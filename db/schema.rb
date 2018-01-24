@@ -105,6 +105,8 @@ ActiveRecord::Schema.define(version: 20180123041411) do
     t.string "phone"
     t.string "address"
     t.string "remember_digest"
+    t.string "activation_digest"
+    t.datetime "activated_at"
     t.boolean "activated"
     t.boolean "admin"
     t.datetime "created_at", null: false

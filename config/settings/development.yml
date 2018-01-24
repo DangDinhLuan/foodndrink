@@ -1,0 +1,24 @@
+validates:
+  name:
+    pattern: /\A[a-zA-Z ]\z/
+    length:
+      minimum: 2
+      maximum: 60
+  email:
+    pattern: /\A[a-zA-Z0-9_]+@[a-z]+\.[a-z.]{2,6}\z/
+    length:
+      maximum: 60
+  phone:
+    pattern: /\A[0,9]{10,11}\z/
+    length:
+      minimum: 10
+      maximum: 11
+  password:
+    length:
+      minimum: 6
+  title:
+    length:
+      maximum: 255
+  address:
+    length:
+      maximum: 255

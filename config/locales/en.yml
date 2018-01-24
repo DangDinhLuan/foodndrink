@@ -1,3 +1,16 @@
 en:
   app:
     title: "Food & Drink"
+  login:
+    title: "Login"
+    remember: "Remember Me"
+  signup:
+    title: "Signup"
+    submit: "Get Started"
+    success: "Well come to Food & Drink! We just send you an email. 
+      Please check your email to active your account."
+  alert_error_title: "Sorry! Something wrong:"
+  name: "Your name"
+  email: "Email"
+  password: "Password"
+  confirmation: "Confirmation"

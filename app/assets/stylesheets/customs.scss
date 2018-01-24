@@ -1,0 +1,653 @@
+@import "bootstrap";
+@import "material";
+
+$white: #FFFFFF;
+$black: #000000;
+$gray: #dce0e0;
+$primary: #9c27b0;
+$warning: #fbc02d;
+$info: #03a9f4;
+$default: #999999;
+$font-color-light: #dce0e0;
+$font-color-dark: #555555;
+$box-shadow-default: 0 1px 10px rgba(0, 0, 0, 0.5);
+$box-shadow-light: 0 1px 5px rgba(0, 0, 0, 0.2);
+
+body {
+  background: $white;
+}
+
+.wrapper {
+  margin-top: 30px;
+}
+
+
+.alert {
+  b {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+}
+/*
+* ==============@@header==================
+*/
+
+.navbar:first-child {
+  padding: 0px 10px !important;
+}
+
+.navbar-header {
+  .navbar-toggle {
+    margin-top: 20px;
+  }
+}
+
+.logo-container {
+  margin-top: 10px;
+    .logo {
+    border: none;
+    border-radius: 0px;
+    width: 100px;
+  }
+}
+
+.form-search {
+  margin: 0px 20px;
+  position: relative;
+  bottom: 5px;
+  .form-control {
+    min-width: 300px;
+    color: $white;
+    padding: 20px;
+    border-radius: 50px;
+    background: $black;
+    opacity: 0.2;
+  }
+
+  .form-control:focus {
+    background: $black;
+    opacity: 0.3;
+  }
+
+  .btn {
+    position: absolute;
+    right: 0px;
+    top: 28px;
+    display: block;
+    box-shadow: unset;
+    background: $gray;
+    opacity: 0.3;
+    i {
+      color: $black;
+      font-weight: normal;
+      opacity: 0.5;
+    }
+  }
+}
+
+.tablist {
+  margin-top: 10px;
+  li, li.active {
+    a, a:hover {
+      color: $white;
+      padding: 5px;
+      line-height: 10px;
+      text-transform: unset;
+      i {
+        font-size: 25px;
+        padding: 5px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  li.active {
+    a, a:focus {
+      background: transparent;
+      box-shadow: unset;
+    }
+    a:hover {
+      background: initial;
+      box-shadow: initial;
+    }
+  }
+
+  .dropdown.open {
+    a {
+      background: unset;
+      i {
+        span {
+          padding: 0px 5px;
+        }
+      }
+    }
+
+    ul {
+      padding: 0px;
+      margin-top: 5px;
+      li {
+        a {
+          margin: 0px;
+          font-size: 15px;
+          color: $font-color-dark;
+          padding: 15px 20px;
+          i {
+            padding-right: 5px;
+            font-size: 15px;
+            color: inherit;
+            display: inline;
+          }
+        }
+        a:hover {
+          color: $white;
+          background: $info;
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  button.close {
+    font-size: 20px;
+    padding: 5px;
+  }
+}
+
+.card {
+  box-shadow: unset;
+}
+
+.catergory-list {
+  border-bottom: 1px solid $gray;
+  padding: 10px 20px;
+  .nav {
+    li {
+      margin: 0px 5px;
+      a, a:hover {
+        border-radius: 50px;
+      }
+
+      a:hover {
+        background: $font-color-light;
+      }
+    }
+  }
+}
+
+/*
+* ====================@@filter===============
+*/
+.filter {
+  margin-top: 10px;
+  .filter-group:last-child {
+    border: unset;
+  }
+
+  .filter-group:first-child {
+    margin: 0px;
+    padding-top: 0px;
+  }
+
+  .filter-group {
+    padding: 10px;
+    margin: 10px 0px;
+    border-bottom: 1px $gray solid;
+    p {
+      color: $font-color-dark;
+      line-height: 10px;
+      padding: 5px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+    i {
+      padding: 0px 3px;
+    }
+  }
+
+
+}
+
+/*
+* ====================@@card==================
+*/
+
+.card-group {
+  margin-bottom: 30px;
+  h2 {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-top: 0px;
+    text-align: center;
+    font-weight: 400;
+  }
+
+  h2::after {
+    content: " ";
+    display: block;
+    width: 20%;
+    height: 2px;
+    background: $gray;
+    margin: 5px auto 20px;
+    text-align: center;
+  }
+
+  .card-item {
+    padding: 0px;
+    margin-top: 20px;
+    .thumbnail {
+      border: unset;
+      margin: 0px 2%;
+      transition: all 0.5s;
+      img {
+        width: 100%;
+        height: 200px;
+      }
+
+      h4 {
+        font-weight: 400;
+        color: $font-color-dark;
+      }
+
+      .item-description {
+        height: 40px;
+        overflow: hidden;
+        margin-bottom: 10px;
+      }
+
+      .item-price {
+        font-size: 20px;
+        font-weight: 400;
+        color: $warning;
+      }
+
+      .item-rating {
+        padding: 10px 5px;
+        color: $primary;
+      }
+
+      .btn {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        opacity: 0;
+        transition: all 0.5s;
+      }
+
+
+    }
+
+    .thumbnail:hover {
+      box-shadow: $box-shadow-default;
+      .btn {
+        opacity: 1;
+      }
+    }
+
+  }
+}
+
+
+.carousel-inner {
+  .item {
+    height: 300px;
+    background: $black;
+    img {
+      width: 100%;
+      opacity: 0.5;
+    }
+  }
+}
+
+/*
+* ===============@@footer=============
+*/
+.footer {
+  background-color: #333333;
+  margin-top: 50px;
+  li {
+    a {
+      color: $font-color-light;
+    }
+  }
+  .btn {
+    background: unset;
+    border: 1px $font-color-light solid;
+    box-shadow: unset;
+  }
+}
+
+/*
+* =================== @@product =====================
+*/
+
+
+/*
+* =================== @@detail =====================
+*/
+
+.product-thumbnail {
+  img {
+    width: 100%;
+  }
+
+  .box {
+    h2 {
+      margin: 0px;
+    }
+
+    .product-description {
+      height: 80px;
+      padding: 20px 10px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      color: $font-color-dark;
+    }
+
+    .product-price {
+      font-size: 30px;
+      font-weight: 400;
+      color: $warning;
+    }
+
+    .product-rating {
+      padding: 10px 20px;
+    }
+
+    .buttons {
+      .btn {
+        .fa-shopping-cart {
+          padding-right: 5px;
+        }
+        .fa-chevron-right {
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+
+}
+
+.details {
+  blockquote {
+    margin: 20px 0px;;
+    font-size: 16px;
+    color: $font-color-dark;
+  }
+}
+
+.related-products {
+  padding: 10px 10px 30px 10px;
+
+}
+
+.comments {
+  padding: 10px 20px;
+  margin-bottom: 50px;
+  border-top: 1px solid $gray;
+  h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  .comment-list {
+    .comment-item {
+      padding: 10px 10px;
+      margin-top: 10px;
+      .media {
+        .media-left {
+          img {
+            width: 80px;
+            height: 80px;
+            border: 2px solid $gray;
+          }
+        }
+
+        .media-body {
+          .media-heading {
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+
+  .comment-form {
+    textarea {
+      padding: 10px;
+    }
+  }
+}
+
+/*
+* =========================@@cart====================
+*/
+
+.box {
+  padding: 20px;
+  box-shadow: $box-shadow-light;
+  h1 {
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  table {
+    tbody {
+      tr {
+        td {
+          vertical-align: middle !important;
+          padding: 5px;
+          img {
+            width: 60px;
+            height: 60px;
+          }
+          input[type="number"] {
+            width: 100px;
+            text-align: center;
+          }
+
+          a {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  .box-footer {
+    overflow: hidden;
+  }
+}
+
+
+
+.order-summary {
+  box-shadow: $box-shadow-light;
+  .box-header {
+    padding: 20px;
+    background: #f7f7f7;
+    h3 {
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+  .text-muted {
+    padding: 10px 20px;
+  }
+
+  table {
+    tbody>tr>td {
+      padding: 10px 20px;
+      color: $font-color-dark;
+    }
+  }
+
+}
+
+/*
+* =================@@checkout===================
+*/
+
+#checkout {
+  .box {
+    padding: 20px 30px;
+    form {
+      .input-group {
+        span {
+          font-size: 18px;
+          padding-left: 0px;
+        }
+      }
+
+    }
+
+    .note {
+      padding-left: 30px;
+    }
+  }
+
+  .box-footer {
+    margin-top: 20px;
+  }
+}
+
+/*
+* ===================@@login=======================
+*/
+.card-signup {
+  margin-top: 100px;
+  .form-group {
+    margin: 20px 0px 0px 0px;
+  }
+  .footer {
+    background: unset;
+    padding: 20px;
+    margin-top: 10px;
+    input[type="submit"] {
+      border: none;
+      color: $primary;
+    }
+  }
+}
+
+.background-filter{
+  background: url("/assets/backgrounds/1.jpg") no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150%;
+}
+
+/*
+* ====================@@profile======================
+*/
+.sidebar-menu {
+  .panel-title {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .nav {
+    li {
+      a {
+        text-align: left;
+        padding: 10px 20px;
+        color: $font-color-dark;
+        i {
+          margin-right: 10px;
+        }
+      }
+      ul {
+        padding: 10px;
+        li {
+          list-style: none;
+          a {
+            text-align: left;
+            text-decoration: none;
+            color: $default;
+            display: block;
+          }
+        }
+        li:hover {
+          background: $gray;
+        }
+      }
+    }
+  }
+}
+
+#infomations {
+  .box {
+    padding: 10px 50px;
+    max-width: 100%;
+    h2 {
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 400;
+    }
+    h3 {
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 400;
+      text-align: center;
+    }
+
+
+  }
+
+  .profile {
+    margin-top: 30px;
+    .avatar {
+      margin: auto;
+      width: 120px;
+      height: 120px;
+    }
+
+  }
+
+  form {
+    .btn {
+      min-width: 120px !important;
+      i {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .change-password {
+    margin-top: 30px;
+    h3 {
+      margin: 0px;
+    }
+  }
+
+  #customer-order {
+    .box {
+      padding: 20px;
+      table {
+        .btn {
+          padding: 5px 10px;
+          max-width: 60px;
+        }
+      }
+    }
+  }
+}
+
+/*
+* ===================@@admin==========================
+*/
+.wrapper.admin-wrapper {
+  margin: 0px !important;
+}
+
+.footer.admin-footer {
+  height: 100px;
+  float: right !important;
+  margin: 0px !important;
+  background: $white !important;
+  width: 100%;
+  padding: 10px 30px;
+}

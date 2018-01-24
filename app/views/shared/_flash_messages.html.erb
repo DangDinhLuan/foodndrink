@@ -1,0 +1,13 @@
+<% flash_messages(flash).each do |type, message, icon| %>
+  <div class="alert alert-<%= type %>">
+    <div class="container-fluid">
+	  <div class="alert-icon">
+		<i class="material-icons"><%= icon %></i>
+	  </div>
+	  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		<span aria-hidden="true"><i class="material-icons">clear</i></span>
+	  </button>
+	  <b><%= type %>: </b><span><%= message %></span>
+    </div>
+  </div>
+<% end %>

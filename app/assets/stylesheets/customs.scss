@@ -530,6 +530,15 @@ body {
   }
 }
 
+.forgot-password {
+  padding: 10px 20px 20px 20px;
+  a {
+    font-weight: 500;
+    color: $gray;
+  }
+
+}
+
 .background-filter{
   background: url("/assets/backgrounds/1.jpg") no-repeat;
   background-size: cover;
@@ -594,7 +603,6 @@ body {
       text-align: center;
     }
 
-
   }
 
   .profile {
@@ -634,20 +642,4 @@ body {
       }
     }
   }
-}
-
-/*
-* ===================@@admin==========================
-*/
-.wrapper.admin-wrapper {
-  margin: 0px !important;
-}
-
-.footer.admin-footer {
-  height: 100px;
-  float: right !important;
-  margin: 0px !important;
-  background: $white !important;
-  width: 100%;
-  padding: 10px 30px;
 }

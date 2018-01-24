@@ -4,6 +4,11 @@ en:
   login:
     title: "Login"
     remember: "Remember Me"
+    success: "Wellcome to Food & Drink"
+    error: "Email or password is invalid!"
+    submit: "Login"
+    forgot_password: "Forgot password ?"
+    signup_now: "Signup now !"
   signup:
     title: "Signup"
     submit: "Get Started"
@@ -30,3 +35,14 @@ en:
         Please click the link below. If you did not request,
         please ignore this email and your password will stay as it is."
       link: "Reset your password !"
+  password_resets:
+    title: "Resets Password"
+    submit: "Send email"
+    send_mail_error: "Email doesn't exist"
+    send_mail_info: "We just send you an email.
+      Please check your email to change your password"
+    reset: "Reset password"
+    expried: "The request have expried!"
+    error: "password error!"
+    blank: "can not be blank!"
+

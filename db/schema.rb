@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20180123041411) do
     t.float "price"
     t.string "unit"
     t.float "avg_rate"
+    t.integer "rates"
     t.integer "quantity"
     t.integer "category_id"
     t.datetime "created_at", null: false
@@ -102,6 +103,8 @@ ActiveRecord::Schema.define(version: 20180123041411) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.string "password_reset_digest"
+    t.datetime "password_reset_send_at"
     t.string "phone"
     t.string "address"
     t.string "remember_digest"

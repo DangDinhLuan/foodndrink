@@ -7,6 +7,7 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.float :price
       t.string :unit
       t.float :avg_rate
+      t.integer :rates
       t.integer :quantity
       t.references :category, foreign_key: true
 

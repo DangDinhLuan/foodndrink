@@ -16,6 +16,7 @@ validates:
   password:
     length:
       minimum: 6
+    reset_expired: 2
   title:
     length:
       maximum: 255

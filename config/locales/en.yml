@@ -7,10 +7,26 @@ en:
   signup:
     title: "Signup"
     submit: "Get Started"
-    success: "Well come to Food & Drink! We just send you an email. 
+    success: "Wellcome to Food & Drink! We just send you an email. 
       Please check your email to active your account."
+    activation:
+      success: "Thank you for joining us. Your account is activated!"
   alert_error_title: "Sorry! Something wrong:"
   name: "Your name"
   email: "Email"
   password: "Password"
   confirmation: "Confirmation"
+  user_mailer:
+    activation:
+      title: "Hi"
+      subject: "Active Account"
+      body: "Wellcome to Food & Drink. Please follow the link below to active
+        your account. Thank you for joining us!"
+      link: "Activation link !"
+    password_reset:
+      title: "Hi"
+      subject: "Reset Password"
+      body: "This email from Food & Drink! You have requested to reset password.
+        Please click the link below. If you did not request,
+        please ignore this email and your password will stay as it is."
+      link: "Reset your password !"

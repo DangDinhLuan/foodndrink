@@ -1,4 +1,10 @@
 en:
+  number:
+    currency:
+      format:
+        delimiter: "."
+        separator: ","
+        unit: "$"
   app:
     title: "Food & Drink"
   login:
@@ -79,3 +85,48 @@ en:
       edit:
         title: "Edit category"
         submit: "Save change"
+      table:
+        edit: "Edit category"
+        delete: "Delete category"
+        delete_confirm: "You sure?"
+    product:
+      heading: "All Products"
+      title: "Title"
+      add_new: "New Product"
+      not_exist: "Sorry! Product doesn't exist!"
+      select:
+        category: "Select Category"
+      quantity: "Quantity"
+      price: "Price ($)"
+      description: "Product description"
+      create:
+        title: "New Product"
+        subtitle: "Complete the product"
+        submit: "Create Product"
+        brown_image: "Upload Image"
+        success: "Create product successfuly!"
+        error: "Error when create the product!"
+      delete:
+        success: "The product was deleted sussecsfuly!"
+        error: "Sorry! Something wrong when delete the product!"
+      edit:
+        title: "Edit Product"
+        subtitle: "Change attributes for product"
+        submit: "Save Changes"
+        brown_image: "Change Image"
+      update:
+        success: "Product was updated successfuly!"
+        error: "Error when update the product!"
+      table:
+        id: "ID"
+        image: "Image"
+        title: "Title"
+        category: "Category"
+        description: "Description"
+        quantity: "Quantity"
+        action: "Action"
+        out_of_stock: "Out of stock"
+        edit: "Edit product"
+        view: "View product"
+        delete: "Delete product"
+        delete_confirm: "You sure ?"

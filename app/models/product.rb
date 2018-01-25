@@ -6,9 +6,13 @@ class Product < ApplicationRecord
   validates :category_id, presence: true
   validates :title, presence: true, length: {maximum: Settings.validates.title.length.maximum}
   validates :description, presence: true
-  validates :image, presence: true
+  mount_uploader :image, ImageUploader
+  validates :image, presence: true, allow_nil: true
   validates :price, presence: true
-  validates :unit, presence: true
   validates :quantity, presence: true
+
+  def excerp
+    self.description.truncate Settings.product.description.excerp, separator: /\s/
+  end
   
 end

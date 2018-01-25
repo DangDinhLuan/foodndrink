@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20180123041411) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
-    t.boolean "category_type"
+    t.string "category_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 20180123041411) do
     t.text "description"
     t.string "image"
     t.float "price"
-    t.string "unit"
     t.float "avg_rate"
     t.integer "rates"
     t.integer "quantity"
@@ -80,8 +79,9 @@ ActiveRecord::Schema.define(version: 20180123041411) do
   end
 
   create_table "slides", force: :cascade do |t|
-    t.string "link"
     t.string "image"
+    t.string "link"
+    t.boolean "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 20180123041411) do
     t.datetime "password_reset_send_at"
     t.string "phone"
     t.string "address"
+    t.string "avatar"
     t.string "remember_digest"
     t.string "activation_digest"
     t.datetime "activated_at"

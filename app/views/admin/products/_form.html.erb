@@ -1,0 +1,54 @@
+<%= form_for [:admin, @product] do |f| %>
+<div class="row">
+    <div class="col-md-8">
+      <div class="form-group label-floating">
+          <label class="control-label">
+          <%= t "admin.product.title" %>
+          </label>
+          <%= f.text_field :title, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+          <%= f.select :category_id, Category.all.collect{|category| [category.title, category.id]},
+            {include_blank: false, prompt: t("admin.product.select.category")}, {class: "form-control"} %>
+      </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8">
+      <div class="form-group label-floating">
+          <label class="control-label">
+          <%= t "admin.product.quantity" %>
+          </label>
+          <%= f.text_field :quantity, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group label-floating">
+          <label class="control-label">
+          <%= t "admin.product.price" %>
+          </label>
+          <%= f.text_field :price, class: "form-control" %>
+      </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+      <div class="form-group label-floating">
+        <label for="description">
+        <%= t "admin.product.description" %>
+        </label>
+        <%= f.text_area :description, class: "form-control", rows: "3" %>
+      </div>
+    </div>
+</div>
+<div class="col-md-12">
+  <span class="btn btn-info btn-file">
+    <i class="fa fa-picture-o" aria-hidden="true"></i>
+    <%= yield :brown_image %>
+    <%= f.file_field :image %>
+  </span>
+  <%= f.submit yield(:submit), class: "btn btn-primary pull-right" %>
+</div>
+<% end %>

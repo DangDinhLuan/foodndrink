@@ -40,7 +40,7 @@ module ApplicationHelper
   end
 
   def currency_for model
-    number = (model.price if model.methods.include? :price) || (model.total ifmodel.methods.include? :total)
+    number = (model.price if model.methods.include? :price) || (model.total if model.methods.include? :total)
     number_to_currency number if number.present?
   end
 end

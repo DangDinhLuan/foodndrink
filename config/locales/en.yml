@@ -157,3 +157,40 @@ en:
         delete_confirm: "Are you sure to delete this slide ?"
         edit: "Edit Slide"
         delete: "Delete Slide"
+        delete_confirm: "You sure ?"
+    order:
+      title: "Orders"
+      detail: "Order detail of: "
+      danger: "Order not defind"
+      edit:
+        success: "Order was successfully updated."
+        danger: "Something went wrong"
+      delete:
+        success: "Object was successfully deleted."
+        danger: "Something went wrong"
+      type:
+        food: "Food"
+        drink: "Drink"
+      show:
+        table:
+          id: "ID"
+          customer: "Customer"
+          accepter: "Accepter"
+          email: "Email"
+          phone: "Phone"
+          address: "Address"
+          total: "Total"
+          status: "Status"
+          view: "View order detail"
+          edit: "Edit order"
+          delete: "Delete order"
+        status:
+          delivered: "Delivered"
+          not_delivery: "Not delivery"
+        data_confim: "You sure?"
+      edit:
+        submit: "Submit change"
+        title: "Edit status order"
+        status:
+          delivered: "Delivered"
+          not_delivery: "Not delivery"

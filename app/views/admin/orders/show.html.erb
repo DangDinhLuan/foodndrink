@@ -1,0 +1,58 @@
+<div class="col-md-12">
+  <%= render "shared/flash_messages"%>
+  <div class="card">
+    <div class="card-header" data-background-color="purple">
+      <h4 class="title"><%= t("admin.order.detail") + @order.name %></h4>
+    </div>
+    <div class="card-content table-responsive col-md-4">
+      <table class="table">
+        <tr>
+          <td><%= t "admin.order.table.accepter" %></td>
+          <td><%= @order.name %></td>
+        </tr>
+        <tr>
+          <td><%= t "admin.order.table.email" %></td>
+          <td><%= @order.email %></td>
+        </tr>
+        <tr>
+          <td><%= t "admin.order.table.phone" %></td>
+          <td><%= @order.phone %></td>
+        </tr>
+        <tr>
+          <td><%= t "admin.order.table.address" %></td>
+          <td><%= @order.address %></td>
+        </tr>
+        <tr>
+          <td><%= t "admin.order.table.total" %></td>
+          <td><%= @order.total %></td>
+        </tr>
+        <tr>
+          <td><%= t "admin.order.table.status" %></td>
+          <td><%= @order.status_order %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="card-content table-responsive col-md-8">
+      <table class="table">
+        <thead>
+          <tr>
+            <th><%= t "admin.product.image" %></th>
+            <th><%= t "admin.product.title" %></th>
+            <th><%= t "admin.product.price" %></th>
+            <th><%= t "admin.product.quantity" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @items.each do |item| %>
+          <tr>
+            <td><%= image_tag item.product.image.url, class: "img-responsive" %></td>
+            <td><%= item.product.title %></td>
+            <td><%= currency_for item %></td>
+            <td><%= item.quantity %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

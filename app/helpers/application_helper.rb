@@ -1,9 +1,15 @@
 module ApplicationHelper
   def error_messages errors
-    errors.messages.each do |field, error|
-      field = field.to_s.capitalize.sub "_", " "
-      message = error.first
-      yield (field + " " + message)
+    if errors.class.to_s == "ActiveModel::Errors"
+      errors.messages.each do |field, error|
+        field = field.to_s.capitalize.sub "_", " "
+        message = error.first
+        yield (field + " " + message)
+      end
+    else
+      errors.each do |error|
+        yield error
+      end
     end
   end
 

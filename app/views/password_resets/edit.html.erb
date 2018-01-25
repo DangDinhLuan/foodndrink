@@ -1,0 +1,34 @@
+<div class="background-filter">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+            <div class="card card-signup">
+              <%= form_for @user, url: password_reset_path(params[:id]) do |f| %>
+                <%= render "shared/error_messages" %>
+                  <div class="header header-primary text-center">
+                    <h4><%= t "password_resets.title" %></h4>
+                  </div>
+                  <div class="content">
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="material-icons">lock_outline</i>
+                      </span>
+                      <%= f.password_field :password, class: "form-control", placeholder: t("password") %>
+                    </div>
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="material-icons">autorenew</i>
+                      </span>
+                      <%= f.password_field :password_confirmation, class: "form-control", placeholder: t("confirmation") %>
+                    </div>
+                  </div>
+                  <%= hidden_field_tag :email, @user.email %>
+                  <div class="footer text-center">
+                    <%= f.submit t("password_resets.reset"), class: "btn btn-white" %>
+                  </div>
+              <% end %>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

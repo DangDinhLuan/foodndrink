@@ -40,6 +40,11 @@ class User < ApplicationRecord
     self.email = email.downcase
   end
 
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest activation_token
+  end
+
   def activate
     update_attribute :activated, true
     update_attribute :activated_at, Time.zone.now
@@ -49,9 +54,27 @@ class User < ApplicationRecord
     self.activated
   end
 
-  def create_activation_digest
-    self.activation_token = User.new_token
-    self.activation_digest = User.digest activation_token
+  def remember
+    self.remember_token = User.new_token
+    update_attribute :remember_digest, User.digest(remember_token)
+  end
+  
+  def remembered?
+    self.remember_digest.present?
+  end
+
+  def forget
+    update_attribute :remember_digest, nil
+  end
+
+  def create_password_reset_digest
+    self.password_reset_token = User.new_token
+    update_attribute :password_reset_digest, User.digest(password_reset_token)
+    update_attribute :password_reset_send_at, Time.zone.now
+  end
+
+  def password_reset_expired?
+    self.password_reset_send_at < Settings.validates.password.reset_expired.hours.ago
   end
 
   def authenticated? attribute, token

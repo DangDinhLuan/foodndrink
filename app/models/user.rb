@@ -58,7 +58,7 @@ class User < ApplicationRecord
     self.remember_token = User.new_token
     update_attribute :remember_digest, User.digest(remember_token)
   end
-  
+
   def remembered?
     self.remember_digest.present?
   end

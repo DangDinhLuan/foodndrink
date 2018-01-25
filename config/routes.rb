@@ -6,5 +6,9 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   resources :users
   resources :account_activations, only: [:edit]
-  resources :password_resets, expect: :destroy  
+  resources :password_resets, expect: :destroy
+
+  namespace :admin do
+    resources :categories
+  end
 end

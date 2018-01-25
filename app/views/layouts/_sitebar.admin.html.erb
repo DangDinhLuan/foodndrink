@@ -1,0 +1,59 @@
+<div class="sidebar" data-color="purple" data-image="../assets/img/sidebar-1.jpg">
+   <div class="logo">
+      <a href="http://www.creative-tim.com" class="simple-text">
+      <%= t "app.title" %>
+      </a>
+   </div>
+   <div class="sidebar-wrapper">
+      <ul class="nav">
+         <li>
+            <a href="#">
+               <i class="material-icons">person</i>
+               <p><%= t "admin.menu.user" %></p>
+            </a>
+         </li>
+         <li class="active">
+            <a href="<%= admin_categories_path %>">
+               <i class="material-icons">view_list</i>
+               <p><%= t "admin.menu.category" %></p>
+            </a>
+         </li>
+         <li>
+            <a href="#">
+               <i class="material-icons">local_drink</i>
+               <p><%= t "admin.menu.product" %></p>
+            </a>
+         </li>
+         <li>
+            <a href="#">
+               <i class="material-icons">add_shopping_cart</i>
+               <p><%= t "admin.menu.order" %></p>
+            </a>
+         </li>
+         <li>
+            <a href="#">
+               <i class="fa fa-heart-o" aria-hidden="true"></i>
+               <p><%= t "admin.menu.suggestion" %></p>
+            </a>
+         </li>
+         <li>
+            <a href="#">
+               <i class="material-icons">comment</i>
+               <p><%= t "admin.menu.comment" %></p>
+            </a>
+         </li>
+         <li>
+            <a href="#">
+               <i class="material-icons">star_rate</i>
+               <p><%= t "admin.menu.rating" %></p>
+            </a>
+         </li>
+         <li>
+            <a href="#">
+               <i class="material-icons">slideshow</i>
+               <p><%= t "admin.menu.slide" %></p>
+            </a>
+         </li>
+      </ul>
+   </div>
+</div>

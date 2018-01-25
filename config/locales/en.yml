@@ -12,7 +12,7 @@ en:
   signup:
     title: "Signup"
     submit: "Get Started"
-    success: "Wellcome to Food & Drink! We just send you an email. 
+    success: "Wellcome to Food & Drink! We just send you an email.
       Please check your email to active your account."
     activation:
       success: "Thank you for joining us. Your account is activated!"
@@ -45,4 +45,37 @@ en:
     expried: "The request have expried!"
     error: "password error!"
     blank: "can not be blank!"
-
+  admin:
+    title: "Foods and Drinks app ruby on rails"
+    proflie: "Profile"
+    menu:
+      home: "Home"
+      user: "Users manage"
+      category: "Categories"
+      product: "Products"
+      order: "Oders"
+      suggestion: "Suggestions"
+      comment: "Comments"
+      rating: "Rates"
+      slide: "Sliders"
+    categories:
+      addsuccess: "Add recond category success"
+      editsuccess: "Edit category success"
+      deletesuccess: "Delete category success"
+      danger: "No data exists"
+      title: "Categories"
+      btnAdd: "Add category"
+      btn_edit: "Update"
+      id: "ID"
+      name: "Name"
+      type: "Type"
+      product: "Total product"
+      action: "Actions"
+      food: "Food"
+      drink: "Drink"
+      new:
+        title: "Add category"
+        submit: "Create category"
+      edit:
+        title: "Edit category"
+        submit: "Save change"

@@ -1,0 +1,17 @@
+@import "admin";
+
+table {
+  tbody {
+    td.td-actions {
+      display: block !important;
+    }
+  }
+
+}
+
+.btn-action{
+  .btn-add{
+    float: right;
+    margin-right: 15px;
+  }
+}

@@ -23,3 +23,5 @@ validates:
   address:
     length:
       maximum: 255
+page:
+  per_page: 5

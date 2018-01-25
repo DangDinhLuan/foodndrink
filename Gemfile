@@ -13,6 +13,8 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "uglifier", ">= 1.3.0"
 gem "font-awesome-rails"
 gem "dotenv-rails"
+gem "jquery-rails", "4.3.1"
+gem "kaminari"
 
 
 group :development, :test do
@@ -24,4 +26,3 @@ end
 group :development do
   gem "web-console", ">= 3.3.0"
 end
-

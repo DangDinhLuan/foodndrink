@@ -1,0 +1,43 @@
+<div class="col-md-12">
+   <%= render "shared/flash_messages"%>
+   <div class="btn-action">
+      <%= link_to t("admin.categories.btnAdd"), new_admin_category_path, class: "btn btn-success btn-add"%>
+   </div>
+   <div class="card">
+      <div class="card-header" data-background-color="purple">
+         <h4 class="title"><%= t "admin.categories.title" %></h4>
+      </div>
+      <div class="card-content table-responsive">
+         <table class="table">
+            <thead>
+               <tr>
+                  <th class="text-center"><%= t "admin.categories.id" %></th>
+                  <th><%= t "admin.categories.name" %></th>
+                  <th><%= t "admin.categories.product" %></th>
+                  <th><%= t "admin.categories.type" %></th>
+                  <th class="text-right th-action"><%= t "admin.categories.action" %></th>
+               </tr>
+            </thead>
+            <tbody>
+               <% @categories.each_with_index do |category, index| %>
+                  <tr>
+                     <td class="text-center"><%= number_index index %></td>
+                     <td><%= category.title %></td>
+                     <td><%= category.products.size %></td>
+                     <td><%= category.type %></td>
+                     <td class="td-actions text-right">
+                        <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                           <i class="material-icons">remove_red_eye</i>
+                        </button>
+                        <%= link_to content_tag(:i, "", class: "fa fa-edit"), edit_admin_category_path(category) %>
+                        <%= link_to content_tag(:i, "", class: "fa fa-times"), admin_category_path(category), remote: :true, method: :delete, data: {confirm: "You sure?"} %>
+                     </td>
+                  </tr>
+               <% end %>
+            </tbody>
+         </table>
+         <%= paginate @categories %>
+         <%= page_entries_info @categories if @categories.blank? %>
+      </div>
+   </div>
+</div>

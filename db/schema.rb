@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20180123041411) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
-    t.string "type"
+    t.boolean "category_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= t "app.title" %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "customs.admin" %>
+    <%= javascript_include_tag "admin", "data-turbolinks-track": "reload" %>
+  </head>
+  <body>
+    <div class="wrapper">
+      <%= render "layouts/sitebar.admin" %>
+      <div class="main-panel">
+        <%= render "layouts/header.admin" %>
+        <div class="content">
+           <div class="container-fluid">
+              <div class="row">
+                <%= yield %>
+              </div>
+           </div>
+        </div>
+        <%= render "layouts/footer.admin" %>
+      </div>
+    </div>
+  </body>
+</html>

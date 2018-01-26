@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   layout "simple", only: [:new]
-  
-  def index;end
+
+  def index; end
 
   def new
     @user = User.new

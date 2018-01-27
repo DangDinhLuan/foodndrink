@@ -1,0 +1,15 @@
+<% provide(:brown_image, t("admin.slide.new.brown_image")) %>
+<% provide(:submit, t("admin.slide.new.submit")) %>
+<div class="col-md-5">
+  <%= render "shared/flash_messages"%>
+  <%= render  "shared/error_messages" %>
+  <div class="card">
+    <div class="card-header" data-background-color="purple">
+       <h4 class="title"><%= t "admin.slide.new.title" %></h4>
+    </div>
+    <div class="card-content">
+        <%= render "form" %>
+    </div>
+  </div>
+</div>
+<%= render "table" %>

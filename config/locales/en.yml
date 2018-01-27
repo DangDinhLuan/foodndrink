@@ -129,4 +129,31 @@ en:
         edit: "Edit product"
         view: "View product"
         delete: "Delete product"
-        delete_confirm: "You sure ?"
+        delete_confirm: "Are you sure to delete this product ?"
+    slide:
+      title: "Title"
+      image: "Image"
+      status: "Active slide"
+      action: "Actions"
+      not_exist: "Sorry! The slide doesn't exist."
+      new:
+        title: "Add new slide"
+        brown_image: "Upload Image"
+        submit: "Add slide"
+      create:
+        success: "Slide is added successfully!"
+        error: "Sorry! Error when add slide."
+      edit:
+        title: "Edit slide"
+        brown_image: "Change Image"
+        submit: "Save Changes"
+      update:
+        success: "Slide is updated successfully!"
+      delete:
+        success: "Delete the slide successfully!"
+        error: "Error when delete this slide!"
+      table:
+        title: "All slides"
+        delete_confirm: "Are you sure to delete this slide ?"
+        edit: "Edit Slide"
+        delete: "Delete Slide"

@@ -1,0 +1,58 @@
+<div class="slide-table-form">
+  <%= form_tag admin_slides_updates_path do %>
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header" data-background-color="purple">
+        <h4 class="title"><%= t "admin.slide.table.title" %></h4>
+      </div>
+      <div class="card-content table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="text-center"><%= t "admin.product.table.id" %></th>
+              <th><%= t "admin.slide.image" %></th>
+              <th><%= t "admin.slide.title" %></th>
+              <th><%= t "admin.slide.status" %></th>
+              <th class="text-right th-action"><%= t "admin.action.action" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @slides.each_with_index do |slide, index| %>
+            <tr>
+              <td class="text-center"><%= number_index index %></td>
+              <td><%= image_tag slide.image.url, class: "img-responsive" %></td>
+              <td class="slide-title"><%= slide.title %></td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <%= hidden_field_tag "slides[]", slide.id %>
+                    <%= check_box_tag "status[#{slide.id}]", true, checked = slide.status%>
+                  </label>
+                </div>
+              </td>
+              <td class="td-actions text-right">
+                <button type="button" rel="tooltip" title="<%= t "admin.slide.table.edit"%>" class="btn btn-success btn-simple btn-xs">
+                  <%= link_to edit_admin_slide_path(slide) do %>
+                  <i class="material-icons">edit</i>
+                  <% end %>
+                </button>
+                <button type="button" rel="tooltip" title="<%= t "admin.slide.table.delete"%>" class="btn btn-danger btn-simple btn-xs">
+                  <%= link_to admin_slide_path(slide), method: :delete, data: {confirm: t("admin.slide.table.delete_confirm")} do %>
+                  <i class="material-icons">delete</i>
+                  <% end %>
+                </button>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-12 slide-action">
+  <% if @slides.present? %>
+    <%= submit_tag "Update", class: "btn btn-primary pull-right" %>
+  <% end %>
+</div>
+<% end %>

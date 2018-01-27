@@ -1,0 +1,26 @@
+<%= form_for [:admin, @slide] do |f| %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-group label-floating">
+        <label class="control-label">
+        <%= t "admin.slide.title" %>
+        </label>
+        <%= f.text_field :title, class: "form-control" %>
+    </div>
+  </div>
+  <div class="col-md-12 checkbox">
+    <label>
+      <%= f.check_box :status, class: "pull-right" %>
+      <%= t "admin.slide.status" %>
+    </label>
+  </div>
+  <div class="col-md-12 slide-action">
+    <span class="btn btn-info btn-file pull-left">
+      <i class="fa fa-picture-o" aria-hidden="true"></i>
+      <%= yield :brown_image %>
+      <%= f.file_field :image %>
+    </span>
+    <%= f.submit yield(:submit), class: "btn btn-primary pull-right" %>
+  </div>
+</div>
+<% end %>

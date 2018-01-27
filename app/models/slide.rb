@@ -1,5 +1,4 @@
 class Slide < ApplicationRecord
-  validates :link, presence: true
-  validates :image, presence: true
-  
+  validates :image, presence: true, allow_nil: true
+  mount_uploader :image, ImageUploader
 end

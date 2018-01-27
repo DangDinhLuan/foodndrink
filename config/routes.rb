@@ -15,5 +15,8 @@ Rails.application.routes.draw do
     resources :slides, except: [:index, :show]
     get "slides", to: "slides#new"
     post "slides/updates", to: "slides#update_status"
+    resources :suggestions, except: [:new]
+    get "suggestions/:id/examine", to: "suggestions#examine"
+    post "suggestions/accept", to: "suggestions#accept"
   end
 end

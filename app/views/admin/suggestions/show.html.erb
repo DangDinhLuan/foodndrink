@@ -1,0 +1,44 @@
+<div class="col-md-12">
+    <div class="product-thumbnail">
+       <div class="row">
+          <div class="col-md-6">
+             <%= image_tag @suggestion.image.url, class: "img-respond" %>
+          </div>
+          <div class="col-md-5">
+             <div class="box">
+                <h2 class="text-center"><%= @suggestion.title %></h2>
+                <p class="text-center"><%= @suggestion.description %></p>
+                <p class="product-price text-center">
+                  <%= currency_for @suggestion %>
+                <p class="text-center buttons">
+                  <% unless @suggestion.accepted? %>
+                    <%= link_to "#{@suggestion.id}/examine",
+                      class: "btn btn-info" do %>
+                      <i class="material-icons">edit</i><%= t "admin.suggestion.add_to_products.submit" %>
+                    <% end %>
+                  <% end %>
+                  <%= link_to admin_suggestion_path(@suggestion), method: :delete,
+                    data: {confirm: t("admin.suggestion.table.delete_confirm")},
+                    class: "btn btn-danger" do %>
+                    <i class="material-icons">delete</i><%= t "admin.suggestion.table.delete" %>
+                  <% end %>
+                </p>
+             </div>
+          </div>
+       </div>
+       <% if @suggestion.note.present? %>
+        <div class="row">
+          <div class="col-md-11">
+              <div class="details">
+                <blockquote>
+                    <h4><%= t "admin.suggestion.note" %></h4>
+                    <div class="product-description">
+                        <%= @suggestion.note %>
+                    </div>
+                </blockquote>
+              </div>
+          </div>
+        </div>
+       <% end %>
+    </div>
+ </div>

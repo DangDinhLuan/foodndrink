@@ -1,0 +1,61 @@
+<div class="col-md-12">
+    <%= render "shared/flash_messages"%>
+    <div class="card">
+       <div class="card-header" data-background-color="purple">
+          <h4 class="title"><%= t "admin.suggestion.heading" %></h4>
+       </div>
+       <div class="card-content table-responsive">
+          <table class="table">
+             <thead>
+                <tr>
+                   <th class="text-center"><%= t "admin.suggestion.table.id" %></th>
+                   <th><%= t "admin.suggestion.image" %></th>
+                   <th><%= t "admin.suggestion.user" %></th>
+                   <th><%= t "admin.suggestion.title" %></th>
+                   <th><%= t "admin.suggestion.price" %></th>
+                   <th><%= t "admin.suggestion.category" %></th>
+                   <th><%= t "admin.suggestion.description" %></th>
+                   <th><%= t "admin.suggestion.status" %></th>
+                   <th class="text-right th-action"><%= t "admin.suggestion.action" %></th>
+                </tr>
+             </thead>
+             <tbody>
+                <% @suggestions.each_with_index do |suggestion, index| %>
+                   <tr>
+                      <td class="text-center"><%= number_index index %></td>
+                      <td><%= image_tag suggestion.image.url, class: "img-responsive" %></td>
+                      <td><%= suggestion.user.name %></td>
+                      <td><%= suggestion.title %></td>
+                      <td><%= currency_for suggestion %></td>
+                      <td><%= suggestion.category.title %></td>
+                      <td class="description"><%= suggestion.excerp %></td>
+                      <td>
+                        <% if suggestion.status %>
+                          <span class="label label-rose">accepted</span>
+                        <% else %>
+                          <span class="label label-warning">unaccept</span>
+                        <% end %>
+                      </td>
+
+                      <td class="td-actions text-right">
+                         <button type="button" rel="tooltip" title="<%= t "admin.suggestion.table.view"%>" class="btn btn-info btn-simple btn-xs">
+                           <%= link_to admin_suggestion_path suggestion do %>
+                             <i class="material-icons">remove_red_eye</i>
+                           <% end %>
+                         </button>
+                         <button type="button" rel="tooltip" title="<%= t "admin.suggestion.table.delete"%>" class="btn btn-danger btn-simple btn-xs">
+                           <%= link_to admin_suggestion_path(suggestion), method: :delete, data: {confirm: t("admin.suggestion.table.delete_confirm")} do %>
+                             <i class="material-icons">delete</i>
+                           <% end %>
+                         </button>
+                      </td>
+                   </tr>
+                <% end %>
+             </tbody>
+          </table>
+          <%= paginate @suggestions %>
+          <%= page_entries_info @suggestions if @suggestions.blank? %>
+       </div>
+    </div>
+ </div>
+ 

@@ -94,8 +94,10 @@ ActiveRecord::Schema.define(version: 20180123041411) do
     t.text "note"
     t.boolean "status"
     t.integer "user_id"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_suggestions_on_category_id"
     t.index ["user_id"], name: "index_suggestions_on_user_id"
   end
 

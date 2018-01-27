@@ -8,6 +8,7 @@ class CreateSuggestions < ActiveRecord::Migration[5.1]
       t.text :note
       t.boolean :status
       t.references :user, foreign_key: true
+      t.references :category, foreign_key: true
 
       t.timestamps
     end

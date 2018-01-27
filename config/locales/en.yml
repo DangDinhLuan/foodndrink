@@ -7,6 +7,28 @@ en:
         unit: "$"
   app:
     title: "Food & Drink"
+    login_register: "Login/Register"
+    home: "Home"
+    about: "About Us"
+    contact: "Contact Us"
+    search_for: "Search for..."
+    user:
+      profile: "Profile"
+      order: "Your orders"
+      sign_out: "Log out"
+    cart:
+      title: "Shopping cart"
+      product: "Product"
+      quantity: "Quantity"
+      unit_price: "Unit price"
+      total: "Total"
+      action: "Action"
+      empty_title: "Your cart is currently empty"
+      your_cart: "Your cart"
+      your_current_cart: "Your current cart have "
+      in_your_cart: " in your cart."
+      close: "Close"
+      save: "Save"
   login:
     title: "Login"
     remember: "Remember Me"

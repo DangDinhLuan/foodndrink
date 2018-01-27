@@ -47,5 +47,33 @@ module SessionsHelper
   def redirect_back
     redirect_to(session[:forwarding_url] || root_url)
   end
-  
+
+  def cart_available?
+    session[:cart].present?
+  end
+
+  def cart_items
+    items = Array.new
+    session[:cart].keys.each do |id|
+      if product = Product.find_by(id: id)
+        item = Item.new product_id: product.id, price: product.price,
+          quantity: session[:cart][id]["quantity"]
+          items.push item
+      end
+    end
+    items
+  end
+
+  def cart_total_price
+    cart_items.map{|item| item.price * item.quantity}.sum
+  end
+
+  def cart_total_items
+    session[:cart].length if cart_available?
+  end
+
+  def total_price_of item
+    item.price * item.quantity
+  end
+
 end

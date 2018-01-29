@@ -149,3 +149,24 @@ select {
     border-left: $info 5px solid;
   }
 }
+
+/*
+*====================@@slide=======================
+*/
+.slide-action {
+  .btn {
+    padding: 10px 15px;
+    max-height: 50px;
+  }
+}
+
+.slide-table-form {
+  max-height: 400px;
+  padding: 0px;
+  overflow: auto;
+  .slide-title {
+    max-width: 200px;
+    overflow: hidden;
+  }
+
+}

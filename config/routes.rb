@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :categories
     resources :products
+    resources :slides, except: [:index, :show]
+    get "slides", to: "slides#new"
+    post "slides/updates", to: "slides#update_status"
   end
 end

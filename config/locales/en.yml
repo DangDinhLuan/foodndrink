@@ -54,6 +54,7 @@ en:
   admin:
     title: "Foods and Drinks app ruby on rails"
     proflie: "Profile"
+    danger: "You can not admin"
     menu:
       home: "Home"
       user: "Users manage"
@@ -128,6 +129,7 @@ en:
         out_of_stock: "Out of stock"
         edit: "Edit product"
         view: "View product"
+        comment: "View comment product"
         delete: "Delete product"
         delete_confirm: "Are you sure to delete this product ?"
     slide:
@@ -223,3 +225,15 @@ en:
         view: "View Suggestion"
         delete: "Delete"
         delete_confirm: "Are you sure to delete this suggestion ?"
+    comment:
+      title: "Comments"
+      danger: "Comment not defind"
+      table:
+        id: "ID"
+        name: "Username"
+        product: "Product"
+        content: "Content"
+        delete: "Delete comment"
+        delete_confirm: "You sure?"
+      delete:
+        success: "Delete comment success"

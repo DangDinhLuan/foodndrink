@@ -5,7 +5,7 @@ class Order < ApplicationRecord
   validates :phone, presence: true, format: {with: Regexp.new(Settings.validates.phone.pattern)}
   validates :address, presence: true, length: {maximum: Settings.validates.address.length.maximum}
   validates :total, presence: true
-  validates :status, inclusion: {in: [true, false]} 
+  validates :status, inclusion: {in: [true, false]}
 
   def status_order
     if self.status

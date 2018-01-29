@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :categories
     resources :orders, except: [:destroy]
+    resources :comments, except: [:edit, :update]
     resources :products
     resources :slides, except: [:index, :show]
     get "slides", to: "slides#new"

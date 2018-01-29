@@ -7,9 +7,9 @@
            <span class="material-input"></span>
         </div>
      </div>
-     <div class="col-md-4">
-        <div class="form-group label-floating">
-           <%= f.select :category_type, [[t("admin.categories.food"), "food"], [t("admin.categories.drink"), "drink"]], {}, class: "form-control" %>
+     <div class="col-md-3">
+        <div class="form-group label-floating is-empty">
+           <%= f.select :category_type, [[t("admin.categories.food"), true],[t("admin.categories.drink"), false]], {}, class: "form-control" %>
            <span class="material-input"></span>
         </div>
      </div>

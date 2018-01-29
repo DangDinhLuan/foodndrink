@@ -5,7 +5,6 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.text :description
       t.string :image
       t.float :price
-      t.string :unit
       t.float :avg_rate
       t.integer :rates
       t.integer :quantity

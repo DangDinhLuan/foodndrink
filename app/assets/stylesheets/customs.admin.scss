@@ -1,17 +1,151 @@
 @import "admin";
 
+$white: #FFFFFF;
+$black: #000000;
+$gray: #dce0e0;
+$primary: #9c27b0;
+$warning: #fbc02d;
+$info: #03a9f4;
+$default: #999999;
+$font-color-light: #dce0e0;
+$font-color-dark: #555555;
+$box-shadow-default: 0 1px 10px rgba(0, 0, 0, 0.5);
+$box-shadow-light: 0 1px 5px rgba(0, 0, 0, 0.2);
+
+a {
+  i {
+    margin-right: 5px;
+  }
+}
+
 table {
   tbody {
     td.td-actions {
       display: block !important;
     }
+    
+    tr {
+      td {
+        button.btn {
+          a {
+            color: unset;
+          }
+        }
+      }
+      .description {
+        max-width: 250px;
+      }
+    }
   }
+}
 
+.card img.img-responsive {
+  width: 50px;
+  height: 50px;
 }
 
 .btn-action{
   .btn-add{
     float: right;
     margin-right: 15px;
+  }
+}
+
+
+select {
+  color: $default !important;
+}
+
+.table .td-actions {
+  display: block;
+}
+
+.btn {
+  .fa {
+    padding-right: 5px;
+  }
+}
+
+.card {
+  .card-content {
+    padding: 20px 30px;
+  }
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+.footer {
+  max-height: 300px;
+}
+
+/*
+*====================@@product========================
+*/
+.product-thumbnail {
+  img {
+    width: 100%;
+  }
+
+  .box {
+    background-color: $white;
+    box-shadow: $box-shadow-light;
+    padding: 20px;
+    h2 {
+      margin: 0px;
+    }
+
+    .product-description {
+      height: 80px;
+      padding: 20px 10px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      color: $font-color-dark;
+    }
+
+    .product-price {
+      margin-top: 30px;
+      font-size: 30px;
+      font-weight: 400;
+      color: $warning;
+    }
+
+    .product-rating {
+      padding: 10px 20px;
+    }
+
+    .buttons {
+      .btn {
+        .fa-shopping-cart {
+          padding-right: 5px;
+        }
+        .fa-chevron-right {
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+
+}
+
+.details {
+  blockquote {
+    margin: 30px 0px;;
+    font-size: 16px;
+    color: $font-color-dark;
+    border-left: $info 5px solid;
   }
 }

@@ -26,11 +26,16 @@
                      <td><%= category.products.size %></td>
                      <td><%= category.type %></td>
                      <td class="td-actions text-right">
-                        <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
-                           <i class="material-icons">remove_red_eye</i>
+                        <button type="button" rel="tooltip" title="<%= t "admin.categories.table.edit"%>" class="btn btn-success btn-simple btn-xs">
+                          <%= link_to edit_admin_category_path(category) do %>
+                            <i class="material-icons">edit</i>
+                          <% end %>
                         </button>
-                        <%= link_to content_tag(:i, "", class: "fa fa-edit"), edit_admin_category_path(category) %>
-                        <%= link_to content_tag(:i, "", class: "fa fa-times"), admin_category_path(category), remote: :true, method: :delete, data: {confirm: "You sure?"} %>
+                        <button type="button" rel="tooltip" title="<%= t "admin.categories.table.delete"%>" class="btn btn-danger btn-simple btn-xs">
+                          <%= link_to admin_category_path(category), method: :delete, data: {confirm: t("admin.categories.table.delete_confirm")} do %>
+                            <i class="material-icons">delete</i>
+                          <% end %>
+                        </button>
                      </td>
                   </tr>
                <% end %>

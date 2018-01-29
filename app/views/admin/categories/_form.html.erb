@@ -1,16 +1,15 @@
 <%= form_for [:admin, @category] do |f| %>
   <div class="row">
-     <div class="col-md-9">
-        <div class="form-group label-floating is-empty">
+     <div class="col-md-8">
+        <div class="form-group label-floating">
            <label class="control-label"><%= t "admin.categories.name" %></label>
            <%= f.text_field :title, class: "form-control" %>
            <span class="material-input"></span>
         </div>
      </div>
-     <div class="col-md-3">
-        <div class="form-group label-floating is-empty">
-           <% @option = options_for_select([[t("admin.categories.food"), 0], [t("admin.categories.drink"), 1]], @category.category_type) %>
-           <%= f.select :category_type, @option, {}, class: 'form-control' %>
+     <div class="col-md-4">
+        <div class="form-group label-floating">
+           <%= f.select :category_type, [[t("admin.categories.food"), "food"], [t("admin.categories.drink"), "drink"]], {}, class: "form-control" %>
            <span class="material-input"></span>
         </div>
      </div>

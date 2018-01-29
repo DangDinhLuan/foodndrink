@@ -9,7 +9,7 @@ validates:
     length:
       maximum: 60
   phone:
-    pattern: \A[0,9]{10,11}\z
+    pattern: \A[0-9]{10,11}\z
     length:
       minimum: 10
       maximum: 11
@@ -25,3 +25,7 @@ validates:
       maximum: 255
 page:
   per_page: 5
+product:
+  description:
+    excerp: 50
+        

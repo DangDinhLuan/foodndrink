@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.datetime :password_reset_send_at
       t.string :phone
       t.string :address
+      t.string :avatar
       t.string :remember_digest
       t.string :activation_digest
       t.datetime :activated_at

@@ -1,0 +1,18 @@
+<%= provide :form_title, t("admin.product.edit.title") %>
+<%= provide :brown_image, t("admin.product.edit.brown_image") %>
+<%= provide :submit, t("admin.product.edit.submit") %>
+<div class="col-md-8">
+  <div class="card">
+    <%= render "shared/error_messages" %>
+    <div class="card-header" data-background-color="purple">
+      <h4 class="title"><%= t "admin.product.edit.title" %></h4>
+      <p class="category">
+        <%= t "admin.product.edit.subtitle" %>
+      </p>
+    </div>
+    <div class="card-content">
+      <%= render "form" %>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>

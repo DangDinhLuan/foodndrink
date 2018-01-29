@@ -17,19 +17,30 @@ module ApplicationHelper
     result = Array.new
     flash.each do |type, message|
       icon = "info_outline"
-      case type
-      when :info
+      case type.to_s.downcase
+      when "info"
         icon = "info_outline"
-      when :success
+      when "success"
         icon = "check"
-      when :warning
+      when "warning"
         icon = "warning"
-      when :danger
-        icon = "ersror_outline"
+      when "danger"
+        icon = "error_outline"
       else
-        type = :info
+        type = "info"
       end
       result.push [type, message, icon]
     end
+    result
+  end
+
+  def number_to_currency number, options = {}
+    options[:locale] = I18n.locale
+    super number, options
+  end
+
+  def currency_for model
+    number = (model.price if model.methods.include? :price) || (model.total ifmodel.methods.include? :total)
+    number_to_currency number if number.present?
   end
 end

@@ -15,6 +15,8 @@ gem "font-awesome-rails"
 gem "dotenv-rails"
 gem "jquery-rails", "4.3.1"
 gem "kaminari"
+gem "carrierwave", "~> 0.10.0"
+gem "mini_magick", "~> 4.3"
 
 
 group :development, :test do

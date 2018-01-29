@@ -27,7 +27,7 @@ class Admin::CategoriesController < AdminController
   def update
     if @category.update_attributes category_params
       flash[:success] = t "admin.categories.editsuccess"
-      redirect_to action: :index
+      redirect_to admin_categories_path
     else
       @messages = @category.errors
       render :edit
@@ -53,7 +53,7 @@ class Admin::CategoriesController < AdminController
     @category = Category.find_by id: params[:id]
     if @category.nil?
       flash[:danger] = t "admin.categories.danger"
-      redirect_to action: :index
+      redirect_to admin_categories_path
     end
   end
 end

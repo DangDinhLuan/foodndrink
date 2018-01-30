@@ -1,67 +1,72 @@
 <div class="col-md-12">
-   <%= render "shared/flash_messages"%>
-   <div class="btn-action">
-      <%= link_to t("admin.product.add_new"), new_admin_product_path, class: "btn btn-info btn-add"%>
-   </div>
-   <div class="card">
-      <div class="card-header" data-background-color="purple">
-         <h4 class="title"><%= t "admin.product.heading" %></h4>
-      </div>
-      <div class="card-content table-responsive">
-         <table class="table">
-            <thead>
-               <tr>
-                  <th class="text-center"><%= t "admin.product.table.id" %></th>
-                  <th><%= t "admin.product.image" %></th>
-                  <th><%= t "admin.product.title" %></th>
-                  <th><%= t "admin.product.price" %></th>
-                  <th><%= t "admin.product.category" %></th>
-                  <th><%= t "admin.product.description" %></th>
-                  <th><%= t "admin.product.quantity" %></th>
-                  <th class="text-right th-action"><%= t "admin.product.action" %></th>
-               </tr>
-            </thead>
-            <tbody>
-               <% @products.each_with_index do |product, index| %>
-                  <tr>
-                     <td class="text-center"><%= number_index index %></td>
-                     <td><%= image_tag product.image.url, class: "img-responsive" %></td>
-                     <td><%= product.title %></td>
-                     <td><%= currency_for product %></td>
-                     <td><%= product.category.title %></td>
-                     <td class="description"><%= product.excerp %></td>
-                     <% if product.quantity.blank? %>
-                        <td>
-                          <span class="badge badge-warning">
-                            <%= t "admin.product.table.out_of_stock" %>
-                          </span>
-                        </td>
-                     <% else %>
-                      <td><%= product.quantity %></td>
-                     <% end %>
-                     <td class="td-actions text-right">
-                        <button type="button" rel="tooltip" title="<%= t "admin.product.table.view"%>" class="btn btn-info btn-simple btn-xs">
-                          <%= link_to admin_product_path product do %>
-                            <i class="material-icons">remove_red_eye</i>
-                          <% end %>
-                        </button>
-                        <button type="button" rel="tooltip" title="<%= t "admin.product.table.edit"%>" class="btn btn-success btn-simple btn-xs">
-                          <%= link_to edit_admin_product_path(product) do %>
-                            <i class="material-icons">edit</i>
-                          <% end %>
-                        </button>
-                        <button type="button" rel="tooltip" title="<%= t "admin.product.table.delete"%>" class="btn btn-danger btn-simple btn-xs">
-                          <%= link_to admin_product_path(product), method: :delete, data: {confirm: t("admin.product.table.delete_confirm")} do %>
-                            <i class="material-icons">delete</i>
-                          <% end %>
-                        </button>
-                     </td>
-                  </tr>
-               <% end %>
-            </tbody>
-         </table>
-         <%= paginate @products %>
-         <%= page_entries_info @products if @products.blank? %>
-      </div>
-   </div>
+  <%= render "shared/flash_messages"%>
+  <div class="btn-action">
+    <%= link_to t("admin.product.add_new"), new_admin_product_path, class: "btn btn-info btn-add"%>
+  </div>
+  <div class="card">
+    <div class="card-header" data-background-color="purple">
+      <h4 class="title"><%= t "admin.product.heading" %></h4>
+    </div>
+    <div class="card-content table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="text-center"><%= t "admin.product.table.id" %></th>
+            <th><%= t "admin.product.image" %></th>
+            <th><%= t "admin.product.title" %></th>
+            <th><%= t "admin.product.price" %></th>
+            <th><%= t "admin.product.category" %></th>
+            <th><%= t "admin.product.description" %></th>
+            <th><%= t "admin.product.quantity" %></th>
+            <th class="text-right th-action"><%= t "admin.product.action" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @products.each_with_index do |product, index| %>
+          <tr>
+            <td class="text-center"><%= number_index index %></td>
+            <td><%= image_tag product.image.url, class: "img-responsive" %></td>
+            <td><%= product.title %></td>
+            <td><%= currency_for product %></td>
+            <td><%= product.category.title %></td>
+            <td class="description"><%= product.excerp %></td>
+            <% if product.quantity.blank? %>
+            <td>
+              <span class="badge badge-warning">
+              <%= t "admin.product.table.out_of_stock" %>
+              </span>
+            </td>
+            <% else %>
+            <td><%= product.quantity %></td>
+            <% end %>
+            <td class="td-actions text-right">
+              <button type="button" rel="tooltip" title="<%= t "admin.product.table.view"%>" class="btn btn-info btn-simple btn-xs">
+              <%= link_to admin_product_path product do %>
+              <i class="material-icons">remove_red_eye</i>
+              <% end %>
+              </button>
+              <button type="button" rel="tooltip" title="<%= t "admin.product.table.comment"%>" class="btn btn-info btn-simple btn-xs">
+              <%= link_to admin_comment_path product do %>
+              <i class="material-icons">comment</i>
+              <% end %>
+              </button>
+              <button type="button" rel="tooltip" title="<%= t "admin.product.table.edit"%>" class="btn btn-success btn-simple btn-xs">
+              <%= link_to edit_admin_product_path(product) do %>
+              <i class="material-icons">edit</i>
+              <% end %>
+              </button>
+              <button type="button" rel="tooltip" title="<%= t "admin.product.table.delete"%>" class="btn btn-danger btn-simple btn-xs">
+              <%= link_to admin_product_path(product), method: :delete, data: {confirm: t("admin.product.table.delete_confirm")} do %>
+              <i class="material-icons">delete</i>
+              <% end %>
+              </button>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= paginate @products %>
+      <%= page_entries_info @products if @products.blank? %>
+    </div>
+  </div>
 </div>

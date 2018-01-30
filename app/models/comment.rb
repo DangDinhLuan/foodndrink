@@ -5,4 +5,5 @@ class Comment < ApplicationRecord
   validates :product_id, presence: true
   validates :content, presence: true
   
+  scope :comment_product, -> (id) {where(product_id: id).order(created_at: :desc)}
 end

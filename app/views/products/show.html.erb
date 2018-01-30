@@ -1,0 +1,68 @@
+<div class="col-md-12">
+  <div class="product-thumbnail">
+    <div class="row">
+        <div class="col-md-6">
+          <%= image_tag  @product.image.url , class: "img-respond" %>
+        </div>
+        <div class="col-md-6">
+          <div class="box">
+              <h2 class="text-center"><%= @product.title %></h2>
+              <div class="product-description">
+                <%= @product.description %>
+              </div>
+              <p class="product-price text-center"><%= currency_for @product %></p>
+              <p class="product-rating text-center">
+                lin
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </p>
+              <div class="row text-center buttons">
+                <%= form_tag(carts_path , remote: true) do %>
+                  <%= hidden_field_tag :product_id, @product.id %>
+                  <button type="submit" class="btn btn-primary">
+                  <i class="fa fa-shopping-cart"></i><%= t "product.add_to_cart" %>
+                  </button>
+                <% end %>
+                <%= link_to user_orders_path, class: "btn btn-info" do %>
+                  <%= t "product.go_to_cart" %><i class="fa fa-chevron-right "></i>
+                <% end %>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="details">
+    <blockquote>
+        <h4>Product details</h4>
+        <p>
+          <%= @product.description %>
+        </p>
+    </blockquote>
+  </div>
+  <div class="card-group related-products">
+    <% if @relateds.present? %>
+      <h2>You may like</h2>
+      <div class="row">
+        <%= render @relateds %>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="comments">
+          <% if @comments.present? %>
+            <h3><%= t "comment.title" %></h3>
+            <div class="comment-list">
+              <%= render @comments %>
+            </div>
+          <% else %>
+            <p class="h4"><%= t "comment.first" %>.</p>
+          <% end %>
+          <%= render "comments/form" %>
+        </div>
+    </div>
+  </div>
+</div>

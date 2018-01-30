@@ -1,5 +1,4 @@
 class CartsController < ApplicationController
-
   def create
     session[:cart] ||= Hash.new
     id = params[:product_id]
@@ -10,8 +9,6 @@ class CartsController < ApplicationController
         session[:cart][id] = Hash.new
         session[:cart][id] = {"quantity" => 1}
       end
-      @item = Item.new product_id: @product.id, price: @product.price,
-          quantity: session[:cart][id]["quantity"]
       respond_to do |format|
         format.html {redirect_to home_path}
         format.js
@@ -19,8 +16,27 @@ class CartsController < ApplicationController
     end
   end
 
-  def update; end
+  def update
+    if params[:product].present?
+      params[:product].each do |id, quantity|
+        if session[:cart].include? id
+          session[:cart][id]["quantity"] = quantity.to_i > 0 ? quantity : 1
+        end
+        respond_to do |format|
+          format.html {redirect_to root_path}
+          format.js
+        end
+      end
+    end
+  end
 
-  def destroy; end
-  
+  def destroy
+    if session[:cart][params[:id]].present?
+      session[:cart].delete params[:id]
+      respond_to do |format|
+        format.html {redirect_to root_path}
+        format.js
+      end
+    end
+  end
 end

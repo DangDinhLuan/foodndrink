@@ -1,0 +1,18 @@
+<%= provide :form_title, t("admin.suggestion.examine.title") %>
+<%= provide :brown_image, t("admin.suggestion.examine.brown_image") %>
+<%= provide :submit, t("admin.suggestion.examine.submit") %>
+<div class="col-md-8">
+  <div class="card">
+    <%= render "shared/error_messages" %>
+    <div class="card-header" data-background-color="purple">
+      <h4 class="title"><%= t "admin.suggestion.examine.title" %></h4>
+      <p class="category">
+        <%= t "admin.suggestion.examine.subtitle" %>
+      </p>
+    </div>
+    <div class="card-content">
+      <%= render "form" %>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>

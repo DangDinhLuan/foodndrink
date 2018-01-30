@@ -194,3 +194,32 @@ en:
         status:
           delivered: "Delivered"
           not_delivery: "Not delivery"
+    suggestion:
+      heading: "All Suggestions"
+      title: "Title"
+      not_exist: "Sorry! This suggestion doesn't exist!"
+      select:
+        category: "Select Category"
+      price: "Price ($)"
+      description: "Suggestion description"
+      note: "Note"
+      status: "Status"
+      add_to_products:
+        submit: "Add To Products"
+      examine:
+        title: "Examine Suggestion"
+        subtitle: "Change attributes for suggestion and make it become a new product"
+        submit: "Add New Product"
+        brown_image: "Change Image"
+      accept:
+        success: "Create product from suggestion successfully!"
+      table:
+        id: "ID"
+        image: "Image"
+        title: "Title"
+        category: "Category"
+        description: "Description"
+        action: "Action"
+        view: "View Suggestion"
+        delete: "Delete"
+        delete_confirm: "Are you sure to delete this suggestion ?"

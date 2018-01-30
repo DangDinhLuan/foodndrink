@@ -1,0 +1,20 @@
+<% if comment ||= @comment %>
+  <div id="comment-<%= comment.id %>" class="comment-item">
+    <div class="media">
+      <div class="media-left">
+        <%= image_tag comment.user.avatar.url, class: "media-object img-circle" %>
+      </div>
+      <div class="media-body">
+        <% if loged_in? && current_user?(comment.user) %>        
+          <button type="button" rel="tooltip" title="<%= t "comment.delete.title"%>" class="btn btn-danger btn-simple btn-xs">
+            <%= link_to comment, method: :delete, remote: true, data: {confirm: t("comment.delete.confirm")} do %>
+                &times;
+            <% end %>
+          </button>
+        <% end %>
+        <h4 class="media-heading"><%= comment.user.name %></h4>
+        <%= comment.content %>
+      </div>
+    </div>
+  </div>
+<% end %>

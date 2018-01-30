@@ -1,0 +1,6 @@
+if(!$(".comment-list").length) {
+  $(".comments").prepend("<h3>Comments</h3><div class='comment-list'></div>");
+}
+$(".h4").remove();
+$(".comment-list").prepend("<%= j render "comment" %>");
+$(".comments textarea").val("");

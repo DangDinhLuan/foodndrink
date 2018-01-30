@@ -28,6 +28,8 @@ page:
 product:
   description:
     excerp: 50
+  related:
+    limit: 4
 home:
   product:
     recent:
@@ -38,3 +40,6 @@ categories:
   product:
     page:
       per_page: 12
+user:
+  avatar:
+    default: "avatars/default.png"

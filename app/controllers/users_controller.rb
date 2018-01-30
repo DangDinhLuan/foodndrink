@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  layout "simple", only: [:new]
+  layout "simple", only: [:new, :create]
 
   def index; end
 

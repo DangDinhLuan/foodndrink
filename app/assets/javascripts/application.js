@@ -13,5 +13,4 @@
 //= require bootstrap
 //= require material
 //= require rails-ujs
-//= require turbolinks
 //=require_tree ../../../vendor/assets/javascripts/

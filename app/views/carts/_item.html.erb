@@ -5,7 +5,7 @@
   </td>
   <td>
     <div class="form-group">
-        <input type="number" value="<%= @item.quantity %>" class="form-control">
+        <input type="number" min="1" value="<%= @item.quantity %>" class="form-control">
     </div>
   </td>
   <td><%= currency_for @item %></td>

@@ -11,8 +11,8 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :quantity, presence: true
 
-  scope :top_news, ->{order(created_at: :desc)}
-  scope :top_rated, ->{order(avg_rate: :desc)}
+  scope :recent, ->{order created_at: :desc}
+  scope :top_rated, ->{order avg_rate: :desc}
   
   def excerp
     self.description.truncate Settings.product.description.excerp, separator: /\s/

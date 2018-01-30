@@ -501,11 +501,53 @@ body {
 
     .product-rating {
       padding: 10px 20px;
+      overflow: hidden;
+      .form-rating {
+        display: inline;
+        button {
+          background: unset;
+          border: none;
+          display: inline !important;
+          box-shadow: unset;
+          padding: 5px;
+        }
+    
+        botton:focus {
+          background: $info;
+          i {
+            color: $white;
+          }
+        }
+        
+        .rated {
+          color: $white;
+          i {
+            color: $primary;
+          }
+        }
+        
+        .unrated {
+          i {
+            color: $default;
+          }
+        }
+      }
     }
 
     .buttons {
       form {
         display: inline-block;
+        .add-to-cart {
+          font-size: 30px;
+          color: $info;
+          font-weight: bold;
+          text-shadow: $box-shadow-light;
+          position: absolute;
+          opacity: 0;
+          left: 140px;
+          bottom: 40px;
+
+        }
       }
       .btn {
         .fa-shopping-cart {
@@ -601,6 +643,19 @@ body {
 /*
 * =========================@@cart====================
 */
+.card-item {
+  .number-floating {
+    position: absolute;
+    bottom: 30px;
+    left: 240px;
+    font-size: 25px;
+    font-weight: bold;
+    color: $info;
+    opacity: 0;
+    text-shadow: $box-shadow-light;
+  }
+
+}
 
 #cart-modal {
   #cart{

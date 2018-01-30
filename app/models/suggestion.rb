@@ -17,8 +17,8 @@ class Suggestion < ApplicationRecord
   end
 
   def accept
-    sefl.status = true
-    sefl.save
+    self.status = true
+    self.save
   end
 
   def accepted?

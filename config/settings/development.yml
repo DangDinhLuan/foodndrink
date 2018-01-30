@@ -43,3 +43,4 @@ categories:
 user:
   avatar:
     default: "avatars/default.png"
+rating: 5

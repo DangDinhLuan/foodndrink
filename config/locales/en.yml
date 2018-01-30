@@ -36,6 +36,7 @@ en:
         title: "Ratings"
     user:
       profile: "Profile"
+      cart: "Goto cart"
       order: "Your orders"
       sign_out: "Log out"
       admin: "administration"
@@ -52,6 +53,8 @@ en:
       in_your_cart: " in your cart."
       close: "Close"
       save: "Save"
+      go_to_cart: "Goto cart"
+      checkout: "Checkout"
   login:
     title: "Login"
     remember: "Remember Me"
@@ -294,6 +297,10 @@ en:
       delete_confirm: "You sure?"
       success: "Delete user success"
       danger: "User not defind"
+<<<<<<< c5824461f39ad4207793a9adeb23153ff2b91c76
+=======
+<<<<<<< dc7c4f44198e87ee4341052cde0fcf1f68c35f74
+>>>>>>> User - User profile
   user_profile:
     title: "Customer section"
     account: "My account"
@@ -342,7 +349,11 @@ en:
       edit:
         success: "Suggestion was successfully updated"
       delete:
+<<<<<<< c5824461f39ad4207793a9adeb23153ff2b91c76
         success: "Suggestion was successfully deleted."
+=======
+        success: "Suggestion was successfully deleted."t
+>>>>>>> User - User profile
   comment:
     title: "Comments"
     first: "Be the first to post a comment"
@@ -351,4 +362,37 @@ en:
     delete:
       title: "Delete comment"
       confirm: "Are you sure to delete your comment?"
+<<<<<<< c5824461f39ad4207793a9adeb23153ff2b91c76
     
+=======
+<<<<<<< HEAD
+  product:
+    go_to_cart: "Goto cart"
+    add_to_cart: "Add to cart"
+  order:
+    success: "Thanks for your order!"
+    sumary:
+      title: "Order summary"
+      detail: "Shipping and additional costs are calculated based on the values you have entered."
+      subtotal: "Order subtotal"
+      shiping: "Shipping and handling"
+      tax: "Tax"
+    checkout:
+      title: "Checkout"
+      name: "Your name"
+      address: "Address"
+      phone: "Phone"
+      email: "Email"
+      note: "Note..."
+      submit: "Order now"
+      back: "Back to basket"
+<<<<<<< HEAD
+=======
+>>>>>>> 6cbb14b... User - View product details and Comment
+=======
+<<<<<<< 9f7121102ea15ad2d09b8ba49b60428fc8f5277d
+=======
+
+>>>>>>> User - Order
+>>>>>>> 3b028e2... User - Order
+>>>>>>> User - User profile

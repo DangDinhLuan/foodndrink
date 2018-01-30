@@ -84,5 +84,9 @@ module SessionsHelper
   def verify_user
     redirect_back unless current_user.present?
   end
+  
+  def destroy_cart
+    session.delete :cart if cart_available?
+  end
 
 end

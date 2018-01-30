@@ -12,12 +12,15 @@
       </div>
       <p class="item-price"><%= currency_for product %></p>
       <div class="item-rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
+        <% point = product.avg_rate || 0 %>
+        <% point.times do %> 
+          <i class="rated fa fa-star"></i>
+        <% end %>
+        <% (5 - point.ceil).times do %> 
+          <i class="unrated fa fa-star"></i>
+        <% end %>
         <span><%= "#(product.rates)" if product.rates %></span>
+
       </div>
       <%= form_tag carts_path, remote: true do %>
         <%= hidden_field_tag :product_id, product.id %>

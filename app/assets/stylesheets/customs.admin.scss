@@ -181,3 +181,84 @@ select {
   width: 100%;
   height: auto;
 }
+
+
+.product-rating {
+  padding: 10px 20px;
+  overflow: hidden;
+  .form-rating {
+    display: inline;
+    button {
+      background: unset;
+      border: none;
+      display: inline !important;
+      box-shadow: unset;
+      padding: 5px;
+    }
+
+    botton:focus {
+      background: $info;
+      i {
+        color: $white;
+      }
+    }
+    
+    .rated {
+      color: $white;
+      i {
+        color: $primary;
+      }
+    }
+    
+    .unrated {
+      i {
+        color: $default;
+      }
+    }
+  }
+}
+
+/*
+*========================@@pagination==========================
+*/
+.pagination a, .pagination span.current, .pagination span.gap {
+  float: left;
+  padding: 0 14px;
+  line-height: 38px;
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid #DDD;
+  border-left-width: 0;
+}
+
+.pagination {
+  border: none;
+
+  .first{
+    display: none;
+  }
+
+  .page, .prev, .next, .current {
+    margin: 0px 5px;
+    a {
+      border: none;
+      color: $default;
+      font-weight: 400;
+    }
+  }
+
+  .current {
+    border: none !important;
+    background: $info !important;
+    color: $white;
+    padding: 0px 15px !important;
+    box-shadow: 0 4px 5px 0 rgba(3, 169, 244, 0.14),
+      0 1px 10px 0 rgba(3, 169, 244, 0.12),
+      0 2px 4px -1px rgba(3, 169, 244, 0.2);
+    border-radius: 30px;
+  }
+
+  .last{
+    display: none;
+  }
+}

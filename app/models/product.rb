@@ -27,4 +27,15 @@ class Product < ApplicationRecord
     end
   end
   
+  def update_ratings
+    self.avg_rate = self.ratings.average :point
+    self.rates = self.ratings.count :point
+    self.save
+  end
+
+  def rated_by user
+    if user && rated = self.ratings.where("user_id = ?", user.id).first
+      rated.point
+    end
+  end
 end

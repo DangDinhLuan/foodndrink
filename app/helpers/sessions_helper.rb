@@ -81,6 +81,12 @@ module SessionsHelper
     item.price * item.quantity
   end
 
+  def quantity_of product
+    return 0 unless cart_available?
+      product_id = (product.methods.include? :id) ? product.id.to_s : product.to_s
+      session[:cart][product_id] ? session[:cart][product_id]["quantity"] : 0
+  end
+
   def verify_user
     redirect_back unless current_user.present?
   end

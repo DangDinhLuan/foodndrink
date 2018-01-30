@@ -1,6 +1,7 @@
 $("#cart-modal .modal-content").remove();
 $("#cart-modal .modal-dialog").append("<%= j render 'carts/content' %>");
 $(".notification-bubble").remove();
+$(".quantity-<%= params[:id] %>").html("<%= quantity_of params[:id] %>");
 $("#summary .order-summary").remove();
 $("#summary").append("<%= j render 'orders/summary' %>");
 <% if cart_total_items %>

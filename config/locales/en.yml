@@ -297,10 +297,6 @@ en:
       delete_confirm: "You sure?"
       success: "Delete user success"
       danger: "User not defind"
-<<<<<<< c5824461f39ad4207793a9adeb23153ff2b91c76
-=======
-<<<<<<< dc7c4f44198e87ee4341052cde0fcf1f68c35f74
->>>>>>> User - User profile
   user_profile:
     title: "Customer section"
     account: "My account"
@@ -349,11 +345,7 @@ en:
       edit:
         success: "Suggestion was successfully updated"
       delete:
-<<<<<<< c5824461f39ad4207793a9adeb23153ff2b91c76
         success: "Suggestion was successfully deleted."
-=======
-        success: "Suggestion was successfully deleted."t
->>>>>>> User - User profile
   comment:
     title: "Comments"
     first: "Be the first to post a comment"
@@ -362,13 +354,11 @@ en:
     delete:
       title: "Delete comment"
       confirm: "Are you sure to delete your comment?"
-<<<<<<< c5824461f39ad4207793a9adeb23153ff2b91c76
-    
-=======
-<<<<<<< HEAD
   product:
     go_to_cart: "Goto cart"
     add_to_cart: "Add to cart"
+    you_may_like: "You may like"
+    detail: "Product details"
   order:
     success: "Thanks for your order!"
     sumary:
@@ -386,13 +376,3 @@ en:
       note: "Note..."
       submit: "Order now"
       back: "Back to basket"
-<<<<<<< HEAD
-=======
->>>>>>> 6cbb14b... User - View product details and Comment
-=======
-<<<<<<< 9f7121102ea15ad2d09b8ba49b60428fc8f5277d
-=======
-
->>>>>>> User - Order
->>>>>>> 3b028e2... User - Order
->>>>>>> User - User profile

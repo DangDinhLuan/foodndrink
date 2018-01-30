@@ -8,7 +8,7 @@ class Admin::CommentsController < AdminController
   end
 
   def show
-    @comments = Comment.includes([:product, :user]).comment_product(params[:id])
+    @comments = Comment.includes([:product, :user]).recent(params[:id])
       .page(params[:page]).per Settings.page.per_page
   end
 

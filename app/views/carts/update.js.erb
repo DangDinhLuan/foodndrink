@@ -1,6 +1,8 @@
 $("#cart-modal .modal-content").remove();
 $("#cart-modal .modal-dialog").append("<%= j render 'carts/content' %>");
 $(".notification-bubble").remove();
+$("#summary .order-summary").remove();
+$("#summary").append("<%= j render 'orders/summary' %>");
 <% if cart_total_items %>
   $("#notification").append("<span class='notification-bubble'><%= cart_total_items %></span>");
 <% end %>

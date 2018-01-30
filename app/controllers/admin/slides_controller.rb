@@ -47,8 +47,11 @@ class Admin::SlidesController < AdminController
           slide.save
         end
       end
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
-    redirect_to admin_slides_path
   end
 
   def load_slide

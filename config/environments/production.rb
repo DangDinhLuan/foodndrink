@@ -88,4 +88,23 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_caching = false
+  config.active_support.deprecation = :log
+  config.active_record.migration_error = :page_load
+
+  config.action_mailer.delivery_method = :smtp
+  host = "foodndrinkapp.herokuapp.com"
+  config.action_mailer.default_url_options = {host: host}
+  ActionMailer::Base.smtp_settings = {
+    :address        => "smtp.sendgrid.net",
+    :port           => "587",
+    :authentication => :plain,
+    :user_name      => ENV["EMAIL"],
+    :password       => ENV["EMAIL_PASSWORD"],
+    :domain         => "foodndrinkapp.herokuapp.com",
+    :enable_starttls_auto => true
+  }
+
 end

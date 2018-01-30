@@ -1,0 +1,30 @@
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="time-selection">
+        <%= form_tag admin_path, method: :get, remote: true do %>
+          <div class="col-md-3 col-md-offset-3">
+            <div class="form-group form-inline">
+              <label for=""><%= t "admin.dashboard.from_date" %></label>
+              <%= text_field_tag :from_date, Date.today.beginning_of_month, class: "form-control datepicker" %>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group form-inline">
+              <label for=""><%= t "admin.dashboard.to_date" %></label>
+              <%= text_field_tag :to_date, Date.today, class: "form-control datepicker" %>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <button type="reset" id="reset" class="btn btn-warning pull-right"><%= t "admin.dashboard.reset" %></button>
+            <button id="submit" class="btn btn-success pull-right"><%= t "admin.dashboard.submit" %></button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div id="dashboards">
+      <%= render "dashboards" %>
+    </div>
+    <%= link_to t("report.dowload"), export_path(format: :xlsx) %>    
+  </div>
+</div>

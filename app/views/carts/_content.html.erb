@@ -32,12 +32,13 @@
           </div>
         </div>          
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default btn-simple" data-dismiss="modal"><%= t "app.cart.close" %></button>
-        <button type="submit" class="btn btn-info btn-simple"><%= t "app.cart.save" %></button>
+      <div class="modal-footer text-center">
+        <%= link_to t("app.cart.checkout"), checkout_path, id: "btn-checkout", class: "btn btn-info btn-simple pull-left" %>
+        <%= link_to t("app.cart.go_to_cart"), cart_details_path, id: "btn-go-to-cart", class: "btn btn-info btn-simple" %>
+        <button id="btn-cart-save" type="submit" class="btn btn-default btn-simple"><%= t "app.cart.save" %></button>
       </div>
     <% end %>
-    <% else %>
+  <% else %>
     <div class="modal-header text-center">
       <h2 class="modal-title h1" id="myModalLabel"><i class="fa fa-shopping-cart"></i></h2>
       <p class="text-muted h4"><%= t "app.cart.empty_title" %></p>

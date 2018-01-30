@@ -31,8 +31,14 @@
                     <% end %>
                   </li>
                   <li>
+                    <%= link_to cart_details_path do %>
+                    <i class="fa fa-shopping-cart"></i>
+                    <%= t "app.user.cart" %>
+                    <% end %>
+                  </li>
+                  <li>
                     <%= link_to user_orders_path do %>
-                    <i class="fa fa-cart-arrow-down"></i>
+                    <i class="fa fa-align-left"></i>
                     <%=  t "app.user.order" %>
                     <% end %>
                   </li>

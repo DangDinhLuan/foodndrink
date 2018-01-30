@@ -1,0 +1,8 @@
+<% point = product.avg_rate || 0 %>
+<% product.avg_rate.ceil.times do %> 
+  <i class="rated fa fa-star"></i>
+<% end %>
+<% (5 - product.avg_rate.ceil).times do %> 
+  <i class="unrated fa fa-star"></i>
+<% end %>
+<span><%= "#(product.rates)" if product.rates %></span>

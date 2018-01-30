@@ -59,4 +59,16 @@ module ApplicationHelper
   def product_collunm
     controller.controller_name == "categories" ? "col-md-4" : "col-md-3"
   end
+
+  def current_controller controller_name
+    controller.controller_name == controller_name
+  end
+
+  def navbar_class
+    if controller.controller_name =~ /home|categories/i
+      "navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll"
+    else
+      "navbar navbar-fixed-top"
+    end
+  end
 end

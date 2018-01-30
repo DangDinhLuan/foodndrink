@@ -1,0 +1,110 @@
+<div class="row">
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-header" data-background-color="orange">
+        <i class="material-icons">shopping_cart</i>
+      </div>
+      <div class="card-content">
+        <p class="category"><%= t "admin.dashboard.quantity" %></p>
+        <h3 class="title"><%= @dashboards.total_quantities %></h3>
+      </div>
+      <div class="card-footer">
+        <div class="stats">
+          <i class="material-icons">date_range</i><%= t "admin.dashboard.in_this_month" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-header" data-background-color="green">
+        <i class="material-icons">monetization_on</i>
+      </div>
+      <div class="card-content">
+        <p class="category"><%= t "amdin.dashboard.price" %></p>
+        <h3 class="title">$<%= @dashboards.total_price %></h3>
+      </div>
+      <div class="card-footer">
+        <div class="stats">
+          <i class="material-icons">timeline</i><%= t "admin.dashboard.last_hours" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-header" data-background-color="red">
+        <i class="material-icons">local_drink</i>
+      </div>
+      <div class="card-content">
+        <p class="category"><%= t "admin.dashboard.product" %></p>
+        <h3 class="title"><%= @dashboards.total_products %></h3>
+      </div>
+      <div class="card-footer">
+        <div class="stats">
+          <i class="material-icons">local_offer</i><%= t "admin.dashboard.total_in_store" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-header" data-background-color="blue">
+        <i class="material-icons">account_circle</i>
+      </div>
+      <div class="card-content">
+        <p class="category"><%= t "admin.dashboard.user" %></p>
+        <h3 class="title"><%= @dashboards.total_users %></h3>
+      </div>
+      <div class="card-footer">
+        <div class="stats">
+          <i class="material-icons">update</i><%= t "admin.dashboard.just_updated" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="chart">
+      <h4><%= t "admin.dashboard.quantity_each_category" %></h4>
+      <%= column_chart @dashboards.total_quantity_sold_of_each_category %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="chart">
+      <h4><%= t "admin.dashboard.price_each_category" %></h4>
+      <%= column_chart @dashboards.total_price_sold_of_each_category %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="chart">
+      <h4><%= t "admin.dashboard.order_in_each_day" %></h4>
+      <%= line_chart @dashboards.order_each_day %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-7 col-md-12">
+    <div class="chart">
+      <h4><%= t "admin.dashboard.product_with_price_and_quantity" %></h4>
+      <%= scatter_chart @dashboards.product_with_total_quantity, xtitle: t("admin.dashboard.chart.price"), ytitle: t("admin.dashboard.chart.total_quantity") %>
+    </div>
+  </div>
+  <div class="col-lg-5 col-md-12">
+    <div class="chart">
+      <h4><%= t "admin.dashboard.food_and_drink" %></h4>
+      <%= pie_chart  @dashboards.product_in_each_category_type %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="chart">
+      <h4><%= t "admin.dashboard.top_product_of_month" %></h4>
+      <%= column_chart @dashboards.top_product_of_month %>
+    </div>
+  </div>
+</div>

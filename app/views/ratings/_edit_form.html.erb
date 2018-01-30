@@ -1,0 +1,11 @@
+<% rated = @rating ? @rating.point : 0 %>
+<% 1.upto Settings.rating do |point| %>
+  <%= form_tag ratings_path, method: :patch, remote: true, class:"form-rating" do %>
+    <%= hidden_field_tag "rating[product_id]", @product.id %>
+    <%= hidden_field_tag "rating[point]", point %>
+    <%= hidden_field_tag "rating[user_id]", current_user.id %>
+    <button type="submit" class="<%= point <= rated ? " rated " : " unrated " %>btn btn-round btn-just-icon btn-cart">
+      <i class="fa fa-star"></i>
+    </button>
+  <% end %>
+<% end %>

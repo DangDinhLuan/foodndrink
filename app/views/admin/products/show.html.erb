@@ -4,19 +4,19 @@
       <div class="col-md-6">
         <%= image_tag @product.image.url, class: "img-respond" %>
       </div>
-      <div class="col-md-5">
+      <div class="col-md-6">
         <div class="box">
           <h2 class="text-center"><%= @product.title %></h2>
           <p class="product-price text-center">
             <%= currency_for @product %><span></span>
           </p>
-          <p class="product-rating text-center">
-            <i class="fa fa-star-o"></i>
-            <i class="fa fa-star-o"></i>
-            <i class="fa fa-star-o"></i>
-            <i class="fa fa-star-o"></i>
-            <i class="fa fa-star-o"></i>
-          </p>
+          <div id="product-rating" class="product-rating text-center">
+            <% 1.upto Settings.rating do |point| %>
+                <button type="submit" class="<%= point <= @product.avg_rate.to_i ? " rated " : " unrated " %>btn btn-round btn-just-icon btn-cart">
+                  <i class="fa fa-star"></i>
+                </button>
+            <% end %>
+          </div>
           <p class="text-center buttons">
             <%= link_to edit_admin_product_path(@product),
               class: "btn btn-info" do %>

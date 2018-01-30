@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   end
 
   def current_user_params
-    params.require(:user).permit :name, :email, :phone, :address, :avatar
+    params.require(:user).permit :name, :email, :phone, :address, :avatar, :chatwork_id
   end
 
   def change_password_params

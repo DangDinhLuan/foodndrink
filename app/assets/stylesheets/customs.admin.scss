@@ -1,5 +1,3 @@
-@import "admin";
-
 $white: #FFFFFF;
 $black: #000000;
 $gray: #dce0e0;
@@ -88,10 +86,32 @@ select {
   opacity: 0;
 }
 
+canvas {
+  box-sizing: border-box !important;
+  width: 100%;
+  background: $white;
+  padding: 20px;
+  box-shadow: $box-shadow-light;
+  border-radius: 5px;
+}
+
+.card-stats {
+  .card-content {
+    height: 110px;
+  }
+}
+
 .footer {
   max-height: 300px;
 }
 
+.chart {
+  margin-bottom: 20px;
+  h4 {
+    font-weight: 400;
+    color: $default;
+  }
+}
 /*
 *====================@@product========================
 */
@@ -153,6 +173,10 @@ select {
 /*
 *====================@@slide=======================
 */
+#update-slide-status {
+  display: none;
+}
+
 .slide-action {
   .btn {
     padding: 10px 15px;
@@ -161,9 +185,7 @@ select {
 }
 
 .slide-table-form {
-  max-height: 400px;
   padding: 0px;
-  overflow: auto;
   .slide-title {
     max-width: 200px;
     overflow: hidden;
@@ -180,4 +202,114 @@ select {
 .card img{
   width: 100%;
   height: auto;
+}
+
+
+.product-rating {
+  padding: 10px 20px;
+  overflow: hidden;
+  .form-rating {
+    display: inline;
+    button {
+      background: unset;
+      border: none;
+      display: inline !important;
+      box-shadow: unset;
+      padding: 5px;
+    }
+
+    botton:focus {
+      background: $info;
+      i {
+        color: $white;
+      }
+    }
+    
+    .rated {
+      color: $white;
+      i {
+        color: $primary;
+      }
+    }
+    
+    .unrated {
+      i {
+        color: $default;
+      }
+    }
+  }
+}
+
+/*
+*========================@@pagination==========================
+*/
+.pagination a, .pagination span.current, .pagination span.gap {
+  float: left;
+  padding: 0 14px;
+  line-height: 38px;
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid #DDD;
+  border-left-width: 0;
+}
+
+.pagination {
+  border: none;
+
+  .gap {
+    display: none;
+  }
+  
+  .first{
+    display: none;
+  }
+
+  .page, .prev, .next, .current {
+    margin: 0px 5px;
+    a {
+      border: none;
+      color: $default;
+      font-weight: 400;
+    }
+  }
+
+  .current {
+    border: none !important;
+    background: $info !important;
+    color: $white;
+    padding: 0px 15px !important;
+    box-shadow: 0 4px 5px 0 rgba(3, 169, 244, 0.14),
+      0 1px 10px 0 rgba(3, 169, 244, 0.12),
+      0 2px 4px -1px rgba(3, 169, 244, 0.2);
+    border-radius: 30px;
+  }
+
+  .last{
+    display: none;
+  }
+}
+
+.time-selection {
+  margin-bottom: 100px;
+  .form-group {
+    margin-top: 15px;
+    input {
+      padding-left: 20px;
+      width: 80%;
+    }
+    label {
+      padding-top: 5px;
+    }
+  }
+}
+
+#fomr-import{
+  display: none
+}
+.filter{
+  width: 25%;
+  float: right;
+  .form-group{
+    margin: 15px 20px 0 0;
+  }
 }

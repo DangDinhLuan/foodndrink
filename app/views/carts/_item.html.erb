@@ -1,0 +1,16 @@
+<tr id="item_<%= @product.id%>">
+  <td><%= image_tag @product.image.url %></td>
+  <td class="item-description">
+    <%= link_to excerp(@product.title), @product %>
+  </td>
+  <td>
+    <div class="form-group">
+        <input type="number" value="<%= @item.quantity %>" class="form-control">
+    </div>
+  </td>
+  <td><%= currency_for @item %></td>
+  <td><%= currency_for (total_price_of @item) %></td>
+  <td>
+    <a href="#"><i class="fa fa-trash-o"></i></a>
+  </td>
+</tr>

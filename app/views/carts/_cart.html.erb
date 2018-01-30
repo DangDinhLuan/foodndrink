@@ -1,0 +1,67 @@
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <% if cart_available? %>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel"><%= t "app.cart.title" %></h4>
+          <p class="text-muted"><%= t "app.cart.your_current_cart" %><%= pluralize cart_total_items, "item" %><%= t "app.cart.in_your_cart" %></p>
+        </div>
+        <div class="modal-body">
+          <div class="box">
+            <form method="post" action="checkout1.html">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th colspan="2"><%= t "app.cart.product" %></th>
+                      <th><%= t "app.cart.quantity" %></th>
+                      <th><%= t "app.cart.unit_price" %></th>
+                      <th><%= t "app.cart.total" %></th>
+                      <th><%= t "app.cart.action" %></th>
+                    </tr>
+                  </thead>
+                  <tbody id="cart-item-list">
+                    <% cart_items.each do |item| %>
+                      <tr id="item_<%= item.product.id%>">
+                        <td><%= image_tag item.product.image.url %></td>
+                          <td class="item-description">
+                              <%= link_to excerp(item.product.title), item.product %>
+                          </td>
+                        <td>
+                          <div class="form-group">
+                            <input type="number" min="1" value="<%= item.quantity %>" class="form-control">
+                          </div>
+                        </td>
+                        <td><%= currency_for item %></td>
+                        <td><%= currency_for (total_price_of item) %></td>
+                        <td>
+                            <a href="#"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th colspan="4"><%= t "app.cart.total" %></th>
+                      <th colspan="2"><%= currency_for cart_total_price %></th>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default btn-simple" data-dismiss="modal"><%= t "app.cart.close" %></button>
+          <button type="button" class="btn btn-info btn-simple"><%= t "app.cart.save" %></button>
+        </div>
+      <% else %>
+        <div class="modal-header text-center">
+          <h2 class="modal-title h1" id="myModalLabel"><i class="fa fa-shopping-cart"></i></h2>
+          <p class="text-muted h4"><%= t "app.cart.empty_title" %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

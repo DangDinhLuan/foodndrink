@@ -40,7 +40,16 @@ module ApplicationHelper
   end
 
   def currency_for model
-    number = (model.price if model.methods.include? :price) || (model.total if model.methods.include? :total)
+    if model.is_a? Numeric
+      number = model
+    else
+      number = (model.price if model.methods.include? :price) || (model.total if model.methods.include? :total)
+    end
     number_to_currency number if number.present?
   end
+
+  def excerp text
+    text.truncate Settings.product.description.excerp, saparator: /\s/
+  end
+
 end

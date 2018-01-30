@@ -28,4 +28,7 @@ page:
 product:
   description:
     excerp: 50
+home:
+  product:
+    limit: 8
         

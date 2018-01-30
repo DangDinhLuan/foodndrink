@@ -4,11 +4,21 @@
     <title><%= t "app.title" %></title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <%= render "shared/flash_messages" %>
-    <%= yield %>
+    <%= render "layouts/application/header" %>
+    <div id="cart-modal">
+      <%= render "carts/cart" %>
+    </div>
+    <%= render "layouts/application/slide" %>
+    <%= render "layouts/application/menu" %>
+    <div class="wrapper">
+        <div class="container">
+          <%= yield %>
+        </div>
+    </div>
+    <%= render "layouts/application/footer" %>
   </body>
 </html>

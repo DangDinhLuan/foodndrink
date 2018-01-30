@@ -1,0 +1,6 @@
+$("#cart").remove();
+$("#cart-modal").append("<%= j render 'carts/cart' %>");
+$("#item_<%= @product.id %>").remove();
+$("#cart-item-list").append("<%= j render 'carts/item' %>");
+$(".notification-bubble").remove();
+$("#notification").append("<span class='notification-bubble'><%= cart_total_items %></span>");

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, expect: :destroy
+  resources :carts, only: [:create, :update, :destroy]
+  resources :products
 
   namespace :admin do
     resources :categories

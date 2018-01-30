@@ -17,4 +17,13 @@ class Product < ApplicationRecord
   def excerp
     self.description.truncate Settings.product.description.excerp, separator: /\s/
   end
+
+  def self.search_by_title(term)
+    if term
+      where('title LIKE ?', "%#{term}%")
+    else
+      all
+    end
+  end
+  
 end

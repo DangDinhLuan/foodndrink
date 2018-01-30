@@ -1,10 +1,14 @@
 class Admin::CategoriesController < AdminController
-
   before_action :load_category, only: [:edit, :update, :destroy]
 
   def index
-    @categories = Category.order(created_at: :desc).includes(:products)
+    if params[:term]
+      @categories = Category.search_by_title(params[:term]).order(created_at: :desc).includes(:products)
       .page(params[:page]).per Settings.page.per_page
+    else
+      @categories = Category.order(created_at: :desc).includes(:products)
+      .page(params[:page]).per Settings.page.per_page
+    end
   end
 
   def new

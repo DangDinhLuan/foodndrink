@@ -20,6 +20,7 @@ module SessionsHelper
   end
 
   def current_user
+    @slide = Slide.all
     if session[:user_id]
       @current_user ||= User.find_by id: session[:user_id]
     elsif cookies.signed[:user_id] && user = User.find_by(id: cookies.signed[:user_id])
@@ -78,6 +79,10 @@ module SessionsHelper
 
   def total_price_of item
     item.price * item.quantity
+  end
+
+  def verify_user
+    redirect_back unless current_user.present?
   end
 
 end

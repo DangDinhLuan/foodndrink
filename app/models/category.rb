@@ -10,4 +10,12 @@ class Category < ApplicationRecord
     self.category_type.capitalize
   end
 
+  def self.search_by_title(term)
+    if term
+      where('title LIKE ?', "%#{term}%")
+    else
+      all
+    end
+  end
+
 end

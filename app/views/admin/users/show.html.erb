@@ -29,27 +29,27 @@
         </thead>
         <tbody>
           <% @orders_user.each_with_index do |order_user, index| %>
-            <tr>
-              <td class="text-center"><%= number_index index %></td>
-              <td><%= order_user.name %></td>
-              <td><%= order_user.email %></td>
-              <td><%= order_user.phone %></td>
-              <td><%= order_user.address %></td>
-              <td><%= currency_for order_user %></td>
-              <td><%= order_user.status_order %></td>
-              <td class="td-actions text-right">
-                <button type="button" rel="tooltip" title="<%= t "admin.order.show.table.view"%>" class="btn btn-info btn-simple btn-xs">
+          <tr>
+            <td class="text-center"><%= number_index index %></td>
+            <td><%= order_user.name %></td>
+            <td><%= order_user.email %></td>
+            <td><%= order_user.phone %></td>
+            <td><%= order_user.address %></td>
+            <td><%= currency_for order_user %></td>
+            <td><%= order_user.status_order %></td>
+            <td class="td-actions text-right">
+              <button type="button" rel="tooltip" title="<%= t "admin.order.show.table.view"%>" class="btn btn-info btn-simple btn-xs">
                 <%= link_to [:admin, order_user] do %>
-                <i class="material-icons">remove_red_eye</i>
+                  <i class="material-icons">remove_red_eye</i>
                 <% end %>
-                </button>
-                <button type="button" rel="tooltip" title="<%= t "admin.order.show.table.edit"%>" class="btn btn-success btn-simple btn-xs">
+              </button>
+              <button type="button" rel="tooltip" title="<%= t "admin.order.show.table.edit"%>" class="btn btn-success btn-simple btn-xs">
                 <%= link_to edit_admin_order_path(order_user) do %>
-                <i class="material-icons">edit</i>
+                  <i class="material-icons">edit</i>
                 <% end %>
-                </button>
-              </td>
-            </tr>
+              </button>
+            </td>
+          </tr>
           <% end %>
         </tbody>
       </table>

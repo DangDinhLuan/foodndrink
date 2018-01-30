@@ -2,8 +2,13 @@ class Admin::SuggestionsController < AdminController
   before_action :load_suggestion, only: [:show, :examine, :destroy]
 
   def index
-    @suggestions = Suggestion.order(created_at: :desc).includes(:user, :category)
+    if params[:term]
+      @suggestions = Suggestion.search_by_title(params[:term]).order(created_at: :desc).includes(:user, :category)
       .page(params[:page]).per Settings.page.per_page
+    else
+      @suggestions = Suggestion.order(created_at: :desc).includes(:user, :category)
+        .page(params[:page]).per Settings.page.per_page
+    end
   end
 
   def examine

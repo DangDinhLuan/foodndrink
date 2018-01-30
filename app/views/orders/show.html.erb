@@ -1,0 +1,64 @@
+<div class="row">
+  <%= render "users/sitebar" %>
+  <div id="infomations">
+    <div class="col-md-9" id="customer-orders">
+      <div class="box">
+        <h1>Order #<%= @order.id %></h1>
+        <p class="text-muted"><%= t "user_profile.order.desc1" %> <a href="contact.html"><%= t "user_profile.order.contact" %></a><%= t "user_profile.order.desc2" %></p>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th colspan="2"><%= t "user_profile.order_detail.product" %></th>
+                <th><%= t "user_profile.order_detail.quantity" %></th>
+                <th><%= t "user_profile.order_detail.price" %></th>
+                <th><%= t "user_profile.order_detail.total" %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @items.each do |item| %>
+                <tr>
+                  <td>
+                    <a href="#">
+                      <%= image_tag item.product.image.url, class: "img-responsive" %>
+                    </a>
+                  </td>
+                  <td><a href="#"><%= item.product.title %></a>
+                  </td>
+                  <td><%= item.quantity %></td>
+                  <td><%= currency_for item %></td>
+                  <td><%= currency_for (item.quantity * item.price) %></td>
+                </tr>
+              <% end %>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th colspan="4" class="text-right">Total</th>
+                <th><%= currency_for @order.total %></th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!-- /.table-responsive -->
+        <div class="row addresses">
+          <div class="col-md-6">
+            <h2><%= t "user_profile.order_detail.invoice" %></h2>
+            <p><%= current_user.name %>
+              <br><%= current_user.phone %>
+              <br><%= current_user.email %>
+              <br><%= current_user.address %>
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h2><%= t "user_profile.order_detail.ship" %></h2>
+            <p><%= @order.name %>
+              <br><%= @order.phone %>
+              <br><%= @order.email %>
+              <br><%= @order.address %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

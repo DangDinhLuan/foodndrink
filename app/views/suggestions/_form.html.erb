@@ -1,0 +1,63 @@
+<%= form_for @suggestion do |f| %>
+    <%= render  "shared/error_messages" %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <div class="row">
+      <div class="col-sm-6">
+        <div  class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-pencil"></i>
+          </span>
+          <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-money"></i>
+          </span>
+          <%= f.text_field :price, class: "form-control", placeholder: "Price" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+          <div  class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-align-justify"></i>
+            </span>
+            <%= f.text_field :description, class: "form-control", placeholder: "Description" %>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-sticky-note"></i>
+            </span>
+            <%= f.text_field :note, class: "form-control", placeholder: "Note" %>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <%= f.file_field :image, class: "file" %>
+          <div class="input-group col-xs-12">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i></span>
+            <input type="text" class="form-control input-lg" disabled placeholder="Upload Image">
+            <span class="input-group-btn">
+              <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <%= f.select :category_id, Category.all.collect{|category| [category.title, category.id]},
+        {include_blank: false, prompt: t("admin.product.select.category")}, {class: "form-control"} %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <button type="submit" class="btn btn-info pull-right"><i class="fa fa-save"></i>Save</button>
+      </div>
+    </div>
+  <% end %>

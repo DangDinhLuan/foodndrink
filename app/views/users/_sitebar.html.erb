@@ -1,0 +1,35 @@
+<div class="col-md-3">
+  <div class="panel panel-default sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= t "user_profile.title" %></h3>
+    </div>
+    <div class="panel-body">
+      <ul class="nav">
+        <li>
+          <ul>
+            <li class="<%= current_class? orders_path %>">
+              <%= link_to orders_path do %>
+                <i class="fa fa-list"></i><%= t "user_profile.order_title" %>
+              <% end %>
+            </li>
+            <li class="<%= current_class? user_profiles_path %>">
+              <%= link_to user_profiles_path do %>
+                <i class="fa fa-user"></i><%= t "user_profile.account" %>
+              <% end %>
+            </li>
+            <li class="<%= current_class? suggestions_path %>">
+              <%= link_to suggestions_path do %>
+                <i class="fa fa-heart"></i><%= t "user_profile.suggestions_title" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to logout_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i><%= t "user_profile.logout" %>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

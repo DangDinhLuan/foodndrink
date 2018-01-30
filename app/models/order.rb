@@ -7,7 +7,7 @@ class Order < ApplicationRecord
   validates :total, presence: true
   validates :status, inclusion: {in: [true, false]}
 
-  scope :order, -> (id) { where(user_id: id).order(created_at: :desc) }
+  scope :order_user_id, -> (id) { where(user_id: id).order(created_at: :desc) }
   
   def status_order
     if self.status
@@ -17,5 +17,11 @@ class Order < ApplicationRecord
     end
   end
 
-
+  def self.search_by_title(term)
+    if term
+      where('name LIKE ?', "%#{term}%")
+    else
+      all
+    end
+  end
 end

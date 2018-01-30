@@ -1,4 +1,5 @@
 class AdminController < ApplicationController
+  include SessionsHelper
   layout "admin"
 
   def correct_user

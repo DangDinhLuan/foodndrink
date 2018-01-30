@@ -10,6 +10,7 @@ class User < ApplicationRecord
     length: {minimum: Settings.validates.name.length.minimum,
       maximum: Settings.validates.name.length.maximum},
     format: {with: Regexp.new(Settings.validates.name.pattern)}
+  mount_uploader :avatar, ImageUploader
   validates :email, presence: true,
     length: {maximum: Settings.validates.email.length.maximum},
     format: {with: Regexp.new(Settings.validates.email.pattern)},

@@ -1,0 +1,60 @@
+<div class="col-md-8 col-md-offset-2">
+  <div class="card card-profile">
+    <div class="content">
+      <h6 class="category text-gray"><%= @user.name %></h6>
+      <h4 class="card-title"><%= @user.email %></h4>
+      <h4 class="card-title"><%= @user.phone %></h4>
+      <p class="card-content"><%= t "admin.user.address" %>: <%= @user.address %></p>
+    </div>
+  </div>
+</div>
+<div class="col-md-12">
+  <div class="card">
+    <div class="card-header" data-background-color="purple">
+      <h4 class="title"><%= t("admin.order.detail") + @user.name %></h4>
+    </div>
+    <div class="card-content table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="text-center"><%= t "admin.order.table.id" %></th>
+            <th><%= t "admin.order.table.accepter" %></th>
+            <th><%= t "admin.order.table.email" %></th>
+            <th><%= t "admin.order.table.phone" %></th>
+            <th><%= t "admin.order.table.address" %></th>
+            <th><%= t "admin.order.table.total" %></th>
+            <th><%= t "admin.order.table.status" %></th>
+            <th class="text-right th-action"><%= t "admin.categories.action" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @orders_user.each_with_index do |order_user, index| %>
+            <tr>
+              <td class="text-center"><%= number_index index %></td>
+              <td><%= order_user.name %></td>
+              <td><%= order_user.email %></td>
+              <td><%= order_user.phone %></td>
+              <td><%= order_user.address %></td>
+              <td><%= currency_for order_user %></td>
+              <td><%= order_user.status_order %></td>
+              <td class="td-actions text-right">
+                <button type="button" rel="tooltip" title="<%= t "admin.order.show.table.view"%>" class="btn btn-info btn-simple btn-xs">
+                <%= link_to [:admin, order_user] do %>
+                <i class="material-icons">remove_red_eye</i>
+                <% end %>
+                </button>
+                <button type="button" rel="tooltip" title="<%= t "admin.order.show.table.edit"%>" class="btn btn-success btn-simple btn-xs">
+                <%= link_to edit_admin_order_path(order_user) do %>
+                <i class="material-icons">edit</i>
+                <% end %>
+                </button>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= paginate @orders_user %>
+      <%= page_entries_info @orders_user if @orders_user.blank? %>
+    </div>
+  </div>
+</div>

@@ -259,3 +259,15 @@ en:
         delete_confirm: "You sure?"
       delete:
         success: "Delete comment success"
+    user:
+      heading: "All Users"
+      name: "Fullname"
+      email: "Email"
+      phone: "Phone"
+      address: "Address"
+      action: "Action"
+      view: "View user"
+      delete: "Detele user"
+      delete_confirm: "You sure?"
+      success: "Delete user success"
+      danger: "User not defind"

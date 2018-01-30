@@ -1,6 +1,11 @@
 <div class="col-md-12">
    <%= render "shared/flash_messages"%>
-   <div class="btn-action">
+   <div class="col-md-3">
+    <%= form_tag admin_categories_path, method: :get do %>
+      <%= select_tag :category_type, options_for_select([[t("admin.categories.all"), ""],[t("admin.categories.food"), "food"],[t("admin.categories.drink"), "drink"]]), class: "form-control", :onchange => "this.form.submit();"  %>
+    <% end %>
+   </div>
+   <div class="btn-action col-md-9">
       <%= link_to t("admin.categories.btnAdd"), new_admin_category_path, class: "btn btn-success btn-add"%>
    </div>
    <div class="card">

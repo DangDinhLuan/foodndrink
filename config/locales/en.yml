@@ -36,6 +36,7 @@ en:
         title: "Ratings"
     user:
       profile: "Profile"
+      cart: "Goto cart"
       order: "Your orders"
       sign_out: "Log out"
       admin: "administration"
@@ -52,6 +53,8 @@ en:
       in_your_cart: " in your cart."
       close: "Close"
       save: "Save"
+      go_to_cart: "Goto cart"
+      checkout: "Checkout"
   login:
     title: "Login"
     remember: "Remember Me"
@@ -125,6 +128,7 @@ en:
       action: "Actions"
       food: "Food"
       drink: "Drink"
+      all: "Select a type"
       new:
         title: "Add category"
         submit: "Create category"
@@ -140,11 +144,13 @@ en:
       title: "Title"
       add_new: "New Product"
       not_exist: "Sorry! Product doesn't exist!"
+      all: "Select a category"
       select:
         category: "Select Category"
       quantity: "Quantity"
       price: "Price ($)"
       description: "Product description"
+      order: "Sold"
       create:
         title: "New Product"
         subtitle: "Complete the product"
@@ -294,6 +300,7 @@ en:
       delete_confirm: "You sure?"
       success: "Delete user success"
       danger: "User not defind"
+      is_admin: "Is admin"
   user_profile:
     title: "Customer section"
     account: "My account"
@@ -351,4 +358,25 @@ en:
     delete:
       title: "Delete comment"
       confirm: "Are you sure to delete your comment?"
-    
+  product:
+    go_to_cart: "Goto cart"
+    add_to_cart: "Add to cart"
+    you_may_like: "You may like"
+    detail: "Product details"
+  order:
+    success: "Thanks for your order!"
+    sumary:
+      title: "Order summary"
+      detail: "Shipping and additional costs are calculated based on the values you have entered."
+      subtotal: "Order subtotal"
+      shiping: "Shipping and handling"
+      tax: "Tax"
+    checkout:
+      title: "Checkout"
+      name: "Your name"
+      address: "Address"
+      phone: "Phone"
+      email: "Email"
+      note: "Note..."
+      submit: "Order now"
+      back: "Back to basket"

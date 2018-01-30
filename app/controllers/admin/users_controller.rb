@@ -4,7 +4,7 @@ class Admin::UsersController < AdminController
 
   def index
     if params[:term]
-      @users = User.search_by_title(params[:term]).order(created_at: :desc).page(params[:page]).per Settings.page.per_page
+      @users = User.search_by_title(params[:term], "name").order(created_at: :desc).page(params[:page]).per Settings.page.per_page
     else
       @users = User.order(created_at: :desc).page(params[:page]).per Settings.page.per_page
     end

@@ -1,0 +1,58 @@
+<%= form_for @order do |f| %>
+  <h1><%= t "order.checkout.title" %></h1>
+  <div class="content">
+    <div class="row">
+      <div class="col-sm-6">
+        <div  class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-user"></i>
+          </span>
+          <%= f.text_field :name, class: "form-control", placeholder: t("order.checkout.name") %>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-address-card"></i>
+          </span>
+          <%= f.text_field :address, class: "form-control", placeholder: t("order.checkout.address") %>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-sm-6">
+        <div  class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-phone-square"></i>
+          </span>
+          <%= f.text_field :phone, class: "form-control", placeholder: t("order.checkout.phone") %>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-envelope"></i>
+          </span>
+          <%= f.text_field :email, class: "form-control", placeholder: t("order.checkout.email") %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group note">
+        <div class="col-sm-12">
+          <%= f.text_area :note, class: "form-control", placeholder: t("order.checkout.note"), rows: "3" %>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+  <div class="box-footer">
+    <div class="pull-left">
+      <%= link_to t("order.checkout.back"), cart_details_path, class: "btn btn-info" %>
+    </div>
+    <div class="pull-right">
+      <%= f.submit t("order.checkout.submit"), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

@@ -3,7 +3,7 @@ class Admin::OrdersController < AdminController
 
   def index
     if params[:term]
-      @orders = Order.search_by_title(params[:term]).order(id: :desc).page(params[:page]).per Settings.page.per_page
+      @orders = Order.search_by_title(params[:term], "name").order(id: :desc).page(params[:page]).per Settings.page.per_page
     else
       @orders = Order.order(id: :desc).page(params[:page]).per Settings.page.per_page
     end

@@ -1,0 +1,28 @@
+<div class="order-summary">
+  <div class="box-header">
+    <h3><%= t "order.sumary.title" %></h3>
+  </div>
+  <p class="text-muted"><%= t "order.sumary.detail" %></p>
+  <div class="table-responsive">
+    <table class="table">
+      <tbody>
+        <tr>
+          <td><%= t "order.sumary.subtotal" %></td>
+          <th><%= currency_for cart_total_price %></th>
+        </tr>
+        <tr>
+          <td><%= t "order.sumary.shiping" %></td>
+          <th><%= currency_for(cart_total_price*5/100) %></th>
+        </tr>
+        <tr>
+          <td><%= t "order.sumary.tax"%></td>
+          <th><%= currency_for(cart_total_price*1/100) %></th>
+        </tr>
+        <tr class="total">
+          <td>Total</td>
+          <th><%= currency_for(cart_total_price*106/100)%></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

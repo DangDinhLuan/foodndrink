@@ -7,6 +7,8 @@ class Order < ApplicationRecord
   validates :total, presence: true
   validates :status, inclusion: {in: [true, false]}
 
+  scope :order, -> (id) { where(user_id: id).order(created_at: :desc) }
+  
   def status_order
     if self.status
       I18n.t("admin.order.show.status.delivered")

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :orders, except: [:destroy]
     resources :comments, except: [:edit, :update]
+    resources :users
     resources :products
     resources :slides, except: [:index, :show]
     get "slides", to: "slides#new"

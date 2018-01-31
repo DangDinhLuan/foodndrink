@@ -1,0 +1,49 @@
+<div class="col-md-12">
+  <%= render "shared/flash_messages"%>
+  <div class="card">
+    <div class="card-header" data-background-color="purple">
+      <h4 class="title"><%= t "admin.user.heading" %></h4>
+    </div>
+    <div class="card-content table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="text-center"><%= t "admin.user.table.id" %></th>
+            <th><%= t "admin.user.name" %></th>
+            <th><%= t "admin.user.email" %></th>
+            <th><%= t "admin.user.phone" %></th>
+            <th><%= t "admin.user.address" %></th>
+            <th class="text-right th-action"><%= t "admin.user.action" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each_with_index do |user, index| %>
+            <tr>
+              <td class="text-center"><%= number_index index %></td>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.phone %></td>
+              <td><%= user.address %></td>
+              <td class="td-actions text-right">
+                <button type="button" rel="tooltip" title="<%= t "admin.user.view"%>" class="btn btn-info btn-simple btn-xs">
+                  <%= link_to admin_user_path user do %>
+                    <i class="material-icons">remove_red_eye</i>
+                  <% end %>
+                </button>
+                <% if current_user.admin? && !current_user?(user) %>
+                  <button type="button" rel="tooltip" title="<%= t "admin.user.delete"%>" class="btn btn-danger btn-simple btn-xs">
+                    <%= link_to admin_user_path(user), method: :delete, data: {confirm: t("admin.user.delete_confirm")} do %>
+                      <i class="material-icons">delete</i>
+                    <% end %>
+                  </button>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= paginate @users %>
+      <%= page_entries_info @users if @users.blank? %>
+    </div>
+  </div>
+</div>

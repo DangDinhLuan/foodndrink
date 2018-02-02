@@ -54,7 +54,7 @@
               </li>
             <% else %>
               <li>
-                <%= link_to login_path, data: {role: "tab", toggle: "tab"} do %>
+                <%= link_to login_path, data: {"role" => "tab", "data-toggle" => "tab"} do %>
                 <i class="fa fa-user"></i>
                 <%= t "app.login_register" %>
                 <% end %>

@@ -1,0 +1,9 @@
+<div class="comment-form">
+  <div class"row">
+    <%= form_for :comment, url: comments_path, remote: true do |f| %>
+      <%= f.text_area :content, id: "comment-content", class: "form-control", placeholder: t("comment.leave_comment") , rows: "5" %>
+      <%= f.hidden_field :product_id, value: @product.id %>
+      <%= f.submit t("comment.submit"), class: "btn btn-prmary pull-right" %>
+    <% end %>
+  </div>
+</div>

@@ -16,4 +16,8 @@ class ImageUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
+  def default_url
+    Settings.user.avatar.default
+  end
+
 end

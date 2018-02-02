@@ -13,6 +13,7 @@ class Product < ApplicationRecord
 
   scope :recent, ->{order created_at: :desc}
   scope :top_rated, ->{order avg_rate: :desc}
+  scope :related, -> product{where "category_id = ? and id <> ?", product.category_id, product.id}
   
   def excerp
     self.description.truncate Settings.product.description.excerp, separator: /\s/

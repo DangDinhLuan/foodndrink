@@ -343,3 +343,12 @@ en:
         success: "Suggestion was successfully updated"
       delete:
         success: "Suggestion was successfully deleted."
+  comment:
+    title: "Comments"
+    first: "Be the first to post a comment"
+    leave_comment: "Leave a comment here..."
+    submit: "Submit"
+    delete:
+      title: "Delete comment"
+      confirm: "Are you sure to delete your comment?"
+    

@@ -8,7 +8,6 @@ $primary: #9c27b0;
 $warning: #fbc02d;
 $info: #03a9f4;
 $default: #999999;
-$font-color-default: #999999;
 $font-color-light: #dce0e0;
 $font-color-dark: #555555;
 $box-shadow-default: 0 1px 10px rgba(0, 0, 0, 0.5);
@@ -67,7 +66,7 @@ body {
     margin: 0px 5px;
     a {
       border: none;
-      color: $font-color-default;
+      color: $default;
       font-weight: 400;
     }
   }
@@ -239,7 +238,7 @@ body {
     background: unset;
     border: 1px solid $default;
     padding: 7px 15px;
-    color: $font-color-default;
+    color: $default;
     box-shadow: unset;
     span {
       margin-left: 5px;
@@ -252,10 +251,9 @@ body {
     font-weight: 500;
     text-transform: uppercase;
     margin-right: 5px;
-    color: $font-color-default;
+    color: $default;
   }
 }
-
 
 .notification-bubble {
   background: #981ea0;
@@ -287,7 +285,7 @@ body {
       a{
         font-weight: bold;
         border-radius: 50px;
-        color: $font-color-default;
+        color: $default;
       }
 
       a:hover {
@@ -500,6 +498,9 @@ body {
     }
 
     .buttons {
+      form {
+        display: inline-block;
+      }
       .btn {
         .fa-shopping-cart {
           padding-right: 5px;
@@ -529,10 +530,16 @@ body {
 .comments {
   padding: 10px 20px;
   margin-bottom: 50px;
-  border-top: 1px solid $gray;
   h3 {
     font-size: 20px;
     text-transform: uppercase;
+    color: $font-color-dark;
+    font-weight: 400;
+  }
+
+  p {
+    color: $default;
+    font-weight: 400;
   }
 
   .comment-list {
@@ -550,14 +557,35 @@ body {
 
         .media-body {
           .media-heading {
+            color: $default;
             font-weight: 400;
           }
         }
+
+        button {
+          a {
+            text-decoration: none;
+            color: $primary;
+            font-size: 30px;
+          }
+          position: absolute;
+          right: 0px;
+          display: none;
+        }
+
+      }
+
+    }
+
+    .comment-item:hover {
+      button {
+        display: inline;
       }
     }
   }
 
   .comment-form {
+    margin-top: 20px;
     textarea {
       padding: 10px;
     }

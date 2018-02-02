@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   resources :products
   resources :suggestions
   resources :categories
+  resources :products, only: :show
+  resources :comments, only: [:create, :destroy]
 
   get "/admin", to: "admin/products#index"
   namespace :admin do

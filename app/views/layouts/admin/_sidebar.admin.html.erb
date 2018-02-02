@@ -5,49 +5,49 @@
    </div>
    <div class="sidebar-wrapper">
       <ul class="nav">
-         <li>
+         <li class="<%= current_class? admin_users_path %>">
             <a href="<%= admin_users_path %>">
                <i class="material-icons">person</i>
                <p><%= t "admin.menu.user" %></p>
             </a>
          </li>
-         <li class="active">
+         <li class="<%= current_class? admin_categories_path %>">
             <a href="<%= admin_categories_path %>">
                <i class="material-icons">view_list</i>
                <p><%= t "admin.menu.category" %></p>
             </a>
          </li>
-         <li>
+         <li class="<%= current_class? admin_products_path %>">
             <a href="<%= admin_products_path %>">
                <i class="material-icons">local_drink</i>
                <p><%= t "admin.menu.product" %></p>
             </a>
          </li>
-         <li>
+         <li class="<%= current_class? admin_orders_path %>">
             <a href="<%= admin_orders_path %>">
                <i class="material-icons">add_shopping_cart</i>
                <p><%= t "admin.menu.order" %></p>
             </a>
          </li>
-         <li>
+         <li class="<%= current_class? admin_suggestions_path %>">
             <a href="<%= admin_suggestions_path %>">
                <i class="fa fa-heart-o" aria-hidden="true"></i>
                <p><%= t "admin.menu.suggestion" %></p>
             </a>
          </li>
-         <li>
+         <li class="<%= current_class? admin_comments_path %>">
             <a href="<%= admin_comments_path %>">
                <i class="material-icons">comments</i>
                <p><%= t "admin.menu.comment" %></p>
             </a>
          </li>
-         <li>
+         <li class="">
             <a href="#">
                <i class="material-icons">star_rate</i>
                <p><%= t "admin.menu.rating" %></p>
             </a>
          </li>
-         <li>
+         <li class="<%= current_class? admin_slides_path %>">
             <a href="<%= admin_slides_path %>">
                <i class="material-icons">slideshow</i>
                <p><%= t "admin.menu.slide" %></p>

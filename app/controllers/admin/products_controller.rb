@@ -2,8 +2,13 @@ class Admin::ProductsController < AdminController
   before_action :load_product, only: [:show, :edit, :update, :destroy]
 
   def index
-    @products = Product.order(created_at: :desc).includes(:category)
+    if params[:term]
+      @products = Product.search_by_title(params[:term]).order(created_at: :desc).includes(:category)
       .page(params[:page]).per Settings.page.per_page
+    else
+      @products = Product.order(created_at: :desc).includes(:category)
+      .page(params[:page]).per Settings.page.per_page
+    end
   end
 
   def new

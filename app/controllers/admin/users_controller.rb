@@ -3,11 +3,15 @@ class Admin::UsersController < AdminController
   before_action :verify_admin, only: [:index, :show, :destroy]
 
   def index
-    @users = User.order(created_at: :desc).page(params[:page]).per Settings.page.per_page
+    if params[:term]
+      @users = User.search_by_title(params[:term]).order(created_at: :desc).page(params[:page]).per Settings.page.per_page
+    else
+      @users = User.order(created_at: :desc).page(params[:page]).per Settings.page.per_page
+    end
   end
 
   def show
-    @orders_user = Order.order(params[:id]).page(params[:page]).per Settings.page.per_page
+    @orders_user = Order.order_user_id(params[:id]).page(params[:page]).per Settings.page.per_page
   end
 
   def destroy

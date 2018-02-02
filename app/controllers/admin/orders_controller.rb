@@ -1,9 +1,12 @@
 class Admin::OrdersController < AdminController
-
   before_action :load_order, only: [:show, :edit, :update]
 
   def index
-    @orders = Order.order(id: :desc).page(params[:page]).per Settings.page.per_page
+    if params[:term]
+      @orders = Order.search_by_title(params[:term]).order(id: :desc).page(params[:page]).per Settings.page.per_page
+    else
+      @orders = Order.order(id: :desc).page(params[:page]).per Settings.page.per_page
+    end
   end
 
   def show
@@ -38,5 +41,4 @@ class Admin::OrdersController < AdminController
       redirect_to admin_orders_url
     end
   end
-
 end

@@ -28,6 +28,10 @@ body {
 
 
 .alert {
+  z-index: 9999999 !important;
+  position: absolute;
+  right: 0;
+  top: 0;
   b {
     font-size: 14px;
     text-transform: uppercase;
@@ -788,6 +792,9 @@ body {
             color: $default;
             display: block;
           }
+          &.active{
+            background: $gray;
+          }
         }
         li:hover {
           background: $gray;
@@ -812,7 +819,31 @@ body {
       font-weight: 400;
       text-align: center;
     }
-
+    &.suggestion{
+      h1{
+        float: left;
+      }
+      .btn-suggestion{
+        float: right;
+        a{
+          color: #fff;
+          i{
+            margin: 0 10px 0 0;
+          }
+        }
+      }
+      hr{
+        clear: both;
+      }
+      .table-responsive{
+        clear: both;
+        tr{
+          td:last-child, th:last-child{
+            text-align: right;
+          }
+        }
+      }
+    }
   }
 
   .profile {
@@ -821,8 +852,34 @@ body {
       margin: auto;
       width: 120px;
       height: 120px;
+      position: relative;
+      .camera{
+        display: none;
+        width: 100%;
+        top: 0px;
+        left: 0;
+        position: absolute;
+        cursor: pointer;
+        opacity: 0.5;
+      }
+      &:hover{
+        .camera{
+          display: block;
+          z-index: 1;
+        }
+        &:before{
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #000000;
+          opacity: 0.5;
+          border-radius: 50%;
+        }
+      }
     }
-
   }
 
   form {
@@ -831,6 +888,9 @@ body {
       i {
         margin-right: 5px;
       }
+    }
+    #avatar{
+      display: none;
     }
   }
 
@@ -853,3 +913,4 @@ body {
     }
   }
 }
+// profile custom css 

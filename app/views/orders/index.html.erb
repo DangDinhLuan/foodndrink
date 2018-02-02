@@ -1,0 +1,40 @@
+<div class="row">
+  <%= render "users/sitebar" %>
+  <div id="infomations">
+    <div class="col-md-9" id="customer-orders">
+      <div class="box">
+        <h1><%= t "user_profile.order_title" %></h1>
+        <p class="lead"><%= t "user_profile.order.title" %></p>
+        <p class="text-muted"><%= t "user_profile.order.desc1" %> <a href="contact.html"><%= t "user_profile.order.contact" %></a><%= t "user_profile.order.desc2" %></p>
+        <hr>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th><%= t "user_profile.order.order_id" %></th>
+                <th><%= t "user_profile.order.date" %></th>
+                <th><%= t "user_profile.order.total" %></th>
+                <th><%= t "user_profile.order.status" %></th>
+                <th><%= t "user_profile.order.action" %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @orders_user.each do |order_user| %>
+                <tr>
+                  <th># <%= order_user.id %></th>
+                  <td><%= order_user.created_at %></td>
+                  <td><%= currency_for order_user %></td>
+                  <td><span class="label label-info"><%= order_user.status_order %></span>
+                  </td>
+                  <td>
+                    <%= link_to "View", order_user, class: "btn btn-primary btn-sm" %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

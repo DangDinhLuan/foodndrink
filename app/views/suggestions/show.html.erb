@@ -1,0 +1,102 @@
+<div class="row">
+  <%= render "users/sitebar" %>
+  <div id="infomations">
+    <div class="col-md-9">
+      <div class="box">
+        <div class="row">
+          <div class="profile text-center">
+              <div class="avatar">
+                  <%= image_tag @user.avatar.url, class: "img-circle img-responsive img-raised img-avatar", alt: @user.name %>
+                  <%= image_tag "logo/camera.png", class: "camera" %>
+              </div>
+              <div class="name">
+                <h3 class="title"><%= @user.name %></h3>
+              </div>
+          </div>
+        </div>
+        <div class="form-info">
+          <%= form_for @user, url: user_path(@user), method: :patch do |f| %>
+            <%= f.file_field :avatar, id: "avatar" %>
+            <div class="row">
+              <div class="col-sm-6">
+                <div  class="input-group">
+                  <span class="input-group-addon">
+                    <i class="fa fa-user"></i>
+                  </span>
+                  <%= f.text_field :name, class: "form-control", placeholder: "Fullname" %>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="fa fa-envelope"></i>
+                  </span>
+                  <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                  <div  class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-phone-square"></i>
+                    </span>
+                    <%= f.text_field :phone, class: "form-control", placeholder: "Phone" %>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-address-card"></i>
+                    </span>
+                    <%= f.text_field :address, class: "form-control", placeholder: "Address" %>
+                  </div>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 text-center">
+                <button type="submit" class="btn btn-info pull-right"><i class="fa fa-save"></i>Save</button>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="change-password">
+          <h3>Change password</h3>
+          <%= form_for @user, url: user_change_password_path, method: :patch do |f| %>
+            <div class="row">
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-key" aria-hidden="true"></i>
+                    </span>
+                    <%= password_field_tag :current_password, params[:current_password], class: 'form-control', placeholder: "Current password" %>
+                  </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-keyboard-o" aria-hidden="true"></i>
+                    </span>
+                    <%= f.password_field :password, class: 'form-control', placeholder: "New password" %>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-repeat" aria-hidden="true"></i>
+                    </span>
+                    <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Retype password" %>
+                  </div>
+                </div>
+                <div class="col-sm-12 text-center">
+                  <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-download"></i>Update</button>
+                </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

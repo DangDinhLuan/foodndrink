@@ -38,6 +38,7 @@ en:
       profile: "Profile"
       order: "Your orders"
       sign_out: "Log out"
+      admin: "administration"
     cart:
       title: "Shopping cart"
       product: "Product"
@@ -293,3 +294,52 @@ en:
       delete_confirm: "You sure?"
       success: "Delete user success"
       danger: "User not defind"
+  user_profile:
+    title: "Customer section"
+    account: "My account"
+    suggestions_title: "My suggestions"
+    logout: "Logout"
+    order_title: "My orders"
+    update: 
+      success: "My profile was successfully updated"
+      password: "My password was successfully updated"
+    order:
+      title: "Your orders on one place."
+      desc1: "If you have any questions, please feel free to"
+      desc2: ", our customer service center is working for you 24/7."
+      contact: "Contact us"
+      id: "Order Id"
+      date: "Date"
+      total: "Total"
+      status: "Status"
+      action: "Action"
+    order_detail:
+      title: "Order"
+      product: "Product"
+      quantity: "Quantity"
+      price: "Price"
+      total: "Total"
+      invoice: "Invoice address"
+      ship: "Shipping address"
+    suggestions:
+      title: "My suggestions"
+      accept: "Accept"
+      refuse: "Refuse"
+      add: "Add suggestion"
+      edit: "Edit suggestion"
+      show:
+        title: "Title"
+        image: "Image"
+        price: "Price"
+        status: "Status"
+        action: "Action"
+        add: "New suggestion"
+        edit_title: "Edit suggestion"
+        delete_title: "Delete suggestion"
+        delete_confirm: "You sure?"
+      new:
+        success: "Suggestion successfully created"
+      edit:
+        success: "Suggestion was successfully updated"
+      delete:
+        success: "Suggestion was successfully deleted."

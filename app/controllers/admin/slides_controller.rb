@@ -60,7 +60,11 @@ class Admin::SlidesController < AdminController
   end
 
   def load_all_slides
-    @slides = Slide.order(status: :desc, created_at: :desc)
+    if params[:term]
+      @slides = Slide.search_by_title(params[:term]).order(status: :desc, created_at: :desc)
+    else
+      @slides = Slide.order(status: :desc, created_at: :desc)
+    end
   end
 
   private

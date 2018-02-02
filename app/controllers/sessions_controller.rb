@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   layout "simple"
 
   def new
+    @slides = Slide.all
     redirect_to root_url if loged_in?
   end
 

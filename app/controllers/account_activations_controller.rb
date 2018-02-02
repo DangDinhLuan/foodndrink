@@ -3,12 +3,11 @@ class AccountActivationsController < ApplicationController
     if @user = User.find_by(email: params[:email])
       if !@user.activated? && @user.authenticated?(:activation, params[:id])
         @user.activate
+        login @user
         flash[:success] = t "signup.activation.success"
-        redirect_to root_path
-      elsif 
-        redirect_to root_path
+        redirect_to @user
       end
-    elsif
+    else
       redirect_to root_path
     end
   end

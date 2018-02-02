@@ -17,5 +17,4 @@ class Product < ApplicationRecord
   def excerp
     self.description.truncate Settings.product.description.excerp, separator: /\s/
   end
-  
 end

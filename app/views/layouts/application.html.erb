@@ -9,9 +9,7 @@
   <body>
     <%= render "layouts/application/header" %>
     <%= render "shared/flash_messages" %>
-    <div id="cart-modal">
-      <%= render "carts/cart" %>
-    </div>
+    <%= render "carts/cart" %>
     <div class="wrapper clear-fixed">
       <div class="container">
         <%= yield %>

@@ -572,6 +572,21 @@ body {
     }
   }
 
+  .modal-content {
+    width: 650px;
+  }
+
+  .modal-footer {
+    padding: 10px 20px;
+    button {
+      font-weight: bold;
+    }
+
+    button:hover {
+      color: $primary;
+    }
+  }
+
   .table {
     thead {
       th {
@@ -595,7 +610,7 @@ body {
           }
         }
         td.item-description {
-          max-width: 180px;
+          width: 200px;
           padding-right: 10px;
           overflow: hidden;
           a {
@@ -605,6 +620,14 @@ body {
 
         td:nth-child(2) {
           text-align: left;
+        }
+      }
+    }
+
+    tfoot {
+      tr {
+        th:nth-child(2) {
+          padding-left: 10px;
         }
       }
     }
@@ -646,8 +669,6 @@ body {
     overflow: hidden;
   }
 }
-
-
 
 .order-summary {
   box-shadow: $box-shadow-light;

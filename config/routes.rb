@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get "/user/orders", to: "users#order"
   resources :account_activations, only: :edit
   resources :password_resets, expect: :destroy
-  resources :carts, only: [:create, :update, :destroy]
+  resources :carts, only: [:create, :destroy]
+  post "carts/update", to: "carts#update"
   resources :products
   resources :categories
 

@@ -1,0 +1,18 @@
+<tr id="item_<%= item.product.id%>">
+  <td><%= image_tag item.product.image.url %></td>
+    <td class="item-description">
+        <%= link_to excerp(item.product.title), item.product %>
+    </td>
+  <td>
+    <div class="form-group">
+      <%= number_field :product, item.product.id, {value: item.quantity, min: 1, class: "form-control"} %>
+    </div>
+  </td>
+  <td><%= currency_for item %></td>
+  <td><%= currency_for (total_price_of item) %></td>
+  <td>
+    <%= link_to cart_path(item.product.id), method: :delete, remote: true do %>
+      <i class="fa fa-trash-o"></i>
+    <% end %>
+  </td>
+</tr>

@@ -52,8 +52,8 @@
                 <% end %>
               </li>
             <% end %>
-            <li data-toggle="modal" data-target="#cart">
-               <a href="#schedule" role="tab" data-toggle="tab">
+            <li id="cart-btn"  data-toggle="modal" data-target="#cart">
+               <a href="#" role="tab" data-toggle="tab">
                   <div id="notification">
                      <% if cart_total_items %>
                      <span class="notification-bubble"><%= cart_total_items %></span>

@@ -4,4 +4,5 @@ class HomeController < ApplicationController
   def index
     @home = Supports::HomeSupport.new
   end
+  
 end

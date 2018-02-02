@@ -1,0 +1,7 @@
+$("#comment-<%= @comment.id %>").remove();
+if(!$(".comment-item").length) {
+  $("h3").remove();
+  $(".comment-list").remove();
+  $(".comments").prepend("<p class='h4'></p>");
+}
+

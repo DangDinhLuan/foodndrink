@@ -6,6 +6,8 @@ class AccountActivationsController < ApplicationController
         login @user
         flash[:success] = t "signup.activation.success"
         redirect_to @user
+      else
+        redirect_to root_path
       end
     else
       redirect_to root_path

@@ -1,0 +1,30 @@
+<div class="<%= product_collunm %> card-item">
+  <div class="thumbnail">
+    <%= link_to product do %>
+    <%= image_tag product.image.url %>
+    <% end %>
+    <div class="caption">
+      <%= link_to product do %>
+        <h4><%= product.title %></h4>
+      <% end %>
+      <div class="item-description">
+        <%= product.excerp %>
+      </div>
+      <p class="item-price"><%= currency_for product %></p>
+      <div class="item-rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <span><%= "#(product.rates)" if product.rates %></span>
+      </div>
+      <%= form_tag carts_path, remote: true do %>
+        <%= hidden_field_tag :product_id, product.id %>
+        <button type="submit" class="btn btn-primary btn-round btn-just-icon btn-cart">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
+      <% end %>
+    </div>
+  </div>
+</div>

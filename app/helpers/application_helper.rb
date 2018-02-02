@@ -52,4 +52,11 @@ module ApplicationHelper
     text.truncate Settings.product.description.excerp, saparator: /\s/
   end
 
+  def current_class? input_path
+    "active" if request.path == input_path
+  end
+
+  def product_collunm
+    controller.controller_name == "categories" ? "col-md-4" : "col-md-3"
+  end
 end

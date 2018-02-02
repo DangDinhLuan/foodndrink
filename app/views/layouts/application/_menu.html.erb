@@ -1,7 +1,11 @@
 <div class="container">
   <div class="row catergory-list">
     <ul class="nav nav-pills">
-      <li role="presentation" class="active"><a href="#"></a></li>
+      <% @categories.each do |category| %>
+        <li role="presentation" class="<%= current_class? category_path(category) %>" >
+          <%= link_to category.title, category %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>

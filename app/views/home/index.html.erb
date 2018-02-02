@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="card-group">
+    <h2><%= t "app.new_product" %></h2>
+    <div class="row">
+      <%= render @home.recent_products %>
+    </div>
+  </div>
+  <div class="card-group">
+    <h2>Top products</h2>
+    <div class="row">
+      <%= render @home.rated_products %>
+    </div>
+  </div>
+</div>

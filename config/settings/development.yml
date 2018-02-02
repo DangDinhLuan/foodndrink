@@ -30,5 +30,11 @@ product:
     excerp: 50
 home:
   product:
-    limit: 8
-        
+    recent:
+      limit: 4
+    top_rated:
+      limit: 8
+categories:
+  product:
+    page:
+      per_page: 12

@@ -1,4 +1,10 @@
 en:
+  views:
+    pagination:
+      next: ">"
+      previous: "<"
+      first: ""
+      last: ""
   number:
     currency:
       format:
@@ -12,6 +18,22 @@ en:
     about: "About Us"
     contact: "Contact Us"
     search_for: "Search for..."
+    sort_product:
+      title: "Sort Products"
+      default: "Default"
+      food: "Food Products"
+      drink: "Drink Product"
+    new_product: "New products"
+    filter:
+      price:
+        title: "Prices"
+        level_1: "Under $5"
+        level_2: "From $5 - $10"
+        level_3: "From $10 - $20"
+        level_4: "Form $20 - $30"
+        level_5: "Form $30 and up"
+      rating:
+        title: "Ratings"
     user:
       profile: "Profile"
       order: "Your orders"

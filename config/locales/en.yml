@@ -128,6 +128,7 @@ en:
       action: "Actions"
       food: "Food"
       drink: "Drink"
+      all: "Select a type"
       new:
         title: "Add category"
         submit: "Create category"
@@ -143,11 +144,13 @@ en:
       title: "Title"
       add_new: "New Product"
       not_exist: "Sorry! Product doesn't exist!"
+      all: "Select a category"
       select:
         category: "Select Category"
       quantity: "Quantity"
       price: "Price ($)"
       description: "Product description"
+      order: "Sold"
       create:
         title: "New Product"
         subtitle: "Complete the product"
@@ -297,6 +300,7 @@ en:
       delete_confirm: "You sure?"
       success: "Delete user success"
       danger: "User not defind"
+      is_admin: "Is admin"
   user_profile:
     title: "Customer section"
     account: "My account"

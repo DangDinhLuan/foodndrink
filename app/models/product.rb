@@ -14,17 +14,10 @@ class Product < ApplicationRecord
   scope :recent, ->{order created_at: :desc}
   scope :top_rated, ->{order avg_rate: :desc}
   scope :related, -> product{where "category_id = ? and id <> ?", product.category_id, product.id}
+  scope :filter, -> (category_id) {where(category_id: category_id).order created_at: :desc}
   
   def excerp
     self.description.truncate Settings.product.description.excerp, separator: /\s/
-  end
-
-  def self.search_by_title(term)
-    if term
-      where('title LIKE ?', "%#{term}%")
-    else
-      all
-    end
   end
   
   def update_ratings

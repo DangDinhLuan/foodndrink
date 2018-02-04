@@ -84,12 +84,4 @@ class User < ApplicationRecord
     BCrypt::Password.new(digest).is_password? token
   end
 
-  def self.search_by_title(term)
-    if term
-      where('name LIKE ?', "%#{term}%")
-    else
-      all
-    end
-  end
-
 end

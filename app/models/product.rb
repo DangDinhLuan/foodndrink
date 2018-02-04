@@ -14,7 +14,13 @@ class Product < ApplicationRecord
   scope :recent, ->{order created_at: :desc}
   scope :top_rated, ->{order avg_rate: :desc}
   scope :related, -> product{where "category_id = ? and id <> ?", product.category_id, product.id}
-  scope :filter, -> (category_id) {where(category_id: category_id).order created_at: :desc}
+  scope :filter, -> (category_id) {where(category_id: category_id)}
+  scope :price_between, -> prices{where prices}
+  scope :rating_in, ->ratings{where ratings}
+  scope :order_by_price, ->order_type{order price: order_type}
+  scope :filter_by_category, ->category_type{joins(:category).where("categories.category_type = ?", category_type)}
+  scope :search, ->key_word{where "title like '%#{key_word}%' or description like '%#{key_word}%'"}
+  
   
   def excerp
     self.description.truncate Settings.product.description.excerp, separator: /\s/
@@ -29,6 +35,16 @@ class Product < ApplicationRecord
   def rated_by user
     if user && rated = self.ratings.where("user_id = ?", user.id).first
       rated.point
+    end
+  end
+
+  class << self
+    def filter_by_params filtering_params
+      results = self.where nil
+      filtering_params.each do |key, value|
+        results = results.public_send(key, value) if value.present?
+      end
+      results
     end
   end
 end

@@ -52,3 +52,47 @@ function readURL(input, imgId) {
   }
 }
 
+
+/*------------------------@@filter----------------------------*/
+$(function() {
+
+  //==================Category page =======================
+  $(".checkbox input[type=checkbox]").click(function() {
+    $("#submit").trigger("click");
+  });
+
+  var orderByPrice = $("input#order_by_price");
+  var dropDownLabel = $("#dropdown-label");
+  $("#price-default").click(function() {
+    dropDownLabel.html($(this).html());
+    orderByPrice.val("asc");
+    $("#submit").trigger("click");
+  });
+
+  $("#price-up").click(function() {
+    dropDownLabel.html($(this).html());
+    orderByPrice.val("asc");
+    $("#submit").trigger("click");
+  });
+
+  $("#price-down").click(function() {
+    dropDownLabel.html($(this).html());
+    orderByPrice.val("desc");
+    $("#submit").trigger("click");
+  });
+
+
+  //===================Homepage===================
+  $("#sort-default").click(function() {
+    dropDownLabel.html($(this).html());
+  });
+
+  $("#sort-food").click(function() {
+    dropDownLabel.html($(this).html());
+  });
+
+  $("#sort-drink").click(function() {
+    dropDownLabel.html($(this).html());
+  });
+
+});

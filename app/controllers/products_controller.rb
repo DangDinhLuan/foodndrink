@@ -7,4 +7,13 @@ class ProductsController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def search
+    if params["key_word"].present?
+      @products = Product.search(params["key_word"])
+        .page(params[:page]).per Settings.search.per_page
+    else
+      redirect_back
+    end
+  end
 end

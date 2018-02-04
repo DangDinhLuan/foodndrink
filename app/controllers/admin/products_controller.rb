@@ -2,12 +2,22 @@ class Admin::ProductsController < AdminController
   before_action :load_product, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:term]
-      @products = Product.search_by_title(params[:term]).order(created_at: :desc).includes(:category)
-      .page(params[:page]).per Settings.page.per_page
+    if params[:category_id]
+      if params[:term]
+        @products = Product.search_by_title(params[:term], "title").filter(params[:category_id]).includes(:category, :items)
+        .page(params[:page]).per Settings.page.per_page
+      else
+        @products = Product.filter(params[:category_id]).includes(:category, :items)
+        .page(params[:page]).per Settings.page.per_page
+      end
     else
-      @products = Product.order(created_at: :desc).includes(:category)
-      .page(params[:page]).per Settings.page.per_page
+      if params[:term]
+        @products = Product.search_by_title(params[:term], "title").order(created_at: :desc).includes(:category, :items)
+        .page(params[:page]).per Settings.page.per_page
+      else
+        @products = Product.order(created_at: :desc).includes(:category, :items)
+        .page(params[:page]).per Settings.page.per_page
+      end
     end
   end
 

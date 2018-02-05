@@ -1,21 +1,29 @@
 <div class="container">
   <div class="row catergory-list">
     <ul class="nav nav-pills">
-      <% @home.categories.each do |category| %>
+      <% @menu.each do |category| %>
         <li role="presentation" class="<%= current_class? category_path(category) %>" >
           <%= link_to category.title, category %>
         </li>
       <% end %>
       <li class="dropdown pull-right filter-btn">
         <p><%= t "app.sort_product.title" %></p>
-        <button class="btn btn-round" type="button" data-toggle="dropdown">
+        <button id="dropdown-label" class="btn btn-round" type="button" data-toggle="dropdown">
           <%= t "app.sort_product.default" %><span class="caret"></span>
         </button>
-        <ul class="dropdown-menu">
-          <li><a href="#"><%= t "app.sort_product.default" %></a></li>
-          <li><a href="#"><%= t "app.sort_product.food" %></a></li>
-          <li><a href="#"><%= t "app.sort_product.drink" %></a></li>
-        </ul>
+        <% if current_controller "home" %>
+          <ul class="dropdown-menu">
+            <li id="sort-default"><%= link_to t("app.sort_product.default"), root_path, remote: true%></li>
+            <li id="sort-food"><%= link_to t("app.sort_product.food"), root_path(filter_by_category: "food"), remote: true%></li>
+            <li id="sort-drink"><%= link_to t("app.sort_product.drink"), root_path(filter_by_category: "drink"), remote: true%></li>
+          </ul>
+        <% elsif current_controller "categories" %>
+          <ul class="dropdown-menu dropdown-filter">
+            <li id="price-default"><%= t("app.sort_product.price.default") %></li>
+            <li id="price-up"><%= t("app.sort_product.price.up") %></li>
+            <li id="price-down"><%= t("app.sort_product.price.down") %></li>
+          </ul>
+        <% end %>
       </li>
     </ul>
   </div>

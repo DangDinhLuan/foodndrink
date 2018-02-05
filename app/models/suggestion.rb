@@ -17,8 +17,8 @@ class Suggestion < ApplicationRecord
   end
 
   def accept
-    sefl.status = true
-    sefl.save
+    self.status = true
+    self.save
   end
 
   def accepted?
@@ -30,14 +30,6 @@ class Suggestion < ApplicationRecord
       I18n.t("user_profile.suggestions.accept")
     else
       I18n.t("user_profile.suggestions.refuse")
-    end
-  end
-
-  def self.search_by_title(term)
-    if term
-      where('title LIKE ?', "%#{term}%")
-    else
-      all
     end
   end
 

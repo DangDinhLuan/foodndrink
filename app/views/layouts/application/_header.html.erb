@@ -1,4 +1,4 @@
-<nav class="navbar navbar-fixed-top" role="navigation">
+<nav class="<%= navbar_class %>" role="navigation">
    <div class="container">
       <div class="navbar-header">
          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
@@ -31,8 +31,14 @@
                     <% end %>
                   </li>
                   <li>
+                    <%= link_to cart_details_path do %>
+                    <i class="fa fa-shopping-cart"></i>
+                    <%= t "app.user.cart" %>
+                    <% end %>
+                  </li>
+                  <li>
                     <%= link_to user_orders_path do %>
-                    <i class="fa fa-cart-arrow-down"></i>
+                    <i class="fa fa-align-left"></i>
                     <%=  t "app.user.order" %>
                     <% end %>
                   </li>
@@ -60,8 +66,8 @@
                 <% end %>
               </li>
             <% end %>
-            <li data-toggle="modal" data-target="#cart">
-               <a href="#schedule" role="tab" data-toggle="tab">
+            <li id="cart-btn"  data-toggle="modal" data-target="#cart">
+               <a href="#" role="tab" data-toggle="tab">
                   <div id="notification">
                      <% if cart_total_items %>
                      <span class="notification-bubble"><%= cart_total_items %></span>
@@ -73,12 +79,12 @@
             </li>
          </ul>
          <ul class="nav navbar-nav pull-right">
-            <form class="form-inline form-search">
-               <input type="text" class="form-control" placeholder="<%= t "app.search_for" %>">
-               <button class="btn btn-round btn-just-icon" type="button">
-               <i class="fa fa-search"></i>
-               </button>
-            </form>
+           <%= form_tag search_path, method: :post, class: "form-inline form-search" do %>
+            <%= text_field_tag :key_word, "", class:"form-control", placeholder: t("app.search_for") %>
+            <%= button_tag class: "btn btn-round btn-just-icon" do %>
+              <i class="fa fa-search"></i>
+            <% end %>
+           <% end %>
          </ul>
       </div>
    </div>

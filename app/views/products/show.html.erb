@@ -11,21 +11,22 @@
                 <%= @product.description %>
               </div>
               <p class="product-price text-center"><%= currency_for @product %></p>
-              <p class="product-rating text-center">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </p>
+              <div id="product-rating" class="product-rating text-center">
+                <% if loged_in? && @rating %>
+                  <%= render "ratings/edit_form" %>
+                <% else %>
+                  <%= render "ratings/new_form" %>
+                <% end %>  
+                </div>
               <div class="row text-center buttons">
                 <%= form_tag(carts_path , remote: true) do %>
                   <%= hidden_field_tag :product_id, @product.id %>
-                  <button type="submit" class="btn btn-primary">
+                  <span class="add-to-cart quantity-<%= @product.id %>"><%= quantity_of @product %></span>
+                  <button type="submit" class="btn btn-primary btn-cart">
                   <i class="fa fa-shopping-cart"></i><%= t "product.add_to_cart" %>
                   </button>
                 <% end %>
-                <%= link_to user_orders_path, class: "btn btn-info" do %>
+                <%= link_to cart_details_path, class: "btn btn-info" do %>
                   <%= t "product.go_to_cart" %><i class="fa fa-chevron-right "></i>
                 <% end %>
               </div>
@@ -42,20 +43,20 @@
     </blockquote>
   </div>
   <div class="card-group related-products">
-    <% if @relateds.present? %>
-      <h2>You may like</h2>
+    <% if @product_support.relateds.present? %>
+      <h2><%= t "product.you_may_like" %></h2>
       <div class="row">
-        <%= render @relateds %>
+        <%= render @product_support.relateds %>
       </div>
     <% end %>
   </div>
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
         <div class="comments">
-          <% if @comments.present? %>
+          <% if @product_support.comments.present? %>
             <h3><%= t "comment.title" %></h3>
             <div class="comment-list">
-              <%= render @comments %>
+              <%= render @product_support.comments %>
             </div>
           <% else %>
             <p class="h4"><%= t "comment.first" %>.</p>

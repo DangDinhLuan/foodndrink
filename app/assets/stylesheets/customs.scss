@@ -42,6 +42,9 @@ body {
   height: 18px !important;
 }
 
+button a {
+  text-decoration: none !important;
+}
 /*
 *========================@@pagination==========================
 */
@@ -341,9 +344,25 @@ body {
         margin-left: 10px;
       }
     }
+    #submit {
+      display: none;
+    }
   }
+}
 
-
+.dropdown-filter {
+  li {
+    padding: 10px 10px 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: $font-color-dark;
+  }
+  
+  li:hover {
+    font-weight: bold;
+    color: $white;
+    background: $info;
+  }
 }
 
 /*
@@ -406,8 +425,14 @@ body {
 
       .item-rating {
         padding: 10px 5px;
-        color: $primary;
+        .rated {
+          color: $primary; 
+        }
+        .unrated {
+          color: $font-color-light;
+        }
       }
+
 
       .btn {
         position: absolute;
@@ -495,11 +520,53 @@ body {
 
     .product-rating {
       padding: 10px 20px;
+      overflow: hidden;
+      .form-rating {
+        display: inline;
+        button {
+          background: unset;
+          border: none;
+          display: inline !important;
+          box-shadow: unset;
+          padding: 5px;
+        }
+    
+        botton:focus {
+          background: $info;
+          i {
+            color: $white;
+          }
+        }
+        
+        .rated {
+          color: $white;
+          i {
+            color: $primary;
+          }
+        }
+        
+        .unrated {
+          i {
+            color: $default;
+          }
+        }
+      }
     }
 
     .buttons {
       form {
         display: inline-block;
+        .add-to-cart {
+          font-size: 30px;
+          color: $info;
+          font-weight: bold;
+          text-shadow: $box-shadow-light;
+          position: absolute;
+          opacity: 0;
+          left: 140px;
+          bottom: 40px;
+
+        }
       }
       .btn {
         .fa-shopping-cart {
@@ -595,6 +662,19 @@ body {
 /*
 * =========================@@cart====================
 */
+.card-item {
+  .number-floating {
+    position: absolute;
+    bottom: 30px;
+    left: 240px;
+    font-size: 25px;
+    font-weight: bold;
+    color: $info;
+    opacity: 0;
+    text-shadow: $box-shadow-light;
+  }
+
+}
 
 #cart-modal {
   #cart{
@@ -610,7 +690,8 @@ body {
 
   .modal-footer {
     padding: 10px 20px;
-    button {
+    button, a {
+      margin: 0px;
       font-weight: bold;
     }
 
@@ -702,6 +783,46 @@ body {
   }
 }
 
+#cart-modal.cart-detail {
+  .modal-dialog {
+    margin: 0px;
+    width: auto;
+    .modal-content {
+      width: auto;
+      box-shadow: $box-shadow-light;
+      h4 {
+        font-size: 25px !important;
+        font-weight: 400;
+        text-transform: uppercase !important;
+      }
+    }
+  }
+  #btn-go-to-cart {
+    display: none;
+  }
+
+  #btn-checkout, #btn-cart-save {
+    color: $white;
+    padding: 10px 20px;
+    margin: 0px 30px 20px 30px;
+    min-width: 120px;
+  }
+  #btn-checkout {
+    background: $info;
+  }
+
+  #btn-cart-save {
+    background: $primary;
+  }
+
+  #btn-checkout:hover, #btn-cart-save:hover {
+    box-shadow: 0 14px 26px -12px rgba(153, 153, 153, 0.42),
+      0 4px 23px 0px rgba(0, 0, 0, 0.12),
+      0 8px 10px -5px rgba(153, 153, 153, 0.2)
+  }
+
+}
+
 .order-summary {
   box-shadow: $box-shadow-light;
   .box-header {
@@ -723,8 +844,6 @@ body {
     }
   }
 }
-
-
 
 /*
 * =================@@checkout===================
@@ -814,18 +933,35 @@ body {
         padding: 10px;
         li {
           list-style: none;
+          border-radius: 2px;
           a {
             text-align: left;
             text-decoration: none;
             color: $default;
             display: block;
+            font-weight: 400;
           }
-          &.active{
-            background: $gray;
+          &.active {
+            border: 1px solid $info;
+            background: $info;
+            a {
+              color: $white;
+            }
           }
         }
+
+        li.active:hover {
+          background: $info;
+          a {
+            color: $white;
+          }
+        }
+
         li:hover {
           background: $gray;
+          a {
+            color: $font-color-dark;
+          }
         }
       }
     }

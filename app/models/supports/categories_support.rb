@@ -1,15 +1,12 @@
 class Supports::CategoriesSupport
-  def initialize id, page
-    @category = Category.find_by id: id
+  def initialize category_id, page, filtering_params
     @page = page
-  end
-
-  def recent
-    Category.recent
+    @filtering_params = filtering_params
+    @category_id = category_id
   end
 
   def products
-    @category.products.recent.page(@page)
+    Product.filter(@category_id).filter_by_params(@filtering_params).recent.page(@page)
       .per Settings.categories.product.page.per_page
   end
 end

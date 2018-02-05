@@ -2,7 +2,10 @@ source "https://rubygems.org"
 
 gem "bcrypt", "~> 3.1.11"
 gem "chatwork"
+<<<<<<< HEAD
 gem "chartkick"
+=======
+>>>>>>> 5ca4291... Send email to user on Chatwork
 gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "jbuilder", "~> 2.5"

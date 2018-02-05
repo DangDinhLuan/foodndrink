@@ -27,9 +27,12 @@ gem "zip-zip"
 gem "roo"
 gem "axlsx", "2.1.0.pre"
 gem "axlsx_rails"
+<<<<<<< HEAD
 gem "whenever", require: false
 gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+=======
+>>>>>>> b9f645a... Admin -  export statistic report to excel
 
 group :production do
   gem "pg", "~> 0.20"

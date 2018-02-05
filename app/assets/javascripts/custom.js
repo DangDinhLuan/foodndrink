@@ -30,8 +30,6 @@ $(document).ready(function(){
     floatingNumber(addToCart, "130px");
     return 0;
   });
-
-
 });
 
 function floatingNumber(elem, left) {
@@ -41,7 +39,6 @@ function floatingNumber(elem, left) {
   elem.animate({left: left, fontSize: "30px"},"fast");
 }
 
-// get thumb image
 function readURL(input, imgId) {
   if (input.files && input.files[0]) {
     var reader = new FileReader();
@@ -52,3 +49,43 @@ function readURL(input, imgId) {
   }
 }
 
+$(function() {
+  $(".checkbox input[type=checkbox]").click(function() {
+    $("#submit").trigger("click");
+  });
+
+  var orderByPrice = $("input#order_by_price");
+  var dropDownLabel = $("#dropdown-label");
+  $("#price-default").click(function() {
+    dropDownLabel.html($(this).html());
+    orderByPrice.val("asc");
+    $("#submit").trigger("click");
+  });
+
+  $("#price-up").click(function() {
+    dropDownLabel.html($(this).html());
+    orderByPrice.val("asc");
+    $("#submit").trigger("click");
+  });
+
+  $("#price-down").click(function() {
+    dropDownLabel.html($(this).html());
+    orderByPrice.val("desc");
+    $("#submit").trigger("click");
+  });
+
+
+  //===================Homepage===================
+  $("#sort-default").click(function() {
+    dropDownLabel.html($(this).html());
+  });
+
+  $("#sort-food").click(function() {
+    dropDownLabel.html($(this).html());
+  });
+
+  $("#sort-drink").click(function() {
+    dropDownLabel.html($(this).html());
+  });
+
+});

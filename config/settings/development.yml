@@ -44,3 +44,5 @@ user:
   avatar:
     default: "avatars/default.png"
 rating: 5
+search:
+  per_page: 12

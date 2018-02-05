@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="card-group">
+    <h2><%= pluralize @products.size, t("app.search.result") %> <%= t("app.search.found") %></h2>
+    <div class="row">
+      <%= render @products %>
+    </div>
+  </div>
+</div>
+<div class="row text-center">
+  <%= paginate @products, left: 1, right: 5 %>
+</div>
+    

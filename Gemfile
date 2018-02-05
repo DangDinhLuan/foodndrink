@@ -22,6 +22,7 @@ gem "zip-zip"
 gem "roo"
 gem "axlsx", "2.1.0.pre"
 gem "axlsx_rails"
+gem "whenever", require: false
 
 group :production do
   gem "pg", "~> 0.20"

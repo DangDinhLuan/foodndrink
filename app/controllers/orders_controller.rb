@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :load_order, only: :show
+  before_action :verify_user, only: :show
 
   def index
     @orders_user = Order.order_user_id(current_user.id).page(params[:page]).per Settings.page.per_page
@@ -23,6 +24,7 @@ class OrdersController < ApplicationController
     @order.user_id = current_user.id if loged_in?
     if @order.save
       save_cart @order
+      UserMailer.custommer_order(@order).deliver
       destroy_cart
       flash[:info] = t "order.success"
       redirect_to root_path

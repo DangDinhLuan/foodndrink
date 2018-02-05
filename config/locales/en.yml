@@ -97,6 +97,13 @@ en:
         Please click the link below. If you did not request,
         please ignore this email and your password will stay as it is."
       link: "Reset your password !"
+    custommer_order:
+      title: "Dear"
+      subject: "Food & Drink - Order details"
+      body: "Your order has been placed on "
+      link: "Order"
+      total: "Total"
+      order: "Order"
   password_resets:
     title: "Resets Password"
     submit: "Send email"

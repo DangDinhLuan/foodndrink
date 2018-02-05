@@ -1,5 +1,5 @@
-set :environment, "development"
+set :environment, "production"
 
-every 1.month do
+every 10.minutes do
   rake "monthly_admin_email"
 end

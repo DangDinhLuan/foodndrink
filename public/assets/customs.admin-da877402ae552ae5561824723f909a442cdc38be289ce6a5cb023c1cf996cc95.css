@@ -1,0 +1,292 @@
+/* line 14, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+a i {
+  margin-right: 5px;
+}
+
+/* line 21, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+table tbody td.td-actions {
+  display: block !important;
+}
+/* line 28, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+table tbody tr td button.btn a {
+  color: unset;
+}
+/* line 33, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+table tbody tr .description {
+  max-width: 250px;
+}
+
+/* line 40, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.card img.img-responsive {
+  width: 50px;
+  height: 50px;
+}
+
+/* line 46, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.btn-action .btn-add {
+  float: right;
+  margin-right: 15px;
+}
+
+/* line 53, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+select {
+  color: #999999 !important;
+}
+
+/* line 57, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.table .td-actions {
+  display: block;
+}
+
+/* line 62, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.btn .fa {
+  padding-right: 5px;
+}
+
+/* line 68, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.card .card-content {
+  padding: 20px 30px;
+}
+
+/* line 73, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+/* line 77, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+/* line 89, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+canvas {
+  box-sizing: border-box !important;
+  width: 100%;
+  background: #FFFFFF;
+  padding: 20px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+/* line 99, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.card-stats .card-content {
+  height: 110px;
+}
+
+/* line 104, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.footer {
+  max-height: 300px;
+}
+
+/* line 108, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.chart {
+  margin-bottom: 20px;
+}
+/* line 110, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.chart h4 {
+  font-weight: 400;
+  color: #999999;
+}
+
+/*
+*====================@@product========================
+*/
+/* line 119, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.product-thumbnail img {
+  width: 100%;
+}
+/* line 123, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.product-thumbnail .box {
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+/* line 127, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.product-thumbnail .box h2 {
+  margin: 0px;
+}
+/* line 131, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.product-thumbnail .box .product-description {
+  height: 80px;
+  padding: 20px 10px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  color: #555555;
+}
+/* line 139, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.product-thumbnail .box .product-price {
+  margin-top: 30px;
+  font-size: 30px;
+  font-weight: 400;
+  color: #fbc02d;
+}
+/* line 146, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.product-thumbnail .box .product-rating {
+  padding: 10px 20px;
+}
+/* line 152, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.product-thumbnail .box .buttons .btn .fa-shopping-cart {
+  padding-right: 5px;
+}
+/* line 155, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.product-thumbnail .box .buttons .btn .fa-chevron-right {
+  padding-left: 5px;
+}
+
+/* line 165, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.details blockquote {
+  margin: 30px 0px;
+  font-size: 16px;
+  color: #555555;
+  border-left: #03a9f4 5px solid;
+}
+
+/*
+*====================@@slide=======================
+*/
+/* line 176, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+#update-slide-status {
+  display: none;
+}
+
+/* line 181, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.slide-action .btn {
+  padding: 10px 15px;
+  max-height: 50px;
+}
+
+/* line 187, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.slide-table-form {
+  padding: 0px;
+}
+/* line 189, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.slide-table-form .slide-title {
+  max-width: 200px;
+  overflow: hidden;
+}
+
+/* line 197, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.product-thumbnail .buttons {
+  margin-top: 30px;
+}
+
+/* line 202, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 208, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.product-rating {
+  padding: 10px 20px;
+  overflow: hidden;
+}
+/* line 211, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.product-rating .form-rating {
+  display: inline;
+}
+/* line 213, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.product-rating .form-rating button {
+  background: unset;
+  border: none;
+  display: inline !important;
+  box-shadow: unset;
+  padding: 5px;
+}
+/* line 221, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.product-rating .form-rating botton:focus {
+  background: #03a9f4;
+}
+/* line 223, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.product-rating .form-rating botton:focus i {
+  color: #FFFFFF;
+}
+/* line 228, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.product-rating .form-rating .rated {
+  color: #FFFFFF;
+}
+/* line 230, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.product-rating .form-rating .rated i {
+  color: #9c27b0;
+}
+/* line 236, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.product-rating .form-rating .unrated i {
+  color: #999999;
+}
+
+/*
+*========================@@pagination==========================
+*/
+/* line 246, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.pagination a, .pagination span.current, .pagination span.gap {
+  float: left;
+  padding: 0 14px;
+  line-height: 38px;
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid #DDD;
+  border-left-width: 0;
+}
+
+/* line 256, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.pagination {
+  border: none;
+}
+/* line 258, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.pagination .gap {
+  display: none;
+}
+/* line 262, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.pagination .first {
+  display: none;
+}
+/* line 266, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.pagination .page, .pagination .prev, .pagination .next, .pagination .current {
+  margin: 0px 5px;
+}
+/* line 268, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.pagination .page a, .pagination .prev a, .pagination .next a, .pagination .current a {
+  border: none;
+  color: #999999;
+  font-weight: 400;
+}
+/* line 275, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.pagination .current {
+  border: none !important;
+  background: #03a9f4 !important;
+  color: #FFFFFF;
+  padding: 0px 15px !important;
+  box-shadow: 0 4px 5px 0 rgba(3, 169, 244, 0.14), 0 1px 10px 0 rgba(3, 169, 244, 0.12), 0 2px 4px -1px rgba(3, 169, 244, 0.2);
+  border-radius: 30px;
+}
+/* line 286, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.pagination .last {
+  display: none;
+}
+
+/* line 291, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.time-selection {
+  margin-bottom: 100px;
+}
+/* line 293, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.time-selection .form-group {
+  margin-top: 15px;
+}
+/* line 295, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.time-selection .form-group input {
+  padding-left: 20px;
+  width: 80%;
+}
+/* line 299, /home/lam/fdf_16/app/assets/stylesheets/customs.admin.scss */
+.time-selection .form-group label {
+  padding-top: 5px;
+}

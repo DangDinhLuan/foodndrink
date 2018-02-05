@@ -54,7 +54,15 @@
                 </div>
             </div>
             <div class="row">
-              <div class="col-sm-12 text-center">
+              <div class="col-sm-6">
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="fa fa-comment"></i>
+                  </span>
+                  <%= f.text_field :chatwork_id, class: "form-control", placeholder: t("chatwork.chatwork_id") %>
+                </div>
+              </div>
+              <div class="col-sm-6 text-center">
                 <button type="submit" class="btn btn-info pull-right"><i class="fa fa-save"></i>Save</button>
               </div>
             </div>

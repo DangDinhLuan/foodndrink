@@ -1044,8 +1044,15 @@ button a {
         }
       }
     }
-  }
 
+  }
+  
+  .form-info {
+    .btn {
+      margin-top: 20px;
+    }
+  }
+  
   form {
     .btn {
       min-width: 120px !important;

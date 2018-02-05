@@ -9,10 +9,7 @@ class CartsController < ApplicationController
         session[:cart][id] = Hash.new
         session[:cart][id] = {"quantity" => 1}
       end
-      respond_to do |format|
-        format.html {redirect_to home_path}
-        format.js
-      end
+      respond
     end
   end
 
@@ -22,10 +19,7 @@ class CartsController < ApplicationController
         if session[:cart].include? id
           session[:cart][id]["quantity"] = quantity.to_i > 0 ? quantity : 1
         end
-        respond_to do |format|
-          format.html {redirect_to root_path}
-          format.js
-        end
+        respond
       end
     end
   end
@@ -33,10 +27,17 @@ class CartsController < ApplicationController
   def destroy
     if session[:cart][params[:id]].present?
       session[:cart].delete params[:id]
-      respond_to do |format|
-        format.html {redirect_to root_path}
-        format.js
-      end
+      respond
     end
   end
+
+  private
+  def respond
+    respond_to do |format|
+      format.html {redirect_to root_path}
+      format.js
+    end
+  end
+
+  def show; end
 end

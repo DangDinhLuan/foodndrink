@@ -18,17 +18,20 @@ class Product < ApplicationRecord
   scope :price_between, -> prices{where prices}
   scope :rating_in, ->ratings{where ratings}
   scope :order_by_price, ->order_type{order price: order_type}
-  scope :filter_by_category, ->category_type{joins(:category).where("categories.category_type = ?", category_type)}
+  scope :filter_by_category, ->category_type{joins(:categor).where("categories.category_type = ?", category_type)}
   scope :search, ->key_word{where "title like '%#{key_word}%' or description like '%#{key_word}%'"}
   scope :product_report, -> (first_month, last_month) {joins(:items)
     .select("products.*, items.*, count(product_id) as count_product").group("products.title")
     .where("items.created_at BETWEEN ? AND ?", first_month, last_month)
     .order("count_product desc").limit Settings.home.product.top_rated.limit}
-  scope :total_sold_of_this_month, ->type{joins("inner join items")
+  scope :total_sold_of_this_month, ->type{joins(:items)
     .where(created_at: Date.today.beginning_of_month..Date.today.end_of_month)
     .group("products.title")
     .sum("items.#{type}")}
-    
+  scope :time_in_range, ->(from_date, to_date){where created_at: from_date..to_date}
+  scope :in_each_category, ->{joins(:category).group("categories.title").count}
+  scope :in_each_category_type, ->{joins(:category).group("upper(categories.category_type)").count}
+
   def excerp
     self.description.truncate Settings.product.description.excerp, separator: /\s/
   end

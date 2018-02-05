@@ -88,10 +88,32 @@ select {
   opacity: 0;
 }
 
+canvas {
+  box-sizing: border-box !important;
+  width: 100%;
+  background: $white;
+  padding: 20px;
+  box-shadow: $box-shadow-light;
+  border-radius: 5px;
+}
+
+.card-stats {
+  .card-content {
+    height: 110px;
+  }
+}
+
 .footer {
   max-height: 300px;
 }
 
+.chart {
+  margin-bottom: 20px;
+  h4 {
+    font-weight: 400;
+    color: $default;
+  }
+}
 /*
 *====================@@product========================
 */
@@ -233,7 +255,10 @@ select {
 
 .pagination {
   border: none;
-
+  .gap {
+    display: none;
+  }
+  
   .first{
     display: none;
   }
@@ -262,3 +287,19 @@ select {
     display: none;
   }
 }
+
+.time-selection {
+  margin-bottom: 100px;
+  .form-group {
+    margin-top: 15px;
+    input {
+      padding-left: 20px;
+      width: 80%;
+    }
+    label {
+      padding-top: 5px;
+    }
+  }
+  
+}
+

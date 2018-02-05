@@ -7,9 +7,12 @@ class Order < ApplicationRecord
   validates :total, presence: true
   validates :status, inclusion: {in: [true, false]}, allow_nil: true
 
-  scope :order_user_id, -> (id) { where(user_id: id).order(created_at: :desc) }
   scope :report_order, -> (first_month, last_month) {where("created_at BETWEEN ? AND ?", first_month, last_month).order created_at: :desc}
-  
+  scope :order_user_id, -> user_id{ where(user_id: user_id).order(created_at: :desc) }
+  scope :group_by_day, -> {group("date(created_at)").count}
+  scope :total_price, ->{sum :total}
+  scope :time_in_range, ->(from_date, to_date){where created_at: from_date..to_date}
+
   def status_order
     if self.status
       I18n.t("admin.order.show.status.delivered")

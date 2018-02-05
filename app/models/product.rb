@@ -20,6 +20,7 @@ class Product < ApplicationRecord
   scope :order_by_price, ->order_type{order price: order_type}
   scope :filter_by_category, ->category_type{joins(:category).where("categories.category_type = ?", category_type)}
   scope :search, ->key_word{where "title like '%#{key_word}%' or description like '%#{key_word}%'"}
+<<<<<<< HEAD
   scope :product_report, -> (first_month, last_month) {joins(:items)
     .select("products.*, items.*, count(product_id) as count_product").group("products.title")
     .where("items.created_at BETWEEN ? AND ?", first_month, last_month)
@@ -31,10 +32,13 @@ class Product < ApplicationRecord
   scope :time_in_range, ->(from_date, to_date){where created_at: from_date..to_date}
   scope :in_each_category, ->{joins(:category).group("categories.title").count}
   scope :in_each_category_type, ->{joins(:category).group("upper(categories.category_type)").count}
+=======
+>>>>>>> d65f322... Admin import product from csv and excel
 
   def excerp
     self.description.truncate Settings.product.description.excerp, separator: /\s/
   end
+<<<<<<< HEAD
 <<<<<<< 7f292043bdf931c85e02c19fcea7d88effab9f59
 
   def update_ratings
@@ -78,6 +82,8 @@ class Product < ApplicationRecord
     self.rates = self.ratings.count :point
     self.save
   end
+=======
+>>>>>>> d65f322... Admin import product from csv and excel
 
   def update_ratings
     self.avg_rate = self.ratings.average :point

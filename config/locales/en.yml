@@ -136,6 +136,7 @@ en:
     proflie: "Profile"
     danger: "You can not admin"
     import: "Import"
+<<<<<<< HEAD
     dashboard:
       quantity: "Quantities"
       in_this_month: "In this month"
@@ -158,6 +159,8 @@ en:
       to_date: "To:"
       submit: "Ok"
       reset: "Reset"
+=======
+>>>>>>> d65f322... Admin import product from csv and excel
     menu:
       dashboard: "Dashboards"
       home: "Home"
@@ -437,11 +440,6 @@ en:
       note: "Note..."
       submit: "Order now"
       back: "Back to basket"
-<<<<<<< 7f292043bdf931c85e02c19fcea7d88effab9f59
-<<<<<<< HEAD
-=======
-=======
->>>>>>> Admin filter order
   report:
     dowload: "Dowload statistic report to excel"
     name: "Name"
@@ -462,7 +460,3 @@ en:
     count: "Order number"
     delivered: "Delivered"
     not_delivery: "Not delivery"
-<<<<<<< 7f292043bdf931c85e02c19fcea7d88effab9f59
->>>>>>> 59e9162bf674120c64041e0bddbebf28f48f56c4
-=======
->>>>>>> Admin filter order

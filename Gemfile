@@ -16,6 +16,7 @@ gem "jquery-rails", "4.3.1"
 gem "kaminari"
 gem "carrierwave", "~> 0.10.0"
 gem "mini_magick", "~> 4.3"
+gem "roo"
 
 group :production do
   gem "pg", "~> 0.20"

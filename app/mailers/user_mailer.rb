@@ -14,7 +14,6 @@ class UserMailer < ApplicationMailer
     @items = @order.items
     mail to: @order.email, subject: I18n.t("user_mailer.custommer_order.subject")
   end
-<<<<<<< HEAD
 
   def monthly_admin_email
     User.admins.each do |admin|
@@ -28,6 +27,4 @@ class UserMailer < ApplicationMailer
     @admin = admin
     mail to: @admin.email, subject: I18n.t("user_mailer.custommer_order.subject")
   end
-=======
->>>>>>> edcd4c2... Send mail to custommer
 end

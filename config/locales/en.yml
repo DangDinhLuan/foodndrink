@@ -104,7 +104,6 @@ en:
       link: "Order"
       total: "Total"
       order: "Order"
-<<<<<<< HEAD
     admin_statistic:
       title: "Dear"
       subject: "Data orders of this month"
@@ -114,8 +113,6 @@ en:
       price_table_title: "Total prices"
       total_quantity: "Total Quantity"
       total_price: "Total Price"
-=======
->>>>>>> edcd4c2... Send mail to custommer
   password_resets:
     title: "Resets Password"
     submit: "Send email"
@@ -136,7 +133,6 @@ en:
     proflie: "Profile"
     danger: "You can not admin"
     import: "Import"
-<<<<<<< HEAD
     dashboard:
       quantity: "Quantities"
       in_this_month: "In this month"
@@ -159,8 +155,6 @@ en:
       to_date: "To:"
       submit: "Ok"
       reset: "Reset"
-=======
->>>>>>> d65f322... Admin import product from csv and excel
     menu:
       dashboard: "Dashboards"
       home: "Home"

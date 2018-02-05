@@ -37,12 +37,17 @@ class Admin::ProductsController < AdminController
   end
 
   def import
+<<<<<<< HEAD
     if params[:file].nil
       redirect_to admin_products_path, notice: t("admin.product.create.error")
     else
       Product.import params[:file]
       redirect_to admin_products_path, notice: t("admin.product.create.success")
     end
+=======
+    Product.import params[:file]
+    redirect_to admin_products_path, notice: t("admin.product.create.success")
+>>>>>>> d65f322... Admin import product from csv and excel
   end
 
   def edit; end

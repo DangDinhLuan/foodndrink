@@ -228,7 +228,11 @@ GEM
     roo (2.7.1)
       nokogiri (~> 1)
       rubyzip (~> 1.1, < 2.0.0)
+<<<<<<< HEAD
     rubyzip (1.1.7)
+=======
+    rubyzip (1.2.1)
+>>>>>>> d65f322... Admin import product from csv and excel
     sass (3.5.5)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -311,10 +315,14 @@ DEPENDENCIES
   rails (~> 5.1.4)
   rails_12factor
 <<<<<<< HEAD
+<<<<<<< HEAD
   roo
   rubyzip (~> 1.1.0)
 =======
 >>>>>>> edcd4c2... Send mail to custommer
+=======
+  roo
+>>>>>>> d65f322... Admin import product from csv and excel
   sass-rails (~> 5.0)
   selenium-webdriver
   sqlite3

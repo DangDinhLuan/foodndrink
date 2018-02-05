@@ -1,0 +1,92 @@
+excel_package = xlsx_package.workbook
+excel_package.styles do |style|
+  highlight_cell = style.add_style(bg_color: "8e24aa", fg_color: "FFFFFF")
+  title = style.add_style(bg_color: "8e24aa", fg_color: "FFFFFF", sz: 14, alignment: {horizontal: :center})
+  bold = style.add_style(b: true)
+  format_date = style.add_style format_code: "yyyy-mm-dd"
+
+  excel_package.add_worksheet(name: "Date current") do |sheet|
+    sheet.add_row [I18n.t("report.order_current")], style: title
+    sheet.merge_cells "A1:G1"
+    sheet.add_row [I18n.t("report.name"),I18n.t("report.email"),I18n.t("report.phone"), +
+      I18n.t("report.address"),I18n.t("report.date"),I18n.t("report.status"),I18n.t("report.total")],
+      style: highlight_cell
+    @report.order_current_day.each do |order|
+      sheet.add_row [order.name, order.email, order.phone, order.address, order.created_at, order.status_order, order.total],
+      style: [nil,nil,nil,nil,format_date,nil,nil]
+    end
+    sheet.add_row    
+    sheet.add_row ["","","","","",I18n.t("report.total"), "=SUM(G4:G#{@report.order_current_day.size + 3})"],
+      style: [nil,nil,nil,nil,nil,bold,bold]
+    sheet.add_row ["","","","","",I18n.t("report.not_delivery"), "=COUNTIF(F4:F#{@report.order_current_day.size + 3},\"Not delivery\")"],
+      style: [nil,nil,nil,nil,nil,bold,bold]
+    sheet.add_row ["","","","","",I18n.t("report.delivered"), "=COUNTIF(F4:F#{@report.order_current_day.size + 3},\"Delivered\")"],
+      style: [nil,nil,nil,nil,nil,bold,bold]
+    sheet.add_row
+    sheet.add_row
+    sheet.add_row
+    sheet.add_row [I18n.t("report.product_current")], style: title
+    sheet.merge_cells "A12:C12"
+    sheet.add_row [I18n.t("report.title"),I18n.t("report.price"),I18n.t("report.count")], style: highlight_cell
+    @report.product_current_day.each do |product|
+      sheet.add_row [product.title, product.price, product.count_product]
+    end
+  end
+  
+  excel_package.add_worksheet(name: "One month") do |sheet|
+    sheet.add_row [I18n.t("report.order_month")], style: title
+    sheet.merge_cells "A1:G1"
+    sheet.add_row [I18n.t("report.name"),I18n.t("report.email"),I18n.t("report.phone"), +
+      I18n.t("report.address"),I18n.t("report.date"),I18n.t("report.status"),I18n.t("report.total")],
+      style: highlight_cell
+    @report.order_current_month.each do |order|
+      sheet.add_row [order.name, order.email, order.phone, order.address, order.created_at, order.status_order, order.total],
+      style: [nil,nil,nil,nil,format_date,nil,nil]
+    end
+    sheet.add_row    
+    sheet.add_row ["","","","","",I18n.t("report.total"), "=SUM(G4:G#{@report.order_current_month.size + 3})"],
+      style: [nil,nil,nil,nil,nil,bold,bold]
+    sheet.add_row ["","","","","",I18n.t("report.not_delivery"), "=COUNTIF(F4:F#{@report.order_current_month.size + 3},\"Not delivery\")"],
+      style: [nil,nil,nil,nil,nil,bold,bold]
+    sheet.add_row ["","","","","",I18n.t("report.delivered"), "=COUNTIF(F4:F#{@report.order_current_month.size + 3},\"Delivered\")"],
+      style: [nil,nil,nil,nil,nil,bold,bold]
+    sheet.add_row
+    sheet.add_row
+    sheet.add_row
+    sheet.add_row [I18n.t("report.product_month")], style: title
+    sheet.merge_cells "A12:C12"
+    sheet.add_row [I18n.t("report.title"),I18n.t("report.price"),I18n.t("report.count")], style: highlight_cell
+    @report.product_current_month.each do |product|
+      sheet.add_row [product.title, product.price, product.count_product]
+    end
+  end
+
+  excel_package.add_worksheet(name: "Three month") do |sheet|
+    sheet.add_row [I18n.t("report.order_month_3")], style: title
+    sheet.merge_cells "A1:G1"
+    sheet.add_row [I18n.t("report.name"),I18n.t("report.email"),I18n.t("report.phone"), +
+      I18n.t("report.address"),I18n.t("report.date"),I18n.t("report.status"),I18n.t("report.total")],
+      style: highlight_cell
+    @report.order_current_3month.each do |order|
+      sheet.add_row [order.name, order.email, order.phone, order.address, order.created_at, order.status_order, order.total],
+      style: [nil,nil,nil,nil,format_date,nil,nil]
+    end
+    sheet.add_row    
+    sheet.add_row ["","","","","",I18n.t("report.total"), "=SUM(G4:G#{@report.order_current_3month.size + 3})"],
+      style: [nil,nil,nil,nil,nil,bold,bold]
+    sheet.add_row ["","","","","",I18n.t("report.not_delivery"), "=COUNTIF(F4:F#{@report.order_current_3month.size + 3},\"Not delivery\")"],
+      style: [nil,nil,nil,nil,nil,bold,bold]
+    sheet.add_row ["","","","","",I18n.t("report.delivered"), "=COUNTIF(F4:F#{@report.order_current_3month.size + 3},\"Delivered\")"],
+      style: [nil,nil,nil,nil,nil,bold,bold]
+    sheet.add_row
+    sheet.add_row
+    sheet.add_row
+    sheet.add_row [I18n.t("report.product_month_3")], style: title
+    sheet.merge_cells "A12:C12"
+    sheet.add_row [I18n.t("report.title"),I18n.t("report.price"),I18n.t("report.count")], style: highlight_cell
+    @report.product_current_3month.each do |product|
+      sheet.add_row [product.title, product.price, product.count_product]
+    end
+  end
+
+end

@@ -18,7 +18,7 @@ class Product < ApplicationRecord
   scope :price_between, -> prices{where prices}
   scope :rating_in, ->ratings{where ratings}
   scope :order_by_price, ->order_type{order price: order_type}
-  scope :filter_by_category, ->category_type{joins(:category).where("categories.category_type = ?", category_type)}
+  scope :filter_by_category, ->category_type{joins(:categor).where("categories.category_type = ?", category_type)}
   scope :search, ->key_word{where "title like '%#{key_word}%' or description like '%#{key_word}%'"}
   scope :product_report, -> (first_month, last_month) {joins(:items)
     .select("products.*, items.*, count(product_id) as count_product").group("products.title")

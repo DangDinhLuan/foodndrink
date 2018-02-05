@@ -2,10 +2,7 @@ source "https://rubygems.org"
 
 gem "bcrypt", "~> 3.1.11"
 gem "chatwork"
-<<<<<<< HEAD
 gem "chartkick"
-=======
->>>>>>> 5ca4291... Send email to user on Chatwork
 gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "jbuilder", "~> 2.5"
@@ -27,16 +24,10 @@ gem "zip-zip"
 gem "roo"
 gem "axlsx", "2.1.0.pre"
 gem "axlsx_rails"
-<<<<<<< HEAD
-<<<<<<< HEAD
 gem "whenever", require: false
 gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
-=======
->>>>>>> b9f645a... Admin -  export statistic report to excel
-=======
 gem "whenever", require: false
->>>>>>> 6a208a7... Send statistic email to admin
 
 group :production do
   gem "pg", "~> 0.20"

@@ -13,6 +13,7 @@ $(document).ready(function(){
         close: "fa fa-remove"
     }
   });
+<<<<<<< HEAD
 
   $( "#btn-import" ).on( "click", function() {
     $( "#import-file" ).trigger( "click" );
@@ -21,4 +22,6 @@ $(document).ready(function(){
   $("#import-file").on("change", function(){
     $( "#submit-file" ).trigger( "click" );
   });
+=======
+>>>>>>> 8628d3c... Admin - View statistics
 });

@@ -1,5 +1,3 @@
-@import "admin";
-
 $white: #FFFFFF;
 $black: #000000;
 $gray: #dce0e0;
@@ -175,6 +173,10 @@ canvas {
 /*
 *====================@@slide=======================
 */
+#update-slide-status {
+  display: none;
+}
+
 .slide-action {
   .btn {
     padding: 10px 15px;
@@ -183,9 +185,7 @@ canvas {
 }
 
 .slide-table-form {
-  max-height: 400px;
   padding: 0px;
-  overflow: auto;
   .slide-title {
     max-width: 200px;
     overflow: hidden;

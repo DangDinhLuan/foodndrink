@@ -4,4 +4,5 @@
  *= require font-awesome
  *= require font-material
  *= require customs.admin
+ *= require_self
  */

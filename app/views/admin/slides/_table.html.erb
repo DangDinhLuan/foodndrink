@@ -1,5 +1,4 @@
-<div class="slide-table-form">
-  <%= form_tag admin_slides_updates_path do %>
+<%= form_tag admin_slides_updates_path, remote: true do %>
   <div class="col-md-12">
     <div class="card">
       <div class="card-header" data-background-color="purple">
@@ -49,10 +48,9 @@
       </div>
     </div>
   </div>
-</div>
-<div class="col-md-12 slide-action">
-  <% if @slides.present? %>
-    <%= submit_tag "Update", class: "btn btn-primary pull-right" %>
-  <% end %>
-</div>
+  <div class="col-md-12 slide-action">
+    <% if @slides.present? %>
+      <%= submit_tag t("admin.slide.update-status"), id: "update-slide-status", class: "btn btn-primary pull-right" %>
+    <% end %>
+  </div>
 <% end %>

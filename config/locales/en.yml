@@ -241,6 +241,7 @@ en:
       image: "Image"
       status: "Active slide"
       action: "Actions"
+      update-status: "Update"
       not_exist: "Sorry! The slide doesn't exist."
       new:
         title: "Add new slide"

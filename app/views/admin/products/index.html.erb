@@ -6,6 +6,10 @@
     <% end %>
   </div>
   <div class="col-md-8">
+    <%= form_tag import_admin_products_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag t "admin.import" %>
+    <% end %>
     <div class="btn-action">
       <%= link_to t("admin.product.add_new"), new_admin_product_path, class: "btn btn-info btn-add"%>
     </div>

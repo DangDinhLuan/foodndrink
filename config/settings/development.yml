@@ -46,3 +46,5 @@ user:
 rating: 5
 search:
   per_page: 12
+url_image:
+  default: "/home/dang.dinh.luan/Pictures/"

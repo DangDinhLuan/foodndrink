@@ -118,6 +118,7 @@ en:
     title: "Foods and Drinks app ruby on rails"
     proflie: "Profile"
     danger: "You can not admin"
+    import: "Import"
     menu:
       home: "Home"
       user: "Users manage"

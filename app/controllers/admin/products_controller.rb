@@ -36,6 +36,11 @@ class Admin::ProductsController < AdminController
     end
   end
 
+  def import
+    Product.import params[:file]
+    redirect_to admin_products_path, notice: t("admin.product.create.success")
+  end
+
   def edit; end
 
   def update

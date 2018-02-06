@@ -30,7 +30,9 @@ Rails.application.routes.draw do
     resources :orders, except: :destroy
     resources :comments, except: [:edit, :update]
     resources :users
-    resources :products
+    resources :products do
+      collection { post :import }
+    end
     resources :slides, except: [:index, :show]
     get "slides", to: "slides#new"
     post "slides/updates", to: "slides#update_status"

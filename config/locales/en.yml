@@ -114,6 +114,11 @@ en:
     expried: "The request have expried!"
     error: "password error!"
     blank: "can not be blank!"
+  chatwork:
+    message:
+      title: "Hello"
+      body: "Thanks for your order. Please check your email to see full details."
+    chatwork_id: "Chatwork ID"
   admin:
     title: "Foods and Drinks app ruby on rails"
     proflie: "Profile"

@@ -8,6 +8,7 @@ class Order < ApplicationRecord
   validates :status, inclusion: {in: [true, false]}, allow_nil: true
 
   scope :order_user_id, -> (id) { where(user_id: id).order(created_at: :desc) }
+  scope :report_order, -> (first_month, last_month) {where("created_at BETWEEN ? AND ?", first_month, last_month).order created_at: :desc}
   
   def status_order
     if self.status

@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   post "/ratings", to: "ratings#create"
   patch "/ratings", to: "ratings#update"
 
-  get "/admin", to: "admin/products#index"
+  get "/admin", to: "admin#index"
   namespace :admin do
     resources :categories
     resources :orders, except: :destroy

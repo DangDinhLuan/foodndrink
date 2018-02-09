@@ -3,6 +3,13 @@ class AdminController < ApplicationController
   layout "admin"
   before_action :verify_admin, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
+  def index
+    @report = Supports::AdminSupport.new
+    respond_to do |format|
+      format.xlsx
+    end
+  end
+  
   def correct_user
     @user = User.find_by id: params[:id]
     redirect_to(root_url) unless current_user? @user

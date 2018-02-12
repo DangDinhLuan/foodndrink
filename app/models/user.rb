@@ -22,6 +22,8 @@ class User < ApplicationRecord
     length: {minimum: Settings.validates.password.length.minimum}, allow_nil: true
   has_secure_password
 
+  scope :admins, ->{where admin: true}
+  
   class << self
     def digest string
       if ActiveModel::SecurePassword.min_cost

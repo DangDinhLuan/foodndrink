@@ -104,6 +104,15 @@ en:
       link: "Order"
       total: "Total"
       order: "Order"
+    admin_statistic:
+      title: "Dear"
+      subject: "Data orders of this month"
+      body: "This is some data of orders in this month. Scroll down and follow the link to see all data infomations."
+      link: "Click here to see all details"
+      quantity_table_title: "Total quantities"
+      price_table_title: "Total prices"
+      total_quantity: "Total Quantity"
+      total_price: "Total Price"
   password_resets:
     title: "Resets Password"
     submit: "Send email"

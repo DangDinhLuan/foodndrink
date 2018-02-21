@@ -14,6 +14,9 @@ $(document).ready(function(){
     }
   });
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> adf62b8... Admin filter order
 
   $( "#btn-import" ).on( "click", function() {
     $( "#import-file" ).trigger( "click" );
@@ -22,6 +25,9 @@ $(document).ready(function(){
   $("#import-file").on("change", function(){
     $( "#submit-file" ).trigger( "click" );
   });
+<<<<<<< HEAD
 =======
 >>>>>>> 8628d3c... Admin - View statistics
+=======
+>>>>>>> adf62b8... Admin filter order
 });

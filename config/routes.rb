@@ -36,9 +36,6 @@ Rails.application.routes.draw do
     resources :products do
       collection { post :import }
     end
-    resources :products do
-      collection { post :import }
-    end
     resources :slides, except: [:index, :show]
     get "slides", to: "slides#new"
     post "slides/updates", to: "slides#update_status"

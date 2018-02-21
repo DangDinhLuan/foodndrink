@@ -25,12 +25,15 @@ body {
   margin-top: 150px;
 }
 
-
 .alert {
+  box-shadow: $box-shadow-default;
+  border-radius: 3px;
+}
+.alert-flash {
   z-index: 9999999 !important;
+  top: 100px;
   position: absolute;
   right: 0;
-  top: 0;
   b {
     font-size: 14px;
     text-transform: uppercase;

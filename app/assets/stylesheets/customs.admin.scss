@@ -10,6 +10,11 @@ $font-color-dark: #555555;
 $box-shadow-default: 0 1px 10px rgba(0, 0, 0, 0.5);
 $box-shadow-light: 0 1px 5px rgba(0, 0, 0, 0.2);
 
+.alert {
+  box-shadow: $box-shadow-default;
+  border-radius: 3px;
+}
+
 a {
   i {
     margin-right: 5px;

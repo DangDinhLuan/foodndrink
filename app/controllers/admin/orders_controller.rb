@@ -2,10 +2,21 @@ class Admin::OrdersController < AdminController
   before_action :load_order, only: [:show, :edit, :update]
 
   def index
+    @to_date = params[:to_date] ? params[:to_date] : Date.current.end_of_day
     if params[:term]
-      @orders = Order.search_by_title(params[:term], "name").order(id: :desc).page(params[:page]).per Settings.page.per_page
+      @orders = Order.search_by_title(params[:term], "name").order(id: :desc)
+      .page(params[:page]).per Settings.page.per_page
     else
-      @orders = Order.order(id: :desc).page(params[:page]).per Settings.page.per_page
+      if params[:from_date]
+        @orders = Order.time_in_range(params[:from_date], @to_date).order(id: :desc).page(params[:page]).per Settings.page.per_page
+      else
+        @orders = Order.order(id: :desc).page(params[:page]).per Settings.page.per_page
+      end
+    end
+    respond_to do |format|
+      format.html
+      format.js
+      format.xlsx
     end
   end
 

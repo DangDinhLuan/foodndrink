@@ -13,4 +13,12 @@ $(document).ready(function(){
         close: "fa fa-remove"
     }
   });
+
+  $( "#btn-import" ).on( "click", function() {
+    $( "#import-file" ).trigger( "click" );
+  });
+
+  $("#import-file").on("change", function(){
+    $( "#submit-file" ).trigger( "click" );
+  });
 });

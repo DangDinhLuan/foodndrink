@@ -20,12 +20,4 @@ class Order < ApplicationRecord
       I18n.t("admin.order.show.status.not_delivery")
     end
   end
-
-  def self.search_by_title(term)
-    if term
-      where('name LIKE ?', "%#{term}%")
-    else
-      all
-    end
-  end
 end

@@ -12,14 +12,26 @@
           </p>
           <div id="product-rating" class="product-rating text-center">
 <<<<<<< HEAD
+<<<<<<< 7f292043bdf931c85e02c19fcea7d88effab9f59
+<<<<<<< HEAD
             <%= render "ratings/rating_form" %>
 =======
+=======
+>>>>>>> Admin filter order
+=======
+>>>>>>> edcd4c2... Send mail to custommer
             <% 1.upto Settings.rating do |point| %>
                 <button type="submit" class="<%= point <= @product.avg_rate.to_i ? " rated " : " unrated " %>btn btn-round btn-just-icon btn-cart">
                   <i class="fa fa-star"></i>
                 </button>
             <% end %>
+<<<<<<< HEAD
+<<<<<<< 7f292043bdf931c85e02c19fcea7d88effab9f59
 >>>>>>> 59e9162bf674120c64041e0bddbebf28f48f56c4
+=======
+>>>>>>> Admin filter order
+=======
+>>>>>>> edcd4c2... Send mail to custommer
           </div>
           <p class="text-center buttons">
             <%= link_to edit_admin_product_path(@product),

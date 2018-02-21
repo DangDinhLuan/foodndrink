@@ -1,5 +1,6 @@
 <div class="col-md-12">
   <%= render "shared/flash_messages"%>
+<<<<<<< 7f292043bdf931c85e02c19fcea7d88effab9f59
   <div class="col-md-4">
     <%= form_tag admin_products_path, method: :get do %>
       <%= select_tag :category_id, options_for_select([t("admin.product.all")] + Category.all.collect{|category| [category.title, category.id]}), class: "form-control", :onchange => "this.form.submit();"  %>
@@ -13,6 +14,26 @@
     <div class="btn-action">
       <%= link_to t("admin.product.add_new"), new_admin_product_path, class: "btn btn-info btn-add"%>
     </div>
+=======
+  <div class="col-md-12">
+    <div class="btn-action">
+      <%= form_tag import_admin_products_path, id: "fomr-import", multipart: true do %>
+        <%= file_field_tag :file, id: "import-file",
+          accept: ".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" %>
+        <%= submit_tag t("admin.import"), id: "submit-file" %>
+      <% end %>
+      <button type="button" rel="tooltip" title="" class="btn btn-success btn-add" id="btn-import">
+        <i class="material-icons">file_upload</i>
+        <%= t "admin.product.import" %>
+      </button>
+      <%= link_to t("admin.product.add_new"), new_admin_product_path, class: "btn btn-info btn-add"%>
+    </div>
+    <%= form_tag admin_products_path, class: "filter", method: :get do %>
+      <%= select_tag :category_id, options_for_select([t("admin.product.all")] + 
+      Category.all.collect{|category| [category.title, category.id]}), 
+      class: "form-control", :onchange => "this.form.submit();"  %>
+    <% end %>
+>>>>>>> Admin filter order
   </div>
   <div class="card">
     <div class="card-header" data-background-color="purple">

@@ -23,7 +23,13 @@ class OrdersController < ApplicationController
     @order.total = cart_total_price
     @order.user_id = current_user.id if loged_in?
     if @order.save
+<<<<<<< HEAD
       checkout_cart @order
+=======
+      save_cart @order
+      UserMailer.custommer_order(@order).deliver
+      destroy_cart
+>>>>>>> edcd4c2... Send mail to custommer
       flash[:info] = t "order.success"
       redirect_to root_path
     else
@@ -70,6 +76,30 @@ class OrdersController < ApplicationController
     end
   end
   
+<<<<<<< 7f292043bdf931c85e02c19fcea7d88effab9f59
+=======
+  def send_chatwork_message
+    room_id = ENV["CHATWORK_ROOM_ID"]
+    admin_id = ENV["CHATWORK_ADMIN_ID"]
+    member_ids = ChatWork::Member.get(room_id: room_id)
+      .collect{|member| member.account_id} - [admin_id.to_i]
+    if member_ids.exclude? current_user.chatwork_id
+      member_ids.push current_user.chatwork_id
+      ChatWork::Member.update_all room_id: room_id,
+        members_admin_ids: admin_id, members_member_ids: member_ids
+    end
+    chatwork_user = ChatWork::Member.get(room_id: room_id)
+      .find{|member| member.account_id.to_s == current_user.chatwork_id}
+    return unless chatwork_user
+    body = "[TO:#{chatwork_user.account_id}] #{chatwork_user.name}\n#{t('chatwork.message.body')}"
+    begin
+      ChatWork::Message.create room_id: room_id, body: body
+    rescue
+      return
+    end
+  end
+  
+>>>>>>> Admin filter order
   private
   def save_cart_items order
     if cart_available?

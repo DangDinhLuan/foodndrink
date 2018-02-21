@@ -37,8 +37,12 @@ class Admin::ProductsController < AdminController
   end
 
   def import
-    Product.import params[:file]
-    redirect_to admin_products_path, notice: t("admin.product.create.success")
+    if params[:file].nil
+      redirect_to admin_products_path, notice: t("admin.product.create.error")
+    else
+      Product.import params[:file]
+      redirect_to admin_products_path, notice: t("admin.product.create.success")
+    end
   end
 
   def edit; end

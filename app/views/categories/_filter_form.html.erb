@@ -1,0 +1,82 @@
+<div class="filter">
+  <%= form_tag category_path, id: "form", method: :get, remote: true do %>
+    <%= hidden_field_tag "order_by_price", "asc" %>
+    <div class="filter-group">
+      <p><%= t "app.filter.price.title" %></p>
+      <div class="checkbox">
+        <label>
+          <%= check_box_tag "price_level[1]", true %>
+          <span><%= t "app.filter.price.level_1" %></span>
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <%= check_box_tag "price_level[2]", true %>
+          <span><%= t "app.filter.price.level_2" %></span>
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <%= check_box_tag "price_level[4]", true %>
+          <span><%= t "app.filter.price.level_3" %></span>
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <%= check_box_tag "price_level[4]", true %>
+          <span><%= t "app.filter.price.level_4" %></span>
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <%= check_box_tag "price_level[5]", true %>
+          <span><%= t "app.filter.price.level_5" %></span>
+        </label>
+      </div>
+    </div>
+    <div class="filter-group">
+      <p><%= t "app.filter.rating.title" %></p>
+      <div class="checkbox">
+        <label>
+          <%= check_box_tag "rating_level[5]", true %>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <%= check_box_tag "rating_level[4]", true %>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <%= check_box_tag "rating_level[3]", true %>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <%= check_box_tag "rating_level[2]", true %>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <%= check_box_tag "rating_level[1]", true %>
+          <i class="fa fa-star"></i>
+        </label>
+      </div>
+      <%= submit_tag "", id: "submit" %>
+    </div>
+  <% end %>
+</div>

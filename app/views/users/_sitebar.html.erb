@@ -7,8 +7,8 @@
       <ul class="nav">
         <li>
           <ul>
-            <li class="<%= current_class? orders_path %>">
-              <%= link_to orders_path do %>
+            <li class="<%= current_class? user_orders_path %>">
+              <%= link_to user_orders_path do %>
                 <i class="fa fa-list"></i><%= t "user_profile.order_title" %>
               <% end %>
             </li>
@@ -23,7 +23,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to logout_path, method: :delete do %>
+              <%= link_to logout_path do %>
                 <i class="fa fa-sign-out"></i><%= t "user_profile.logout" %>
               <% end %>
             </li>

@@ -34,15 +34,15 @@ Rails.application.configure do
   config.assets.quiet = true
 
   config.action_mailer.delivery_method = :smtp
-  host = "localhost:3000"
-  config.action_mailer.default_url_options = {host: host, protocol: "http"}
+  host = "foodndrinkapp.herokuapp.com"
+  config.action_mailer.default_url_options = {host: host}
   ActionMailer::Base.smtp_settings = {
-    :address        => "smtp.gmail.com",
+    :address        => "smtp.sendgrid.net",
     :port           => "587",
     :authentication => :plain,
     :user_name      => ENV["EMAIL"],
     :password       => ENV["EMAIL_PASSWORD"],
-    :domain         => "localhost:3000",
+    :domain         => "foodndrinkapp.herokuapp.com",
     :enable_starttls_auto => true
   }
 end

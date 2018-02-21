@@ -1,0 +1,51 @@
+<h2><%= t "user_mailer.custommer_order.title" %> <%= @admin.name %></h2>
+<p><%= t "user_mailer.admin_statistic.body" %></p>
+<h4><%= t "user_mailer.admin_statistic.quantity_table_title" %></h4>
+<table class="m_7986748672540615154feature-table-2" border="0" width="680" cellspacing="0" cellpadding="5" style="border:1px solid #dee2e3">
+  <tbody>
+    <tr>
+      <td style="font-size:12px;font-family:Arial,Helvetica,sans-serif;background:#dceff5;font-weight:bold;text-align:center">
+          <div align="left"><%= t "user_profile.order_detail.product" %></div>
+      </td>
+      <td style="font-size:12px;font-family:Arial,Helvetica,sans-serif;background:#dceff5;font-weight:bold;text-align:center">
+          <div align="left"><%= t "user_mailer.admin_statistic.total_quantity" %></div>
+      </td>
+    </tr>
+    <% @total_quantity.each do |product, quantity| %>
+      <tr>
+        <td valign="top" style="font-size:11px;font-family:Arial,Helvetica,sans-serif;border-bottom:1px solid #dee2e3">
+          <div align="left"><%= product %></div>
+        </td>
+        <td valign="top" style="font-size:11px;font-family:Arial,Helvetica,sans-serif;border-bottom:1px solid #dee2e3">
+          <div align="left"><%= quantity %></div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h4><%= t "user_mailer.admin_statistic.price_table_title" %></h4>
+<table class="m_7986748672540615154feature-table-2" border="0" width="680" cellspacing="0" cellpadding="5" style="border:1px solid #dee2e3">
+  <tbody>
+    <tr>
+      <td style="font-size:12px;font-family:Arial,Helvetica,sans-serif;background:#dceff5;font-weight:bold;text-align:center">
+          <div align="left"><%= t "user_profile.order_detail.product" %></div>
+      </td>
+      <td style="font-size:12px;font-family:Arial,Helvetica,sans-serif;background:#dceff5;font-weight:bold;text-align:center">
+          <div align="left"><%= t "user_mailer.admin_statistic.total_price" %></div>
+      </td>
+    </tr>
+    <% @total_price.each do |product, price| %>
+      <tr>
+        <td valign="top" style="font-size:11px;font-family:Arial,Helvetica,sans-serif;border-bottom:1px solid #dee2e3">
+          <div align="left"><%= product %></div>
+        </td>
+        <td valign="top" style="font-size:11px;font-family:Arial,Helvetica,sans-serif;border-bottom:1px solid #dee2e3">
+          <div align="left">$<%= price %></div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/>
+<%= link_to t("user_mailer.admin_statistic.link"), admin_url %>
+

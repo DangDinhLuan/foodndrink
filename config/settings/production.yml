@@ -1,0 +1,52 @@
+validates:
+  name:
+    pattern: \A[\p{L}\s]+\z
+    length:
+      minimum: 2
+      maximum: 60
+  email:
+    pattern: \A[a-zA-Z0-9_.]+@[a-z]+\.[a-z.]{2,6}\z
+    length:
+      maximum: 60
+  phone:
+    pattern: \A[0-9]{10,11}\z
+    length:
+      minimum: 10
+      maximum: 11
+  password:
+    length:
+      minimum: 6
+    reset_expired: 2
+  title:
+    length:
+      maximum: 255
+  address:
+    length:
+      maximum: 255
+page:
+  per_page: 5
+product:
+  description:
+    excerp: 50
+  related:
+    limit: 4
+home:
+  product:
+    recent:
+      limit: 4
+    top_rated:
+      limit: 8
+categories:
+  product:
+    page:
+      per_page: 12
+user:
+  avatar:
+    default: "avatars/default.png"
+rating: 5
+search:
+  per_page: 12
+url_image:
+  default: "/home/dang.dinh.luan/Pictures/"
+dashboard:
+  top_product_limit: 10

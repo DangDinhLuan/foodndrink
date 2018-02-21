@@ -18,12 +18,20 @@ en:
     about: "About Us"
     contact: "Contact Us"
     search_for: "Search for..."
+    search:
+      result: "product"
+      found: "found"
     sort_product:
       title: "Sort Products"
       default: "Default"
       food: "Food Products"
       drink: "Drink Product"
+      price:
+        default: "Default"
+        up: "Price go Up"
+        down: "Price go Down"
     new_product: "New products"
+    top_product: "Top products"
     filter:
       price:
         title: "Prices"
@@ -89,6 +97,22 @@ en:
         Please click the link below. If you did not request,
         please ignore this email and your password will stay as it is."
       link: "Reset your password !"
+    custommer_order:
+      title: "Dear"
+      subject: "Food & Drink - Order details"
+      body: "Your order has been placed on "
+      link: "Order"
+      total: "Total"
+      order: "Order"
+    admin_statistic:
+      title: "Dear"
+      subject: "Data orders of this month"
+      body: "This is some data of orders in this month. Scroll down and follow the link to see all data infomations."
+      link: "Click here to see all details"
+      quantity_table_title: "Total quantities"
+      price_table_title: "Total prices"
+      total_quantity: "Total Quantity"
+      total_price: "Total Price"
   password_resets:
     title: "Resets Password"
     submit: "Send email"
@@ -99,11 +123,40 @@ en:
     expried: "The request have expried!"
     error: "password error!"
     blank: "can not be blank!"
+  chatwork:
+    message:
+      title: "Hello"
+      body: "Thanks for your order. Please check your email to see full details."
+    chatwork_id: "Chatwork ID"
   admin:
     title: "Foods and Drinks app ruby on rails"
     proflie: "Profile"
     danger: "You can not admin"
+    import: "Import"
+    dashboard:
+      quantity: "Quantities"
+      in_this_month: "In this month"
+      price: "Total Prices"
+      last_hours: "Last 24 Hours"
+      product: "Products"
+      total_in_store: "Total in the store"
+      user: "Users"
+      just_updated: "Just Updated"
+      quantity_each_category: "Total quantity of each category"
+      price_each_category: "Total price of each category"
+      order_in_each_day: "Orders in each day"
+      product_with_price_and_quantity: "Product with price and total quantities"
+      food_and_drink: "Food and drink"
+      top_product_of_month: "Top products of month"
+      chart:
+        price: "Price"
+        total_quantity: "Total quantity"
+      from_date: "From:"
+      to_date: "To:"
+      submit: "Ok"
+      reset: "Reset"
     menu:
+      dashboard: "Dashboards"
       home: "Home"
       user: "Users manage"
       category: "Categories"
@@ -128,6 +181,7 @@ en:
       action: "Actions"
       food: "Food"
       drink: "Drink"
+      all: "Select a type"
       new:
         title: "Add category"
         submit: "Create category"
@@ -143,11 +197,13 @@ en:
       title: "Title"
       add_new: "New Product"
       not_exist: "Sorry! Product doesn't exist!"
+      all: "Select a category"
       select:
         category: "Select Category"
       quantity: "Quantity"
       price: "Price ($)"
       description: "Product description"
+      order: "Sold"
       create:
         title: "New Product"
         subtitle: "Complete the product"
@@ -185,6 +241,7 @@ en:
       image: "Image"
       status: "Active slide"
       action: "Actions"
+      update-status: "Update"
       not_exist: "Sorry! The slide doesn't exist."
       new:
         title: "Add new slide"
@@ -297,6 +354,10 @@ en:
       delete_confirm: "You sure?"
       success: "Delete user success"
       danger: "User not defind"
+<<<<<<< HEAD
+=======
+      is_admin: "Is admin"
+>>>>>>> 59e9162bf674120c64041e0bddbebf28f48f56c4
   user_profile:
     title: "Customer section"
     account: "My account"
@@ -376,3 +437,26 @@ en:
       note: "Note..."
       submit: "Order now"
       back: "Back to basket"
+<<<<<<< HEAD
+=======
+  report:
+    dowload: "Dowload statistic report to excel"
+    name: "Name"
+    email: "Email"
+    phone: "Phone"
+    address: "Address"
+    total: "Total"
+    date: "Created"
+    status: "Status"
+    order_current: "Orders report in the day"
+    product_current: "Products report in the day"
+    order_month: "Orders report in the month"
+    product_month: "Products report in the month"
+    order_month_3: "Orders report in the month"
+    product_month_3: "Products report in the month"
+    title: "Title"
+    price: "Price"
+    count: "Order number"
+    delivered: "Delivered"
+    not_delivery: "Not delivery"
+>>>>>>> 59e9162bf674120c64041e0bddbebf28f48f56c4

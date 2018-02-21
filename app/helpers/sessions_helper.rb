@@ -70,7 +70,7 @@ module SessionsHelper
   end
 
   def cart_total_price
-    cart_items.map{|item| item.price * item.quantity}.sum
+    cart_available? ? cart_items.map{|item| item.price * item.quantity}.sum : 0
   end
 
   def cart_total_items

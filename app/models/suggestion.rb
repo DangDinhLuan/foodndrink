@@ -33,12 +33,4 @@ class Suggestion < ApplicationRecord
     end
   end
 
-  def self.search_by_title(term)
-    if term
-      where('title LIKE ?', "%#{term}%")
-    else
-      all
-    end
-  end
-
 end

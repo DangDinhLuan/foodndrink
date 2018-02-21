@@ -11,7 +11,15 @@
             <%= currency_for @product %><span></span>
           </p>
           <div id="product-rating" class="product-rating text-center">
+<<<<<<< HEAD
             <%= render "ratings/rating_form" %>
+=======
+            <% 1.upto Settings.rating do |point| %>
+                <button type="submit" class="<%= point <= @product.avg_rate.to_i ? " rated " : " unrated " %>btn btn-round btn-just-icon btn-cart">
+                  <i class="fa fa-star"></i>
+                </button>
+            <% end %>
+>>>>>>> 59e9162bf674120c64041e0bddbebf28f48f56c4
           </div>
           <p class="text-center buttons">
             <%= link_to edit_admin_product_path(@product),

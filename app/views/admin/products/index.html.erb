@@ -1,7 +1,18 @@
 <div class="col-md-12">
   <%= render "shared/flash_messages"%>
-  <div class="btn-action">
-    <%= link_to t("admin.product.add_new"), new_admin_product_path, class: "btn btn-info btn-add"%>
+  <div class="col-md-4">
+    <%= form_tag admin_products_path, method: :get do %>
+      <%= select_tag :category_id, options_for_select([t("admin.product.all")] + Category.all.collect{|category| [category.title, category.id]}), class: "form-control", :onchange => "this.form.submit();"  %>
+    <% end %>
+  </div>
+  <div class="col-md-8">
+    <%= form_tag import_admin_products_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag t "admin.import" %>
+    <% end %>
+    <div class="btn-action">
+      <%= link_to t("admin.product.add_new"), new_admin_product_path, class: "btn btn-info btn-add"%>
+    </div>
   </div>
   <div class="card">
     <div class="card-header" data-background-color="purple">
@@ -18,6 +29,7 @@
             <th><%= t "admin.product.category" %></th>
             <th><%= t "admin.product.description" %></th>
             <th><%= t "admin.product.quantity" %></th>
+            <th><%= t "admin.product.order" %></th>
             <th class="text-right th-action"><%= t "admin.product.action" %></th>
           </tr>
         </thead>
@@ -39,6 +51,7 @@
             <% else %>
             <td><%= product.quantity %></td>
             <% end %>
+            <td><%= product.items.size %></td>
             <td class="td-actions text-right">
               <button type="button" rel="tooltip" title="<%= t "admin.product.table.view"%>" class="btn btn-info btn-simple btn-xs">
               <%= link_to admin_product_path product do %>

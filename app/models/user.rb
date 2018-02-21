@@ -22,6 +22,8 @@ class User < ApplicationRecord
     length: {minimum: Settings.validates.password.length.minimum}, allow_nil: true
   has_secure_password
 
+  scope :admins, ->{where admin: true}
+  
   class << self
     def digest string
       if ActiveModel::SecurePassword.min_cost
@@ -83,13 +85,4 @@ class User < ApplicationRecord
     return false if digest.nil?
     BCrypt::Password.new(digest).is_password? token
   end
-
-  def self.search_by_title(term)
-    if term
-      where('name LIKE ?', "%#{term}%")
-    else
-      all
-    end
-  end
-
 end

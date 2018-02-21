@@ -44,3 +44,12 @@ user:
   avatar:
     default: "avatars/default.png"
 rating: 5
+<<<<<<< HEAD
+=======
+search:
+  per_page: 12
+url_image:
+  default: "/home/dang.dinh.luan/Pictures/"
+dashboard:
+  top_product_limit: 10
+>>>>>>> 59e9162bf674120c64041e0bddbebf28f48f56c4

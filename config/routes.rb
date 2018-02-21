@@ -5,34 +5,46 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
+<<<<<<< HEAD
   get "/user/orders", to: "orders#show"
+=======
+>>>>>>> 59e9162bf674120c64041e0bddbebf28f48f56c4
   get "user/profiles", to: "users#show"
   patch "user/change_password", to: "users#change_password"
   resources :users, except: [:index, :show, :destroy]
   resources :orders, except: [:edit, :update, :destroy]
+<<<<<<< HEAD
   resources :account_activations, only: [:edit]
+=======
+  get "/user/orders", to: "orders#index"
+>>>>>>> 59e9162bf674120c64041e0bddbebf28f48f56c4
   get "/checkout", to: "orders#new"
   resources :account_activations, only: :edit
   resources :password_resets, expect: :destroy
   resources :carts, only: [:create, :destroy]
-  post "carts/update", to: "carts#update"
-  get "cart/details", to: "carts#show"
-  resources :orders, expect: :destroy
-  resources :products
+  post "/carts/update", to: "carts#update"
+  get "/cart/details", to: "carts#show"
   resources :suggestions
-  resources :categories
+  resources :categories, only: :show
   resources :products, only: :show
+  post "/search", to: "products#search"
   resources :comments, only: [:create, :destroy]
   post "/ratings", to: "ratings#create"
   patch "/ratings", to: "ratings#update"
 
-  get "/admin", to: "admin/products#index"
+  get "/admin", to: "admin/dashboards#index"
   namespace :admin do
     resources :categories
     resources :orders, except: :destroy
     resources :comments, except: [:edit, :update]
     resources :users
+<<<<<<< HEAD
     resources :products
+=======
+    resources :products do
+      collection { post :import }
+    end
+>>>>>>> 59e9162bf674120c64041e0bddbebf28f48f56c4
     resources :slides, except: [:index, :show]
     get "slides", to: "slides#new"
     post "slides/updates", to: "slides#update_status"

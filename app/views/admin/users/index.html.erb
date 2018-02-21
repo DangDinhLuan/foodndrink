@@ -13,6 +13,7 @@
             <th><%= t "admin.user.email" %></th>
             <th><%= t "admin.user.phone" %></th>
             <th><%= t "admin.user.address" %></th>
+            <th><%= t "admin.user.is_admin" %></th>
             <th class="text-right th-action"><%= t "admin.user.action" %></th>
           </tr>
         </thead>
@@ -24,6 +25,7 @@
               <td><%= user.email %></td>
               <td><%= user.phone %></td>
               <td><%= user.address %></td>
+              <td><%= user.admin %></td>
               <td class="td-actions text-right">
                 <button type="button" rel="tooltip" title="<%= t "admin.user.view"%>" class="btn btn-info btn-simple btn-xs">
                   <%= link_to admin_user_path user do %>
@@ -42,6 +44,7 @@
           <% end %>
         </tbody>
       </table>
+      <%= link_to t("report.dowload"), admin_path(format: :xlsx) %>
       <%= paginate @users %>
       <%= page_entries_info @users if @users.blank? %>
     </div>

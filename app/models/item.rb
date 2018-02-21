@@ -6,5 +6,9 @@ class Item < ApplicationRecord
   validates :price, presence: true
   validates :quantity, presence: true
   
-  scope :item, -> (id) { where(order_id: id) }
+  scope :item, -> order_id{where(order_id: order_id)}
+  scope :total_quantities, ->{sum :quantity}
+  scope :total_price, ->{sum :price}
+  scope :time_in_range, ->(from_date, to_date){where created_at: from_date..to_date}
+
 end

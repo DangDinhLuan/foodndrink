@@ -302,13 +302,19 @@ DEPENDENCIES
   jquery-ui-rails
   kaminari
   mini_magick (~> 4.3)
+<<<<<<< HEAD
   momentjs-rails (~> 2.9)!
+=======
+>>>>>>> edcd4c2... Send mail to custommer
   pg (~> 0.20)
   puma (~> 3.7)
   rails (~> 5.1.4)
   rails_12factor
+<<<<<<< HEAD
   roo
   rubyzip (~> 1.1.0)
+=======
+>>>>>>> edcd4c2... Send mail to custommer
   sass-rails (~> 5.0)
   selenium-webdriver
   sqlite3

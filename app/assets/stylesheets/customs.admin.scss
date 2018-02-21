@@ -255,14 +255,9 @@ canvas {
 
 .pagination {
   border: none;
-<<<<<<< HEAD
-
-=======
   .gap {
     display: none;
   }
-  
->>>>>>> 59e9162bf674120c64041e0bddbebf28f48f56c4
   .first{
     display: none;
   }
@@ -291,9 +286,6 @@ canvas {
     display: none;
   }
 }
-<<<<<<< HEAD
-=======
-
 .time-selection {
   margin-bottom: 100px;
   .form-group {
@@ -308,5 +300,13 @@ canvas {
   }
   
 }
-
->>>>>>> 59e9162bf674120c64041e0bddbebf28f48f56c4
+#fomr-import{
+  display: none
+}
+.filter{
+  width: 25%;
+  float: right;
+  .form-group{
+    margin: 15px 20px 0 0;
+  }
+}

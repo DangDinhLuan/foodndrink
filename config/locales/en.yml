@@ -104,6 +104,7 @@ en:
       link: "Order"
       total: "Total"
       order: "Order"
+<<<<<<< HEAD
     admin_statistic:
       title: "Dear"
       subject: "Data orders of this month"
@@ -113,6 +114,8 @@ en:
       price_table_title: "Total prices"
       total_quantity: "Total Quantity"
       total_price: "Total Price"
+=======
+>>>>>>> edcd4c2... Send mail to custommer
   password_resets:
     title: "Resets Password"
     submit: "Send email"
@@ -354,10 +357,7 @@ en:
       delete_confirm: "You sure?"
       success: "Delete user success"
       danger: "User not defind"
-<<<<<<< HEAD
-=======
       is_admin: "Is admin"
->>>>>>> 59e9162bf674120c64041e0bddbebf28f48f56c4
   user_profile:
     title: "Customer section"
     account: "My account"
@@ -437,8 +437,11 @@ en:
       note: "Note..."
       submit: "Order now"
       back: "Back to basket"
+<<<<<<< 7f292043bdf931c85e02c19fcea7d88effab9f59
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> Admin filter order
   report:
     dowload: "Dowload statistic report to excel"
     name: "Name"
@@ -459,4 +462,7 @@ en:
     count: "Order number"
     delivered: "Delivered"
     not_delivery: "Not delivery"
+<<<<<<< 7f292043bdf931c85e02c19fcea7d88effab9f59
 >>>>>>> 59e9162bf674120c64041e0bddbebf28f48f56c4
+=======
+>>>>>>> Admin filter order

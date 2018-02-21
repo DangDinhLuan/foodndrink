@@ -1,0 +1,10 @@
+excel_package = xlsx_package.workbook
+excel_package.add_worksheet(name: "Date current") do |sheet|
+  sheet.add_row [I18n.t("report.order_current")]
+  sheet.merge_cells "A1:G1"
+  sheet.add_row [I18n.t("report.name"),I18n.t("report.email"),I18n.t("report.phone"), +
+    I18n.t("report.address"),I18n.t("report.date"),I18n.t("report.status"),I18n.t("report.total")]
+  @orders.each do |order|
+    sheet.add_row [order.name, order.email, order.phone, order.address, order.created_at, order.status_order, order.total]
+  end
+end

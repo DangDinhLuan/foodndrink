@@ -30,8 +30,6 @@ $(document).ready(function(){
     floatingNumber(addToCart, "130px");
     return 0;
   });
-
-
 });
 
 function floatingNumber(elem, left) {
@@ -40,7 +38,6 @@ function floatingNumber(elem, left) {
   elem.animate({opacity: "1"});
   elem.animate({left: left, fontSize: "30px"},"fast");
 }
-
 // get thumb image
 function readURL(input, imgId) {
   if (input.files && input.files[0]) {
@@ -51,4 +48,3 @@ function readURL(input, imgId) {
     reader.readAsDataURL(input.files[0]);
   }
 }
-

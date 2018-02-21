@@ -1,0 +1,41 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th class="text-center"><%= t "admin.order.table.id" %></th>
+      <th><%= t "admin.order.table.accepter" %></th>
+      <th><%= t "admin.order.table.email" %></th>
+      <th><%= t "admin.order.table.phone" %></th>
+      <th><%= t "admin.order.table.address" %></th>
+      <th><%= t "admin.order.table.total" %></th>
+      <th><%= t "admin.order.table.status" %></th>
+      <th class="text-right th-action"><%= t "admin.categories.action" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each_with_index do |order, index| %>
+    <tr>
+      <td class="text-center"><%= number_index index %></td>
+      <td><%= order.name %></td>
+      <td><%= order.email %></td>
+      <td><%= order.phone %></td>
+      <td><%= order.address %></td>
+      <td><%= currency_for order %></td>
+      <td><%= order.status_order %></td>
+      <td class="td-actions text-right">
+        <button type="button" rel="tooltip" title="<%= t "admin.order.show.table.view"%>" class="btn btn-info btn-simple btn-xs">
+        <%= link_to [:admin, order] do %>
+        <i class="material-icons">remove_red_eye</i>
+        <% end %>
+        </button>
+        <button type="button" rel="tooltip" title="<%= t "admin.order.show.table.edit"%>" class="btn btn-success btn-simple btn-xs">
+        <%= link_to edit_admin_order_path(order) do %>
+        <i class="material-icons">edit</i>
+        <% end %>
+        </button>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @orders %>
+<%= page_entries_info @orders if @orders.blank? %>

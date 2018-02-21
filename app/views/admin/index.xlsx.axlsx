@@ -54,7 +54,10 @@ excel_package.styles do |style|
     sheet.add_row
     sheet.add_row
     sheet.add_row [I18n.t("report.product_month")], style: title
+<<<<<<< 7f292043bdf931c85e02c19fcea7d88effab9f59
     sheet.merge_cells "A12:C12"
+=======
+>>>>>>> Admin filter order
     sheet.add_row [I18n.t("report.title"),I18n.t("report.price"),I18n.t("report.count")], style: highlight_cell
     @report.product_current_month.each do |product|
       sheet.add_row [product.title, product.price, product.count_product]
@@ -82,7 +85,10 @@ excel_package.styles do |style|
     sheet.add_row
     sheet.add_row
     sheet.add_row [I18n.t("report.product_month_3")], style: title
+<<<<<<< 7f292043bdf931c85e02c19fcea7d88effab9f59
     sheet.merge_cells "A12:C12"
+=======
+>>>>>>> Admin filter order
     sheet.add_row [I18n.t("report.title"),I18n.t("report.price"),I18n.t("report.count")], style: highlight_cell
     @report.product_current_3month.each do |product|
       sheet.add_row [product.title, product.price, product.count_product]

@@ -2,15 +2,11 @@
    <%= render "shared/flash_messages"%>
    <div class="col-md-3">
     <%= form_tag admin_categories_path, method: :get do %>
-      <%= select_tag :category_type, options_for_select([[t("admin.categories.all"), ""],[t("admin.categories.food"), "food"],[t("admin.categories.drink"), "drink"]]), class: "form-control", :onchange => "this.form.submit();"  %>
+      <%= select_tag :category_type, options_for_select([[t("admin.categories.all"), ""],[t("admin.categories.default"), ""],[t("admin.categories.food"), "food"],[t("admin.categories.drink"), "drink"]]), class: "form-control", :onchange => "this.form.submit();"  %>
     <% end %>
    </div>
    <div class="btn-action col-md-9">
-<<<<<<< 7f292043bdf931c85e02c19fcea7d88effab9f59
-      <%= link_to t("admin.categories.btnAdd"), new_admin_category_path, class: "btn btn-info btn-add"%>
-=======
       <%= link_to t("admin.categories.btnAdd"), new_admin_category_path, class: "btn btn-success btn-add"%>
->>>>>>> Admin filter order
    </div>
    <div class="card">
       <div class="card-header" data-background-color="purple">

@@ -182,6 +182,7 @@ en:
       food: "Food"
       drink: "Drink"
       all: "Select a type"
+      default: "Select All"
       new:
         title: "Add category"
         submit: "Create category"

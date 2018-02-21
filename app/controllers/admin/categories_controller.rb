@@ -2,20 +2,20 @@ class Admin::CategoriesController < AdminController
   before_action :load_category, only: [:edit, :update, :destroy]
 
   def index
-    if params[:category_type]
-      if params[:term]
-        @categories = Category.search_by_title(params[:term], "title").filter(params[:category_type])
-        .includes(:products).page(params[:page]).per Settings.page.per_page
-      else
-        @categories = Category.filter(params[:category_type]).includes(:products)
-        .page(params[:page]).per Settings.page.per_page
-      end
-    else
+    if params[:category_type].blank?
       if params[:term]
         @categories = Category.search_by_title(params[:term], "title").recent
         .includes(:products).page(params[:page]).per Settings.page.per_page
       else
         @categories = Category.recent.includes(:products)
+        .page(params[:page]).per Settings.page.per_page
+      end
+    else
+      if params[:term]
+        @categories = Category.search_by_title(params[:term], "title").filter(params[:category_type])
+        .includes(:products).page(params[:page]).per Settings.page.per_page
+      else
+        @categories = Category.filter(params[:category_type]).includes(:products)
         .page(params[:page]).per Settings.page.per_page
       end
     end

@@ -27,7 +27,6 @@ gem "axlsx_rails"
 gem "whenever", require: false
 gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
-gem "whenever", require: false
 
 group :production do
   gem "pg", "~> 0.20"
